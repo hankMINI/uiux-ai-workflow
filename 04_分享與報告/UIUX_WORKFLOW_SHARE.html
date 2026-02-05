@@ -62,7 +62,6 @@
       position: relative;
     }
 
-    /* Header using Flex */
     header {
       background: #1A1A24;
       color: white;
@@ -89,7 +88,6 @@
       margin-bottom: var(--sp-lg);
     }
 
-    /* Sticky Nav using Flex */
     .sticky-nav {
       position: sticky;
       top: 0;
@@ -207,7 +205,6 @@
       gap: var(--sp-xs);
     }
 
-    /* Insight Box using Flex */
     .insight-box {
       background: #1A1A24;
       color: white;
@@ -224,7 +221,6 @@
       margin-bottom: var(--sp-sm);
     }
 
-    /* Mode Comparison using Flex */
     .mode-comparison {
       display: flex;
       flex-direction: column;
@@ -284,7 +280,6 @@
       font-style: italic;
     }
 
-    /* Solution Card using Flex */
     .solution-card {
       border: 1px solid var(--border);
       margin-bottom: var(--sp-xl);
@@ -317,97 +312,75 @@
       margin-bottom: var(--sp-sm);
     }
 
-    .tool-badge {
-      align-self: flex-start;
-      background: var(--primary);
-      color: var(--text);
-      padding: 4px 12px;
-      font-weight: 700;
-      font-size: var(--fs-sm);
-      margin-bottom: var(--sp-sm);
-    }
-
-    /* Implementation Steps converted from Grid to Flex */
-    .step-container {
+    /* Steps Layout */
+    .step-list-vertical {
       display: flex;
-      gap: var(--sp-lg);
+      flex-direction: column;
+      gap: var(--sp-md);
       margin: var(--sp-md) 0;
     }
 
-    .step-item {
-      flex: 1; /* Equal width */
+    .step-box {
       border: 1px solid var(--border);
-      padding: 20px;
+      padding: 24px;
       background: #FDFDFD;
       display: flex;
       flex-direction: column;
+      gap: 16px;
     }
 
-    .step-label {
+    .step-badge {
+      align-self: flex-start;
+      background: var(--text);
+      color: var(--primary);
+      padding: 4px 12px;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: var(--sp-sm);
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 4px;
+      font-size: var(--fs-sm);
+    }
+
+    .step-content {
+      display: flex;
+      gap: 24px;
+    }
+
+    .step-text {
+      flex: 1;
+    }
+
+    .step-visual {
+      flex: 1;
     }
 
     .step-img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: auto;
       border: 1px solid var(--border);
-      margin-top: auto; /* Push to bottom if text differs in length */
       cursor: zoom-in;
       transition: transform 0.2s;
     }
 
     .step-img:hover {
       transform: scale(1.02);
-      border-color: var(--primary);
     }
 
-    /* Pros & Cons converted from Grid to Flex */
-    .pro-con-grid {
-      display: flex;
-      gap: var(--sp-md);
-      margin: var(--sp-md) 0;
-    }
-
-    .pros-box, .cons-box {
-      flex: 1;
-      padding: var(--sp-sm);
-    }
-
-    .pros-box {
-      background: #F0FDF4;
-      border-left: 4px solid var(--success);
-    }
-
-    .cons-box {
-      background: #FEF2F2;
-      border-left: 4px solid var(--danger);
-    }
-
-    .pro-con-title {
-      font-weight: 700;
+    .prompt-box {
+      background: var(--code-bg);
+      color: #e2e8f0;
+      padding: var(--sp-md);
+      font-family: "SF Mono", monospace;
       font-size: var(--fs-sm);
-      margin-bottom: var(--sp-xs);
-      display: block;
+      margin-top: var(--sp-sm);
+      border-left: 4px solid var(--primary);
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
     }
 
-    .pro-con-list {
-      padding-left: 20px;
-      margin: 0;
-      font-size: var(--fs-sm);
-      color: var(--text);
-    }
-
+    /* Case Details */
     .case-toggle {
       margin-top: var(--sp-md);
       border-top: 1px solid var(--border);
       padding-top: var(--sp-sm);
-      display: flex;
-      flex-direction: column;
     }
 
     .toggle-btn {
@@ -421,7 +394,6 @@
       align-items: center;
       gap: var(--sp-xs);
       padding: 0;
-      align-self: flex-start;
     }
 
     .toggle-content {
@@ -438,19 +410,6 @@
       display: block;
     }
 
-    .case-detail-item {
-      margin-bottom: var(--sp-md);
-      padding-bottom: var(--sp-md);
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .case-detail-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0;
@@ -462,45 +421,15 @@
       align-items: center;
       justify-content: center;
       z-index: 2000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
     }
 
-    .lightbox.active {
-      display: flex;
-      opacity: 1;
-    }
+    .lightbox.active { display: flex; }
 
     .lightbox-img {
       max-width: 90%;
       max-height: 90vh;
-      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
       border: 2px solid var(--primary);
     }
-
-    .lightbox-close {
-      position: absolute;
-      top: var(--sp-lg);
-      right: var(--sp-lg);
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      font-size: 60px;
-      cursor: pointer;
-      padding: var(--sp-md);
-      user-select: none;
-    }
-
-    .lightbox-prev { left: 20px; }
-    .lightbox-next { right: 20px; }
 
     footer {
       text-align: center;
@@ -510,14 +439,8 @@
       border-top: 1px solid var(--border);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .step-container, .pro-con-grid {
-        flex-direction: column;
-      }
-      header h1 {
-        font-size: 1.8rem;
-      }
+      .step-content { flex-direction: column; }
     }
   </style>
 </head>
@@ -606,7 +529,6 @@
 </div>
 
 <section>
-  <!-- Solution 1 -->
   <div class="solution-card">
     <div class="solution-header">
       <span class="icon">
@@ -615,66 +537,90 @@
       回應痛點 1：競品分析資料散亂
     </div>
     <div class="solution-body">
-      <span class="tool-badge">Gemini Deep Research + NotebookLM</span>
-      <h4>雙軌調研：從「廣度海選」到「深度收斂」</h4>
+      <h4>實戰演練：My FamiPort App 「我的專屬」優化任務</h4>
       
-      <!-- Implementation Steps using Flex -->
-      <div class="step-container">
-        <div class="step-item">
-          <span class="step-label">Step 1: 廣度搜尋</span>
-          <p style="font-size: var(--fs-sm);">透過 Gemini Deep Research 自動搜尋網路資料，產出帶有引用來源的報告。</p>
-          <img src="http://localhost:3845/assets/f13b0cfda1ce246f014da5a008f213ac232874f5.png" class="step-img" alt="Gemini Deep Research Screenshot">
+      <div class="step-list-vertical">
+        <!-- Step 1 -->
+        <div class="step-box">
+          <div class="step-badge">Step 1: 需求定錨與現狀盤點</div>
+          <div class="step-content">
+            <div class="step-text">
+              <p>整理客戶核心思考方向，定義 AI 需理解的戰場：</p>
+              <ul style="font-size: var(--fs-sm); padding-left: 20px; color: var(--secondary);">
+                <li>資產盤點：八大商流數據（發票、記帳本、包裹等）。</li>
+                <li>核心問題：MFP 通知騷擾、服務間缺乏導流。</li>
+                <li>策略方向：如何利用高流量服務（列印、包裹）帶動低頻功能（記帳本）。</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="step-item">
-          <span class="step-label">Step 2: 深度分析</span>
-          <p style="font-size: var(--fs-sm);">將搜尋結果丟入 NotebookLM，進行跨文件比對，收斂出核心產品策略。</p>
-          <img src="http://localhost:3845/assets/56b93fd3879f07df108dae7f5a5a1eb00678c347.png" class="step-img" alt="NotebookLM Analysis Screenshot">
+
+        <!-- Step 2 -->
+        <div class="step-box">
+          <div class="step-badge">Step 2: 由 Gemini 產出專業研究指令</div>
+          <div class="step-content">
+            <div class="step-text">
+              <p>將盤點內容餵給 Gemini，產出兩組針對性的 Deep Research Prompt：</p>
+              <div class="prompt-box">【台灣市場 Prompt】分析 7-11、萊爾富與第三方發票 App 的截流與精準推播機制。</div>
+              <div class="prompt-box">【日本市場 Prompt】借鏡日本 Lawson、7-11 與全家之 DX 轉化案例（如 Loppi、ATM 導流）。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-box">
+          <div class="step-badge">Step 3: 跨境廣度搜尋 (Deep Research)</div>
+          <div class="step-content">
+            <div class="step-text">
+              <p>執行指令，獲得《台灣超商行銷截流報告》與《日本超商 DX 借鏡報告》，取代手動翻閱 50+ 網站。</p>
+            </div>
+            <div class="step-visual">
+              <img src="http://localhost:3845/assets/f13b0cfda1ce246f014da5a008f213ac232874f5.png" class="step-img" alt="Deep Research Execution">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-box">
+          <div class="step-badge">Step 4: 邏輯收斂與機會點分析 (NotebookLM)</div>
+          <div class="step-content">
+            <div class="step-text">
+              <p>將 Step 3 的報告丟入 NotebookLM 進行跨文件分析，找出「台灣市場現狀」與「日本成功案例」之間的落差。確保產出的想法有數據與案例支撐。</p>
+            </div>
+            <div class="step-visual">
+              <img src="http://localhost:3845/assets/56b93fd3879f07df108dae7f5a5a1eb00678c347.png" class="step-img" alt="NotebookLM Analysis">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-box">
+          <div class="step-badge">Step 5: 結合外部模式擬定方案 (Gemini)</div>
+          <div class="step-content">
+            <div class="step-text">
+              <p>將收斂出的機會點丟回 Gemini 產出最終功能想法。</p>
+              <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 12px;">
+                <strong>為什麼回丟 Gemini？</strong><br>
+                NotebookLM 擅長「基於現有資料收斂」，而 Gemini 具備更廣的「外部知識庫」。它能結合心理學模式（如 FOMO 效應）與最新 UI 趨勢，將冷硬的報告轉化為具備互動亮點的功能。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Pros & Cons using Flex -->
-      <div class="pro-con-grid">
-        <div class="pros-box">
-          <span class="pro-con-title" style="color: var(--success);">優點</span>
-          <ul class="pro-con-list">
-            <li>大幅省下資料蒐集時間，搜尋範圍更廣。</li>
-            <li>產出具備來源引用的結構化報告，可信度高。</li>
-            <li>有效收斂重點，方便多份文件交叉比對。</li>
-          </ul>
-        </div>
-        <div class="cons-box">
-          <span class="pro-con-title" style="color: var(--danger);">缺點</span>
-          <ul class="pro-con-list">
-            <li>Gemini 深度搜尋時間較長，需預留等待空檔。</li>
-            <li>需精確輸入 Prompt 才能獲得高品質原始資料。</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="insight-box" style="margin: 24px 0 0 0; border-left-color: var(--success); background: #F0FDF4; color: var(--text);">
-        <h3 style="color: var(--success); font-size: 1.1rem; margin-top: 0;">實戰案例：FamiPort App 改版</h3>
-        <p style="font-size: 0.95rem;"><strong>解法：</strong>透過雙軌調研，成功對焦「台灣數據痛點」與「日本經驗」邏輯對接，推導出「源於數據，證於經驗」的戰略敘事。</p>
-        
+      <div class="insight-box" style="margin: 32px 0 0 0; border-left-color: var(--success); background: #F0FDF4; color: var(--text);">
+        <h3 style="color: var(--success); font-size: 1.1rem; margin-top: 0;">最終成果：FamiPort 戰略架構</h3>
+        <p style="font-size: 0.95rem;">基於以上 AI 戰略鏈，成功推導出「源於數據，證於經驗」的四大優化功能。</p>
         <div class="case-toggle">
           <button class="toggle-btn" onclick="toggleCase()">
-            <span class="icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-            </span>
-            查看完整戰略驗證細節
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            查看功能推導細節
           </button>
           <div class="toggle-content" id="caseContent">
-            <div class="case-detail-item">
-              <p><strong>1. 新專屬任務 (Mission)：</strong>利用高頻包裹流量帶動低頻記帳本。對應日本全家「集章拉力賽」戰略，解決服務客不消費問題。</p>
-            </div>
-            <div class="case-detail-item">
-              <p><strong>2. 每日簽到 (Daily Check-in)：</strong>將爆發型流量轉化為日常黏著。對應日本 7-Eleven 的徽章制度，有效提升日活躍用戶。</p>
-            </div>
-            <div class="case-detail-item">
-              <p><strong>3. 常用門市優惠：</strong>解決價格與資訊不對稱。日本 Lawson 案例證明清晰展示優惠價值是驅動到店的關鍵。</p>
-            </div>
-            <div class="case-detail-item">
-              <p><strong>4. 整合地圖趣 (Map Integration)：</strong>將被動查詢轉為主動視覺引導。對應日本超商從店鋪便利轉向口袋便利的趨勢。</p>
-            </div>
+            <div class="case-detail-item"><p>1. 專屬任務：利用包裹流量帶動記帳本。對應日本全家「集章拉力賽」戰略。</p></div>
+            <div class="case-detail-item"><p>2. 每日簽到：將爆發型流量轉為日常黏著。對應日本 7-Eleven 的徽章制度。</p></div>
+            <div class="case-detail-item"><p>3. 門市優惠：解決價格與資訊不對稱。日本 Lawson 的價值放大戰略。</p></div>
+            <div class="case-detail-item"><p>4. 整合地圖：將被動查詢轉為主動視覺引導。符合日本「口袋便利」大趨勢。</p></div>
           </div>
         </div>
       </div>
@@ -686,11 +632,8 @@
   <p>Generated by Gemini CLI | Optimized for EY Style System</p>
 </footer>
 
-<!-- Lightbox Element -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
-  <div class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#10094;</div>
-  <div class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#10095;</div>
   <img src="" alt="Lightbox Image" class="lightbox-img" id="lightboxImg">
 </div>
 
@@ -703,47 +646,22 @@
   const images = Array.from(document.querySelectorAll('.step-img'));
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
-  let currentIndex = 0;
 
-  // Initial Setup
   images.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
   });
-
-  function openLightbox(index) {
-    currentIndex = index;
-    updateLightboxImage();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
-  }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  function changeImage(direction) {
-    currentIndex += direction;
-    if (currentIndex >= images.length) currentIndex = 0;
-    if (currentIndex < 0) currentIndex = images.length - 1;
-    updateLightboxImage();
-  }
-
-  function updateLightboxImage() {
-    lightboxImg.src = images[currentIndex].src;
-  }
-
-  // Close on Background Click
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
-  });
-
-  // Keyboard Navigation
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') changeImage(1);
-    if (e.key === 'ArrowLeft') changeImage(-1);
   });
 </script>
 
