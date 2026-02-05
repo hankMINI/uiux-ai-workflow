@@ -1,0 +1,73 @@
+{
+  "global": {
+    "colors": {
+      "primary": {
+        "50": { "value": "#FFF0E5", "type": "color" },
+        "100": { "value": "#FFD6B8", "type": "color" },
+        "200": { "value": "#FFB88A", "type": "color" },
+        "300": { "value": "#FF995C", "type": "color" },
+        "400": { "value": "#FF7A2E", "type": "color" },
+        "500": { "value": "#FF5B00", "type": "color" },
+        "600": { "value": "#CC4900", "type": "color" },
+        "700": { "value": "#993700", "type": "color" },
+        "800": { "value": "#662400", "type": "color" },
+        "900": { "value": "#331200", "type": "color" }
+      },
+      "secondary": {
+        "value": "#1C1C1C",
+        "type": "color"
+      },
+      "background": {
+        "value": "#F5F5F5",
+        "type": "color"
+      },
+      "success": {
+        "value": "#43B75D",
+        "type": "color"
+      },
+      "warning": {
+        "value": "#FFAA00",
+        "type": "color"
+      },
+      "error": {
+        "value": "#EE443F",
+        "type": "color"
+      },
+      "info": {
+        "value": "#0095FF",
+        "type": "color"
+      },
+      "gray": {
+        "50": { "value": "#F9FAFB", "type": "color" },
+        "100": { "value": "#F3F4F6", "type": "color" },
+        "200": { "value": "#E5E7EA", "type": "color" },
+        "300": { "value": "#D2D5DB", "type": "color" },
+        "400": { "value": "#9EA2AE", "type": "color" },
+        "500": { "value": "#6D717F", "type": "color" },
+        "600": { "value": "#4D5461", "type": "color" },
+        "700": { "value": "#394050", "type": "color" },
+        "800": { "value": "#212936", "type": "color" },
+        "900": { "value": "#131927", "type": "color" }
+      }
+    },
+    "borderRadius": {
+      "none": { "value": "0", "type": "borderRadius" },
+      "sm": { "value": "8", "type": "borderRadius" },
+      "md": { "value": "12", "type": "borderRadius" },
+      "lg": { "value": "24", "type": "borderRadius" },
+      "full": { "value": "9999", "type": "borderRadius" }
+    },
+    "spacing": {
+      "base": { "value": "8", "type": "spacing" },
+      "xs": { "value": "4", "type": "spacing" },
+      "sm": { "value": "8", "type": "spacing" },
+      "md": { "value": "16", "type": "spacing" },
+      "lg": { "value": "24", "type": "spacing" },
+      "xl": { "value": "32", "type": "spacing" }
+    },
+    "fontFamilies": {
+      "heading": { "value": "PingFang TC, Roboto", "type": "fontFamilies" },
+      "body": { "value": "PingFang TC, Roboto", "type": "fontFamilies" }
+    }
+  }
+}

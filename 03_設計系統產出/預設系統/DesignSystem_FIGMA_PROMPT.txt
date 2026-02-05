@@ -1,0 +1,45 @@
+Design a comprehensive UI Design System & Component Library for a "DesignSystem" style app. **ALL TEXT DISPLAYED IN THE UI MUST BE IN TRADITIONAL CHINESE (TAIWAN).**
+
+Style Configuration:
+- Primary Color: #06C167
+- Font: Inter / PingFang TC
+- Border Radius: 12px
+- Spacing Base: 4px
+- Aesthetic: Modern, Clean, Professional, using Soft Shadows.
+
+Please generate the following sections in a clean documentation layout using Auto Layout:
+
+1. 基礎規範 (Foundations):
+- 色票板 (Color Swatches): Show Primary (#06C167) scale 50-900, Secondary (#000000), Success, Warning (#FFC043), Error (#E03E2F), and Gray scale 50-900.
+- 字級規範 (Typography): Display H1 (32px), H2 (24px), H3 (20px), Body (16px), Caption (14px), Small (12px).
+- 圖示組 (Icon Set): Show 24px line icons (Home, Search, User, Settings, Notifications, Add, Edit, Delete).
+
+2. 按鈕與選擇 (Buttons & Selection):
+- 按鈕群組 (Buttons): Include Primary (Solid #06C167), Secondary (Outline), Ghost, and Link buttons. Show Default, Hover, and Disabled states.
+- 懸浮按鈕 (FAB): A circular floating button with a "+" icon.
+- 標籤 (Tags & Chips): Capsule-shaped tags (Selected, Unselected, Removable).
+- 選擇控制: Checkbox, Radio, Toggle Switch (iOS style).
+
+3. 表單與控制 (Form & Controls):
+- 輸入框 (Text Fields): Email and Password fields with Label, Placeholder, and Error state.
+- 拉桿 (Slider): A horizontal slider with a value tooltip.
+- 步進器 (Stepper): Quantity selector "- 1 +".
+- 下拉選單 (Dropdown): Category selection with expanded and collapsed states.
+
+4. 導航系統 (Navigation):
+- 頁籤 (Tabs): Underline and Pill styles.
+- 底部導航列 (Bottom Tab Bar): Mobile layout with 4 icons (首頁, 分類, 購物車, 帳戶).
+- 麵包屑 (Breadcrumbs): "首頁 > 分類 > 當前商品".
+
+5. 容器與回饋 (Containers & Feedback):
+- 提示橫幅 (Alerts): Success and Error banners with icons.
+- 浮動通知 (Toast): A dark toast saying "已成功加入購物車".
+- 卡片 (Cards): Vertical "Product Card" and Horizontal "List Item Card".
+- 彈窗 (Modal): Confirmation dialog with "確定要刪除嗎？" title, "此動作無法還原" body text, and "取消/確定" buttons.
+
+Platform Standards:
+- All UI elements must use Traditional Chinese text.
+- Use Auto Layout for ALL elements.
+- Consistent 12px border radius for containers, 8px for smaller components.
+- Arrange everything in an organized, easy-to-read documentation grid.
+- Use Soft Shadows to create depth.

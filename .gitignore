@@ -1,0 +1,4 @@
+.DS_Store
+.gemini-clipboard/
+node_modules/
+*.log

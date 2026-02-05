@@ -1,0 +1,75 @@
+Design a complete Design System with the following [Klook Style Configuration] applied to the [Master Structure]. All UI text must be Traditional Chinese (Taiwan).
+
+[Klook Style Configuration]
+- Primary Color: #FF5B00 (Vibrant Orange)
+- Background Color: #F5F5F5 (Light Grey)
+- Surface Color: #FFFFFF (White)
+- Text Color: #1C1C1C (Dark Black)
+- Font: PingFang TC / Roboto
+- Border Radius: 12px (Rounded & Friendly)
+- Spacing Base: 8px
+- Shadow: Soft, Diffused
+- Aesthetic: Modern, Energetic, Travel-centric, High Contrast CTA.
+
+[Master Structure - YOU MUST GENERATE ALL ITEMS BELOW]:
+
+1. Typography (Hierarchy)
+- Headings: H1 (48px), H2 (40px), H3 (32px), H4 (28px), H5 (24px).
+- Subtitles: S1 (18px), S2 (16px).
+- Body: B1-B4 (Regular & Medium variants).
+- Utility: Caption (C1-C3), Label, Button Text (Giant to Tiny).
+
+2. Colors & Shadows
+- Palette: Primary #FF5B00 (scale 50-900), Grey (scale 50-900), Success (#43B75D), Warning (#FFAA00), Error (#EE443F), Info (#0095FF).
+- Shadows: 8 levels of elevation (100 to 800) using soft, multi-layer shadows suited for card-based UI.
+
+3. Buttons (Matrix)
+- Sizes: Giant (56px), Large (48px), Medium (40px), Small (32px), Tiny (24px).
+- Styles: Filled (Primary #FF5B00), Outline (Orange Border), Clear (Ghost).
+- States: Default, Hover, Focus, Press, Disabled.
+- Content: Text only, Icon + Text, Icon only.
+- Note: Use Pill shape (fully rounded) for buttons if appropriate for "Friendly" style, or 8px radius.
+
+4. Inputs & Forms (9 States)
+- Fields: Input (Large/Medium) with Labels and Help Text.
+- States: Default, Filled, Hover, Focus (Orange Glow), Disabled, Success, Info, Warning, Error.
+- Controls:
+    - Checkbox (Orange accent when selected).
+    - Radio (Orange dot).
+    - Toggle (Orange active state).
+    - Stepper (+/- counter for ticket quantity).
+
+5. Navigation (App & Web)
+- Navbar Top: Mobile header with Back/Title/Action.
+- Navbar Bottom: Mobile Tab Bar with 4-5 items (Home, Search, Bookings, Account) - Active state Orange.
+- Breadcrumbs: Group & Item level.
+- Pagination: Numbered list with prev/next arrows.
+- Tabs: Pill & Underline styles (Orange underline/bg).
+
+6. Data Display (Travel Focused)
+- Avatar: Sizes (XXXL to Tiny), Types (Image/Letter/Icon).
+- Badge/Chip: Status tags (e.g., "Instant Confirmation", "Best Seller") in Semantic Colors.
+- Cards:
+    - Vertical Card: Large image on top, Title, Rating (Star), Price (Orange) below.
+    - Horizontal Card: Image on left, details on right.
+- List: Left Icon/Avatar + Title + Subtitle + Right Chevron/Action.
+- Tooltip: Top/Bottom/Left/Right.
+
+7. Feedback
+- Alert: Inline & Banner styles (Success/Info/Warning/Error).
+- Loader: Orange Spinner (Giant to Tiny).
+- Progress Bar: Orange fill (0-100%).
+
+8. Icons (Rounded Line Style)
+- Generate a consistent line-style icon set covering:
+    - Navigation (Arrows, Home, Menu)
+    - Actions (Search, Filter, Share, Favorite)
+    - Communication (Chat, Mail)
+    - Travel (Ticket, Map, Pin, Bus, Train, Plane, Hotel)
+    - User (Profile, Settings)
+
+Layout Rules:
+- Use **Auto Layout** for everything.
+- Organize components in a clear grid.
+- Ensure high contrast for accessibility (Black text on White, White text on Orange).
+- Use vibrant image placeholders where applicable.
