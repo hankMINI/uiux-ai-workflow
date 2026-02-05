@@ -20,7 +20,7 @@
       --border: #ECECF3;    /* EY Grey 02.5 */
       --code-bg: #2E2E38;   /* EY Grey 04 */
 
-      /* Typography Scale (EY Style Hierarchy) */
+      /* Typography Scale */
       --fs-l1: 2.5rem;    /* 40px */
       --fs-l2: 1.75rem;   /* 28px */
       --fs-l3: 1.375rem;  /* 22px */
@@ -36,16 +36,8 @@
       --sp-xl: 48px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: "EYInterstate", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       background: var(--bg);
@@ -55,12 +47,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .icon {
-      display: inline-flex;
-      align-self: center;
-      top: 0.125em;
-      position: relative;
-    }
+    .icon { display: inline-flex; align-self: center; top: 0.125em; position: relative; }
+    p { margin-bottom: var(--sp-sm); }
+    ul { margin-bottom: var(--sp-sm); padding-left: 20px; }
+    li { margin-bottom: var(--sp-xs); }
+    h2, h3, h4 { margin-top: 0; }
 
     header {
       background: #1A1A24;
@@ -73,20 +64,8 @@
       border-bottom: 6px solid var(--primary);
     }
 
-    header h1 {
-      font-size: var(--fs-l1);
-      font-weight: 700;
-      margin-bottom: var(--sp-sm);
-      color: var(--primary);
-      letter-spacing: -0.02em;
-    }
-
-    header .subtitle {
-      font-size: var(--fs-l3);
-      opacity: 0.9;
-      max-width: 700px;
-      margin-bottom: var(--sp-lg);
-    }
+    header h1 { font-size: var(--fs-l1); font-weight: 700; margin-bottom: var(--sp-sm); color: var(--primary); letter-spacing: -0.02em; }
+    header .subtitle { font-size: var(--fs-l3); opacity: 0.9; max-width: 700px; margin-bottom: var(--sp-lg); }
 
     .sticky-nav {
       position: sticky;
@@ -97,41 +76,12 @@
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
 
-    .sticky-nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
+    .sticky-nav ul { display: flex; justify-content: center; list-style: none; max-width: 1080px; margin: 0 auto; padding: 0; }
+    .sticky-nav a { display: block; padding: 20px var(--sp-lg); color: var(--text); text-decoration: none; font-weight: 700; font-size: var(--fs-sm); border-bottom: 4px solid transparent; transition: all 0.2s ease; }
+    .sticky-nav a:hover { border-bottom-color: var(--primary); background: #FDFDFD; }
 
-    .sticky-nav a {
-      display: block;
-      padding: 20px var(--sp-lg);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: var(--fs-sm);
-      border-bottom: 4px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .sticky-nav a:hover {
-      border-bottom-color: var(--primary);
-      background: #FDFDFD;
-    }
-
-    main {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 20px var(--sp-md) var(--sp-xl);
-      display: flex;
-      flex-direction: column;
-    }
-
-    [id] {
-      scroll-margin-top: 80px;
-    }
+    main { max-width: 1080px; margin: 0 auto; padding: 20px var(--sp-md) var(--sp-xl); display: flex; flex-direction: column; }
+    [id] { scroll-margin-top: 80px; }
 
     section {
       background: var(--bg-card);
@@ -152,58 +102,13 @@
       align-items: center;
     }
 
-    .part-header h2 {
-      font-size: var(--fs-l2);
-      margin: 0;
-      font-weight: 700;
-      line-height: 1;
-    }
+    .part-header h2 { font-size: var(--fs-l2); margin: 0; font-weight: 700; line-height: 1; }
+    h2 { font-size: var(--fs-l2); font-weight: 700; color: var(--text); margin-bottom: var(--sp-lg); padding-bottom: var(--sp-xs); border-bottom: 4px solid var(--primary); align-self: flex-start; }
+    h3 { font-size: var(--fs-l3); font-weight: 700; margin: var(--sp-xl) 0 var(--sp-md); display: flex; align-items: center; gap: var(--sp-xs); }
 
-    h2 {
-      font-size: var(--fs-l2);
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: var(--sp-lg);
-      padding-bottom: var(--sp-xs);
-      border-bottom: 4px solid var(--primary);
-      align-self: flex-start;
-    }
-
-    h3 {
-      font-size: var(--fs-l3);
-      font-weight: 700;
-      margin: var(--sp-xl) 0 var(--sp-md);
-      display: flex;
-      align-items: center;
-      gap: var(--sp-xs);
-    }
-
-    p {
-      margin-bottom: var(--sp-md);
-    }
-
-    .pain-point-container {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-sm);
-      margin: var(--sp-md) 0;
-    }
-
-    .pain-point-item {
-      padding: var(--sp-sm) var(--sp-md);
-      background: #F6F6FA;
-      border-left: 4px solid var(--secondary);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pain-point-item h4 {
-      font-weight: 700;
-      margin-bottom: var(--sp-xs);
-      display: flex;
-      align-items: center;
-      gap: var(--sp-xs);
-    }
+    .pain-point-container { display: flex; flex-direction: column; gap: var(--sp-sm); margin: var(--sp-md) 0; }
+    .pain-point-item { padding: var(--sp-sm) var(--sp-md); background: #F6F6FA; border-left: 4px solid var(--secondary); display: flex; flex-direction: column; }
+    .pain-point-item h4 { font-weight: 700; margin-bottom: var(--sp-xs); display: flex; align-items: center; gap: var(--sp-xs); }
 
     .insight-box {
       background: #1A1A24;
@@ -215,233 +120,73 @@
       flex-direction: column;
     }
 
-    .insight-box h3 {
-      color: var(--primary);
-      margin-top: 0;
-      margin-bottom: var(--sp-sm);
-    }
+    .insight-box h3 { color: var(--primary); margin-top: 0; margin-bottom: var(--sp-sm); }
 
-    .mode-comparison {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-md);
-      margin: var(--sp-lg) 0;
-    }
+    .mode-comparison { display: flex; flex-direction: column; gap: var(--sp-md); margin: var(--sp-lg) 0; }
+    .mode-card { padding: var(--sp-md); border: 1px solid var(--border); position: relative; display: flex; flex-direction: column; }
+    .mode-card.traditional { background: #F6F6FA; border-left: 4px solid var(--secondary); opacity: 0.8; }
+    .mode-card.hybrid { background: #FFFBE6; border: 2px solid var(--primary); border-left: 6px solid var(--primary); box-shadow: 0 8px 30px rgba(255, 230, 0, 0.15); }
+    .mode-card .mode-tag { position: absolute; top: -12px; left: 20px; background: var(--text); color: var(--primary); padding: 2px 12px; font-size: var(--fs-sm); font-weight: 700; }
+    .mode-card p { margin: var(--sp-xs) 0 0 0; font-family: "SF Mono", monospace; font-size: var(--fs-body); }
+    .highlight-text { color: var(--primary-dark); font-weight: 700; border-bottom: 2px solid var(--primary); }
 
-    .mode-card {
-      padding: var(--sp-md);
-      border: 1px solid var(--border);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
+    .solution-card { border: 1px solid var(--border); margin-bottom: var(--sp-xl); display: flex; flex-direction: column; }
+    .solution-header { background: #E5E5E5; padding: var(--sp-sm) var(--sp-md); display: flex; align-items: center; gap: var(--sp-xs); font-weight: 700; color: var(--secondary); border-bottom: 1px solid var(--border); }
+    .solution-body { padding: var(--sp-lg); background: white; display: flex; flex-direction: column; }
+    .solution-body h4 { color: var(--primary-dark); font-size: var(--fs-l3); margin-top: 0; margin-bottom: var(--sp-sm); }
 
-    .mode-card.traditional {
+    .phase-container { display: flex; flex-direction: column; gap: var(--sp-lg); margin: var(--sp-md) 0; }
+    .phase-card { border: 1px solid var(--border); padding: 24px; background: #FDFDFD; border-top: 4px solid var(--secondary); display: flex; flex-direction: column; }
+    .phase-card.phase-1 { border-top-color: var(--primary-dark); }
+    .phase-card.phase-2 { border-top-color: var(--success); }
+    .phase-card.phase-3 { border-top-color: var(--accent); }
+
+    .phase-badge { align-self: flex-start; background: var(--text); color: var(--primary); padding: 4px 12px; font-weight: 700; font-size: var(--fs-sm); margin-bottom: var(--sp-sm); }
+
+    .step-label { font-weight: 700; color: var(--text); margin-bottom: var(--sp-xs); display: inline-block; border-bottom: 2px solid var(--primary); padding-bottom: 4px; }
+
+    .prompt-trigger {
+      margin-top: var(--sp-sm);
+      padding: 12px 16px;
       background: #F6F6FA;
-      border-left: 4px solid var(--secondary);
-      opacity: 0.8;
-    }
-
-    .mode-card.hybrid {
-      background: #FFFBE6;
-      border: 2px solid var(--primary);
-      border-left: 6px solid var(--primary);
-      box-shadow: 0 8px 30px rgba(255, 230, 0, 0.15);
-    }
-
-    .mode-card .mode-tag {
-      position: absolute;
-      top: -12px;
-      left: 20px;
-      background: var(--text);
-      color: var(--primary);
-      padding: 2px 12px;
-      font-size: var(--fs-sm);
-      font-weight: 700;
-    }
-
-    .mode-card p {
-      margin: var(--sp-xs) 0 0 0;
-      font-family: "SF Mono", monospace;
-      font-size: var(--fs-body);
-    }
-
-    .highlight-text {
-      color: var(--primary-dark);
-      font-weight: 700;
-      border-bottom: 2px solid var(--primary);
-    }
-
-    .conclusion-text {
-      font-size: var(--fs-body);
-      color: var(--text-muted);
-      margin-top: var(--sp-md);
-      text-align: center;
-      font-style: italic;
-    }
-
-    .solution-card {
       border: 1px solid var(--border);
-      margin-bottom: var(--sp-xl);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .solution-header {
-      background: #E5E5E5;
-      padding: var(--sp-sm) var(--sp-md);
-      display: flex;
-      align-items: center;
-      gap: var(--sp-xs);
-      font-weight: 700;
-      color: var(--secondary);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .solution-body {
-      padding: var(--sp-lg);
-      background: white;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .solution-body h4 {
-      color: var(--primary-dark);
-      font-size: var(--fs-l3);
-      margin-top: 0;
-      margin-bottom: var(--sp-sm);
-    }
-
-    /* Steps Layout */
-    .step-list-vertical {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-md);
-      margin: var(--sp-md) 0;
-    }
-
-    .step-box {
-      border: 1px solid var(--border);
-      padding: 24px;
-      background: #FDFDFD;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .step-badge {
-      align-self: flex-start;
-      background: var(--text);
-      color: var(--primary);
-      padding: 4px 12px;
-      font-weight: 700;
-      font-size: var(--fs-sm);
-    }
-
-    .step-content {
-      display: flex;
-      gap: 24px;
-    }
-
-    .step-text {
-      flex: 1;
-    }
-
-    .step-visual {
-      flex: 1;
-    }
-
-    .step-img {
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--border);
-      cursor: zoom-in;
-      transition: transform 0.2s;
-    }
-
-    .step-img:hover {
-      transform: scale(1.02);
-    }
-
-    .prompt-box {
-      background: var(--code-bg);
-      color: #e2e8f0;
-      padding: var(--sp-md);
-      font-family: "SF Mono", monospace;
-      font-size: var(--fs-sm);
-      margin-top: var(--sp-sm);
       border-left: 4px solid var(--primary);
-      max-height: 300px;
-      overflow-y: auto;
-      white-space: pre-wrap;
-    }
-
-    /* Case Details */
-    .case-toggle {
-      margin-top: var(--sp-md);
-      border-top: 1px solid var(--border);
-      padding-top: var(--sp-sm);
-    }
-
-    .toggle-btn {
-      background: none;
-      border: none;
-      color: var(--secondary);
+      cursor: pointer;
       font-weight: 700;
       font-size: var(--fs-sm);
-      cursor: pointer;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: var(--sp-xs);
-      padding: 0;
     }
+    .prompt-trigger:hover { background: #FFFBE6; }
+    .prompt-trigger::after { content: '點擊展開全文 →'; font-weight: 400; color: var(--secondary); }
 
-    .toggle-content {
-      display: none;
-      background: #FDFDFD;
-      padding: var(--sp-md);
-      margin-top: var(--sp-sm);
-      border: 1px solid var(--border);
-      font-size: var(--fs-sm);
-      line-height: 1.8;
-    }
+    .feature-list { display: flex; flex-direction: column; gap: var(--sp-md); margin-top: var(--sp-sm); }
+    .feature-item { border: 1px solid var(--border); padding: 20px; background: #F6F6FA; border-left: 4px solid var(--primary-dark); }
+    .feature-item h5 { font-size: var(--fs-body); color: var(--text); margin-bottom: 12px; font-weight: 700; }
+    .feature-detail { font-size: var(--fs-sm); color: var(--secondary); margin-bottom: 8px; }
+    .feature-label { color: var(--primary-dark); font-weight: 700; margin-right: 8px; }
 
-    .toggle-content.active {
-      display: block;
-    }
+    .step-img { width: 100%; height: auto; border: 1px solid var(--border); cursor: zoom-in; transition: transform 0.2s; margin-top: var(--sp-sm); }
+    .step-img:hover { transform: scale(1.01); }
 
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(26, 26, 36, 0.95);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-    }
+    .text-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 36, 0.95); display: none; align-items: center; justify-content: center; z-index: 3000; }
+    .text-modal.active { display: flex; }
+    .text-modal-content { background: white; width: 90%; max-width: 800px; max-height: 85vh; padding: var(--sp-xl); position: relative; overflow-y: auto; border-left: 8px solid var(--primary); }
+    .text-modal-close { position: absolute; top: 20px; right: 20px; font-size: 32px; cursor: pointer; color: var(--secondary); }
+    .text-modal-body { font-family: "SF Mono", monospace; font-size: var(--fs-sm); line-height: 1.6; white-space: pre-wrap; color: var(--text); }
 
+    .case-toggle { margin-top: var(--sp-md); border-top: 1px solid var(--border); padding-top: var(--sp-sm); }
+    .toggle-btn { background: none; border: none; color: var(--secondary); font-weight: 700; font-size: var(--fs-sm); cursor: pointer; display: flex; align-items: center; gap: var(--sp-xs); padding: 0; }
+    .toggle-content { display: none; background: #FDFDFD; padding: var(--sp-md); margin-top: var(--sp-sm); border: 1px solid var(--border); font-size: var(--fs-sm); line-height: 1.8; }
+    .toggle-content.active { display: block; }
+
+    .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 36, 0.95); display: none; align-items: center; justify-content: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease; }
     .lightbox.active { display: flex; }
+    .lightbox-img { max-width: 90%; max-height: 90vh; border: 2px solid var(--primary); }
+    .lightbox-close { position: absolute; top: var(--sp-lg); right: var(--sp-lg); color: white; font-size: 40px; cursor: pointer; }
 
-    .lightbox-img {
-      max-width: 90%;
-      max-height: 90vh;
-      border: 2px solid var(--primary);
-    }
-
-    footer {
-      text-align: center;
-      padding: var(--sp-xl) var(--sp-md);
-      color: var(--text-muted);
-      font-size: var(--fs-sm);
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      .step-content { flex-direction: column; }
-    }
+    footer { text-align: center; padding: var(--sp-xl) var(--sp-md); color: var(--text-muted); font-size: var(--fs-sm); border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
@@ -467,7 +212,6 @@
 
 <section id="section1">
   <h2>一、前言：工作流程中的時間損耗</h2>
-
   <div class="pain-point-container">
     <div class="pain-point-item">
       <h4>痛點 1：競品分析資料散亂，難以收斂重點</h4>
@@ -479,7 +223,7 @@
     </div>
     <div class="pain-point-item">
       <h4>痛點 3：Sitemap 與報價依賴經驗，易有落差</h4>
-      <p>憑感覺估算工時，常漏算 RWD 與隱形頁面，導致報價失準、專案成本超支。</p>
+      <p>憑感覺估算工時，常漏算 RWD 與隱藏頁面，導致報價失準、專案成本超支。</p>
     </div>
     <div class="pain-point-item">
       <h4>痛點 4：Design System 變數手動建立，維護難度高</h4>
@@ -494,34 +238,23 @@
 
 <section id="section2">
   <h2>二、核心方法論：混合工作流程</h2>
-  
   <div class="insight-box">
     <h3>設計師應專注決策，而非機械產出</h3>
     <p>
       我喜歡設計，但討厭為了找競品開 50 個分頁，討厭手動調整 PPT 排版。「適材適所」意味著讓 AI 處理結構化任務，設計師回歸策略層面。
     </p>
   </div>
-
   <div class="mode-comparison">
     <div class="mode-card traditional">
       <div class="mode-tag">傳統模式</div>
       <p>「要做競品分析」 → 手動開 50 個分頁 → 複製貼上到 Figma → 資訊過載</p>
     </div>
-
     <div class="mode-card hybrid">
       <div class="mode-tag">混合模式</div>
-      <p>
-        「AI 廣搜，設計師擬定策略」 → 
-        <span class="highlight-text">gemini deep research</span> 抓取資料 → 
-        <span class="highlight-text">NotebookLM</span> 消化內容 → 
-        提升決策效率
-      </p>
+      <p>「AI 廣搜，設計師擬定策略」 → <span class="highlight-text">gemini deep research</span> 抓取資料 → <span class="highlight-text">NotebookLM</span> 消化內容 → 提升決策效率</p>
     </div>
   </div>
-
-  <p class="conclusion-text">
-    工具能解決問題就是好工具，不追求全自動化，而是追求決策效率極大化。
-  </p>
+  <p style="text-align: center; color: var(--text-muted); font-style: italic;">工具能解決問題就是好工具，不追求全自動化，而是追求決策效率極大化。</p>
 </section>
 
 <div class="part-header" id="section3">
@@ -537,117 +270,225 @@
       回應痛點 1：競品分析資料散亂
     </div>
     <div class="solution-body">
-      <h4>實戰演練：My FamiPort App 「我的專屬」優化任務</h4>
+      <h4>實戰案例：My FamiPort App 「我的專屬」優化任務</h4>
       
-      <div class="step-list-vertical">
-        <!-- Step 1 -->
-        <div class="step-box">
-          <div class="step-badge">Step 1: 需求定錨與現狀盤點</div>
-          <div class="step-content">
-            <div class="step-text">
-              <p>整理客戶核心思考方向，定義 AI 需理解的戰場：</p>
-              <ul style="font-size: var(--fs-sm); padding-left: 20px; color: var(--secondary);">
-                <li>資產盤點：八大商流數據（發票、記帳本、包裹等）。</li>
-                <li>核心問題：MFP 通知騷擾、服務間缺乏導流。</li>
-                <li>策略方向：如何利用高流量服務（列印、包裹）帶動低頻功能（記帳本）。</li>
-              </ul>
+      <div class="phase-container">
+        
+        <!-- Phase 1 -->
+        <div class="phase-card phase-1">
+          <div class="phase-badge">Phase 1: Gemini 廣度挖掘</div>
+          <p>採集全家現況與全球指標性競品數據。</p>
+          
+          <div style="margin-bottom: var(--sp-md);">
+            <span class="step-label">步驟 1：全家現況與痛點診斷</span>
+            <img src="釐清目前需求.jpg" class="step-img" alt="釐清需求截圖">
+            <div class="prompt-trigger" onclick="openTextModal(0)">查看診斷指令 Prompt</div>
+          </div>
+
+          <div>
+            <span class="step-label">步驟 2：全球零售競品掃描</span>
+            <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">台灣與日本各大超商與零售競品分析</p>
+            <div style="display: flex; gap: 24px; align-items: flex-start;">
+              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.39.43.png" class="step-img" style="margin-top: 0;" alt="日本超商研究"></div>
+              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.40.04.png" class="step-img" style="margin-top: 0;" alt="台灣超商研究"></div>
             </div>
+            <div class="prompt-trigger" onclick="openTextModal(1)">查看全球競品掃描 Prompt</div>
           </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="step-box">
-          <div class="step-badge">Step 2: 由 Gemini 產出專業研究指令</div>
-          <div class="step-content">
-            <div class="step-text">
-              <p>將盤點內容餵給 Gemini，產出兩組針對性的 Deep Research Prompt：</p>
-              <div class="prompt-box">【台灣市場 Prompt】分析 7-11、萊爾富與第三方發票 App 的截流與精準推播機制。</div>
-              <div class="prompt-box">【日本市場 Prompt】借鏡日本 Lawson、7-11 與全家之 DX 轉化案例（如 Loppi、ATM 導流）。</div>
-            </div>
+        <!-- Phase 2 -->
+        <div class="phase-card phase-2">
+          <div class="phase-badge">Phase 2: NotebookLM 深度萃取</div>
+          <p>強制 AI 將「全家的問題」與「競品的解法」進行配對。</p>
+          
+          <div style="margin-bottom: var(--sp-md);">
+            <span class="step-label">步驟 3：跨文件痛點與解法配對</span>
+            <img src="截圖 2026-02-06 凌晨2.01.07.png" class="step-img" alt="NotebookLM Analysis">
+            <div class="prompt-trigger" onclick="openTextModal(2)">查看交叉分析 Prompt</div>
+          </div>
+
+          <div>
+            <span class="step-label">步驟 4：生成產品規格草案</span>
+            <img src="截圖 2026-02-06 凌晨2.01.21.png" class="step-img" alt="Product PRD Draft">
+            <div class="prompt-trigger" onclick="openTextModal(3)">查看規格生成 Prompt</div>
           </div>
         </div>
 
-        <!-- Step 3 -->
-        <div class="step-box">
-          <div class="step-badge">Step 3: 跨境廣度搜尋 (Deep Research)</div>
-          <div class="step-content">
-            <div class="step-text">
-              <p>執行指令，獲得《台灣超商行銷截流報告》與《日本超商 DX 借鏡報告》，取代手動翻閱 50+ 網站。</p>
+        <!-- Phase 3 -->
+        <div class="phase-card phase-3">
+          <div class="phase-badge">Phase 3: Gemini 創意擴充與驗證</div>
+          <p>補強文案細節並進行風險壓力測試。</p>
+          
+          <div>
+            <span class="step-label">步驟 5：優化方案結果呈現</span>
+            
+            <div class="feature-list">
+              <!-- Feature 1 -->
+              <div class="feature-item">
+                <h5>1. Fami-Link 智慧動態島</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 趕時間的上班族在進店時，置頂顯示列印代碼，無需翻找。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 參考動態島設計，有檔案上傳時自動在頂部出現卡片，顯示倒數與條碼。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 等待殺時間優惠。機台操作空檔彈出限時 10 分鐘商品折價券。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決 OMO 條碼焦慮與等待枯燥斷點。</p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="feature-item">
+                <h5>2. 賣家成就卡</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 微型網拍賣家在寄件時累積進度，增加選擇全家的動力。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 擬物化集章卡，視覺模擬真實蓋章效果，顯示月寄件進度。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 集章拉力賽。利用目標漸近效應，集滿 10 件贈送商品。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決寄件流程純勞務無獎勵問題，防止賣家流失。</p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="feature-item">
+                <h5>3. 我的雲端冰箱</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 通勤族將買一送一贈品寄存，解決一次提不動重物的問題。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 虛擬冰箱貨架圖像介面，將已買未領商品擺在架上並標示期限。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 資產損失提醒。快過期時推播轉送或領取提示，利用損失規避心理。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決實體促銷拿不動痛點，創造未來必然回訪。</p>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="feature-item">
+                <h5>4. 機台登入魔杖</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 用手機掃描機台 QR Code 自動登入，避免在公用螢幕打字。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面顯眼處設置掃描登入功能，一鍵同步手機寄件與列印資料。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 無接觸獎勵。使用掃碼登入可獲得額外點數，養成數位習慣。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 消滅手動輸入 10 碼代碼的原始斷點體驗。</p>
+              </div>
+
+              <!-- Feature 5 -->
+              <div class="feature-item">
+                <h5>5. 超級一鍵通</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 結帳不手忙腳亂，一個二維碼搞定會員、載具與支付。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面右下角設置懸浮按鈕，按下去彈出四合一聚合碼。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決結帳時切換 App 造成的卡頓與排隊壓力。</p>
+              </div>
+
+              <!-- Feature 6 -->
+              <div class="feature-item">
+                <h5>6. 每日好運籤</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 每天打開 App 試運氣，賺取小額點數回饋。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面顯眼處設置扭蛋機或求籤筒互動模組。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 機率性獎勵。利用賭博心理提升日活躍用戶數。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決 App 工具屬性過強導致平常不會開啟的問題。</p>
+              </div>
+
+              <!-- Feature 7 -->
+              <div class="feature-item">
+                <h5>7. 繳費刮刮樂</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 繳完帳單後獲得數位刮刮樂，獲得心理補償與驚喜感。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 偵測繳費完成後彈出數位收據，滑動螢幕刮開獎項。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 變動獎勵。把痛苦的支出轉化為期待中獎的互動遊戲。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決繳費服務缺乏正向情緒回饋的體驗斷層。</p>
+              </div>
+
+              <!-- Feature 8 -->
+              <div class="feature-item">
+                <h5>8. 包裹雷達</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 一眼確認待取包裹數量，方便下班順路領取。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 儀表板顯示包裹數量狀態，並整合物流進度追蹤。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 搬運補給。偵測大件包裹時自動產生飲品優惠券，提示搬重物辛苦了。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決物流資訊不同步與忘記取件問題。</p>
+              </div>
+
+              <!-- Feature 9 -->
+              <div class="feature-item">
+                <h5>9. 娛樂票夾</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 隨時確認數位票券狀態，安心入場參與活動。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 參考數位錢包，將票券圖像化為精美票根，點擊可看細節。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 展演前導購。活動開演前在票券下方推播周邊門市咖啡優惠。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決用戶對數位資產找不到的焦慮與信任危機。</p>
+              </div>
+
+              <!-- Feature 10 -->
+              <div class="feature-item">
+                <h5>10. 點數計算機</h5>
+                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 清楚點數換算的實際價值，決定兌換時機。</p>
+                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 不再只顯示點數數值，直接顯示可換得之商品或折抵現金。</p>
+                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 目標進度。顯示距離下一個獎勵目標的差距，刺激持續累積。</p>
+                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決點數價值感模糊導致用戶不積極累積的問題。</p>
+              </div>
             </div>
-            <div class="step-visual">
-              <img src="http://localhost:3845/assets/f13b0cfda1ce246f014da5a008f213ac232874f5.png" class="step-img" alt="Deep Research Execution">
-            </div>
+
+            <div class="prompt-trigger" onclick="openTextModal(4)" style="margin-top: 24px;">查看創意發想與風險測試 Prompt</div>
           </div>
         </div>
 
-        <!-- Step 4 -->
-        <div class="step-box">
-          <div class="step-badge">Step 4: 邏輯收斂與機會點分析 (NotebookLM)</div>
-          <div class="step-content">
-            <div class="step-text">
-              <p>將 Step 3 的報告丟入 NotebookLM 進行跨文件分析，找出「台灣市場現狀」與「日本成功案例」之間的落差。確保產出的想法有數據與案例支撐。</p>
-            </div>
-            <div class="step-visual">
-              <img src="http://localhost:3845/assets/56b93fd3879f07df108dae7f5a5a1eb00678c347.png" class="step-img" alt="NotebookLM Analysis">
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="step-box">
-          <div class="step-badge">Step 5: 結合外部模式擬定方案 (Gemini)</div>
-          <div class="step-content">
-            <div class="step-text">
-              <p>將收斂出的機會點丟回 Gemini 產出最終功能想法。</p>
-              <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 12px;">
-                <strong>為什麼回丟 Gemini？</strong><br>
-                NotebookLM 擅長「基於現有資料收斂」，而 Gemini 具備更廣的「外部知識庫」。它能結合心理學模式（如 FOMO 效應）與最新 UI 趨勢，將冷硬的報告轉化為具備互動亮點的功能。
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="insight-box" style="margin: 32px 0 0 0; border-left-color: var(--success); background: #F0FDF4; color: var(--text);">
-        <h3 style="color: var(--success); font-size: 1.1rem; margin-top: 0;">最終成果：FamiPort 戰略架構</h3>
-        <p style="font-size: 0.95rem;">基於以上 AI 戰略鏈，成功推導出「源於數據，證於經驗」的四大優化功能。</p>
-        <div class="case-toggle">
-          <button class="toggle-btn" onclick="toggleCase()">
-            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
-            查看功能推導細節
-          </button>
-          <div class="toggle-content" id="caseContent">
-            <div class="case-detail-item"><p>1. 專屬任務：利用包裹流量帶動記帳本。對應日本全家「集章拉力賽」戰略。</p></div>
-            <div class="case-detail-item"><p>2. 每日簽到：將爆發型流量轉為日常黏著。對應日本 7-Eleven 的徽章制度。</p></div>
-            <div class="case-detail-item"><p>3. 門市優惠：解決價格與資訊不對稱。日本 Lawson 的價值放大戰略。</p></div>
-            <div class="case-detail-item"><p>4. 整合地圖：將被動查詢轉為主動視覺引導。符合日本「口袋便利」大趨勢。</p></div>
-          </div>
-        </div>
+        <h3 style="color: var(--success); font-size: 1.1rem; margin-top: 0;">戰略總結：從數據到功能的完整推導</h3>
+        <p style="font-size: 0.95rem;">基於以上三階段流程，成功將「工具流量」轉化為「商品消費」，打造具備高黏著度的生活儀表板。</p>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>Generated by Gemini CLI | Optimized for EY Style System</p>
-</footer>
+<footer><p>Generated by Gemini CLI | Optimized for EY Style System</p></footer>
 
 <div class="lightbox" id="lightbox">
   <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
   <img src="" alt="Lightbox Image" class="lightbox-img" id="lightboxImg">
 </div>
 
-<script>
-  function toggleCase() {
-    const content = document.getElementById('caseContent');
-    content.classList.toggle('active');
-  }
+<div class="text-modal" id="textModal">
+  <div class="text-modal-content">
+    <div class="text-modal-close" onclick="closeTextModal()">&times;</div>
+    <div class="text-modal-body" id="textModalBody"></div>
+  </div>
+</div>
 
-  const images = Array.from(document.querySelectorAll('.step-img'));
+<script>
+  function toggleCase() { document.getElementById('caseContent').classList.toggle('active'); }
+  
+  const promptData = [
+    `【全家現況與痛點診斷】
+請扮演資深零售體驗研究員。針對『全家 My FamiPort App』進行診斷：
+1. 【核心商流盤點】：找出用戶真正高頻使用的 Top 3 需求（如：寄件、列印、繳費）。
+2. 【OMO 體驗斷點分析】：分析用戶在 App 操作到實體機台執行中最挫折的斷點。
+3. 【我的專屬模組病灶】：剖析為何目前區塊使用率低？從功能面、介面面、價值面分析。`,
+    `【全球零售競品特徵掃描】
+請進行「全球零售 App 標竿分析」，針對以下維度掃描具備獨特黏著機制的案例：
+1. 韓國 GS25 - 雲端倉儲策略：分析如何寄存贈品並轉化回訪率。
+2. 台灣全聯 PX Mart - 每日活躍策略：如何利用每日簽到與任務牆吸引長輩使用。
+3. 日本超商 (FamilyMart/Lawson) - 遊戲化行銷：分析個人化優惠券與集章進度條設計。
+4. 台灣 7-ELEVEN - 生態圈整合：分析如何打造一站式生活入口。`,
+    `【跨文件痛點與解法配對】
+請閱讀上傳的兩份文件，執行交叉分析並輸出表格：
+1. 【全家核心商流】：列出流量最大功能。
+2. 【現存痛點】：對應的使用者痛點。
+3. 【可借鏡的競品機制】：從 GS25、全聯或日本超商案例中找出解法。
+4. 【預期優化方向】：描述如何應用在「我的專屬」頁面。`,
+    `【生成產品規格草案】
+基於上述分析，正式規劃『全家 My FamiPort App - 我的專屬』改版企劃書。
+目標：將此區塊從「冷門工具」轉型為「熱門生活儀表板」。
+請提供 10 個具體的改版功能提案，包含：功能命名、用戶故事、UI/UX 介面概念、遊戲化機制、解決的痛點。`,
+    `【創意擴充、微互動與風險測試】
+1. 【UI 文案發想】：發想動態島在運送中、已到店、快過期狀態下的吸睛短句。
+2. 【勳章成就命名】：設計有趣、年輕化的成就系統名稱。
+3. 【風險預判與紅隊演練】：扮演最嚴格的產品總監，找出操作門檻、現場營運與系統整合的潛在風險並給出防禦策略。`
+  ];
+
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
+  const textModal = document.getElementById('textModal');
+  const textModalBody = document.getElementById('textModalBody');
 
-  images.forEach((img, index) => {
+  function openTextModal(index) {
+    textModalBody.textContent = promptData[index];
+    textModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeTextModal() {
+    textModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.step-img').forEach(img => {
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
       lightbox.classList.add('active');
@@ -660,9 +501,10 @@
     document.body.style.overflow = '';
   }
 
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
+  window.onclick = function(event) {
+    if (event.target == lightbox) closeLightbox();
+    if (event.target == textModal) closeTextModal();
+  }
 </script>
 
 </main>
