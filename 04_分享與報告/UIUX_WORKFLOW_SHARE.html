@@ -21,12 +21,12 @@
       --code-bg: #2E2E38;   /* EY Grey 04 */
 
       /* Typography Scale */
-      --fs-l1: 2.5rem;    /* 40px */
-      --fs-l2: 1.75rem;   /* 28px */
-      --fs-l3: 1.375rem;  /* 22px */
-      --fs-l4: 1.125rem;  /* 18px */
-      --fs-body: 1.0625rem; /* 17px */
-      --fs-sm: 0.9375rem;  /* 15px */
+      --fs-l1: 2.5rem;
+      --fs-l2: 1.75rem;
+      --fs-l3: 1.375rem;
+      --fs-l4: 1.125rem;
+      --fs-body: 1.0625rem;
+      --fs-sm: 0.9375rem;
 
       /* Spacing Scale */
       --sp-xs: 8px;
@@ -107,7 +107,7 @@
     h3 { font-size: var(--fs-l3); font-weight: 700; margin: var(--sp-xl) 0 var(--sp-md); display: flex; align-items: center; gap: var(--sp-xs); }
 
     .pain-point-container { display: flex; flex-direction: column; gap: var(--sp-sm); margin: var(--sp-md) 0; }
-    .pain-point-item { padding: var(--sp-sm) var(--sp-md); background: #F6F6FA; border-left: 4px solid var(--secondary); display: flex; flex-direction: column; }
+    .pain-point-item { padding: var(--sp-sm) var(--sp-md); background: #F6F6FA; border: 1px solid var(--border); border-left: 4px solid var(--secondary); display: flex; flex-direction: column; }
     .pain-point-item h4 { font-weight: 700; margin-bottom: var(--sp-xs); display: flex; align-items: center; gap: var(--sp-xs); }
 
     .insight-box {
@@ -159,7 +159,7 @@
       align-items: center;
     }
     .prompt-trigger:hover { background: #FFFBE6; }
-    .prompt-trigger::after { content: '點擊展開全文 →'; font-weight: 400; color: var(--secondary); }
+    .prompt-trigger::after { content: '點擊展開 Prompt →'; font-weight: 400; color: var(--secondary); }
 
     .feature-list { display: flex; flex-direction: column; gap: var(--sp-md); margin-top: var(--sp-sm); }
     .feature-item { border: 1px solid var(--border); padding: 20px; background: #F6F6FA; border-left: 4px solid var(--primary-dark); }
@@ -175,16 +175,6 @@
     .text-modal-content { background: white; width: 90%; max-width: 800px; max-height: 85vh; padding: var(--sp-xl); position: relative; overflow-y: auto; border-left: 8px solid var(--primary); }
     .text-modal-close { position: absolute; top: 20px; right: 20px; font-size: 32px; cursor: pointer; color: var(--secondary); }
     .text-modal-body { font-family: "SF Mono", monospace; font-size: var(--fs-sm); line-height: 1.6; white-space: pre-wrap; color: var(--text); }
-
-    .case-toggle { margin-top: var(--sp-md); border-top: 1px solid var(--border); padding-top: var(--sp-sm); }
-    .toggle-btn { background: none; border: none; color: var(--secondary); font-weight: 700; font-size: var(--fs-sm); cursor: pointer; display: flex; align-items: center; gap: var(--sp-xs); padding: 0; }
-    .toggle-content { display: none; background: #FDFDFD; padding: var(--sp-md); margin-top: var(--sp-sm); border: 1px solid var(--border); font-size: var(--fs-sm); line-height: 1.8; }
-    .toggle-content.active { display: block; }
-
-    .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 36, 0.95); display: none; align-items: center; justify-content: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease; }
-    .lightbox.active { display: flex; }
-    .lightbox-img { max-width: 90%; max-height: 90vh; border: 2px solid var(--primary); }
-    .lightbox-close { position: absolute; top: var(--sp-lg); right: var(--sp-lg); color: white; font-size: 40px; cursor: pointer; }
 
     footer { text-align: center; padding: var(--sp-xl) var(--sp-md); color: var(--text-muted); font-size: var(--fs-sm); border-top: 1px solid var(--border); }
   </style>
@@ -217,7 +207,7 @@
       <h4>痛點 1：競品分析資料散亂，難以收斂重點</h4>
       <p>翻閱數十個網站，時間花在蒐集資料而非思考產品策略，分析流於表面。</p>
     </div>
-    <div class="pain-point-item" style="background: #FFFBE6; border-left-color: var(--primary);">
+    <div class="pain-point-item">
       <h4>痛點 2：簡報排版手動調整，產能損耗高</h4>
       <p>手動搬運文圖導致格式跑版，設計師花時間處理對齊與字體，而非內容品質。</p>
     </div>
@@ -254,7 +244,6 @@
       <p>「AI 廣搜，設計師擬定策略」 → <span class="highlight-text">gemini deep research</span> 抓取資料 → <span class="highlight-text">NotebookLM</span> 消化內容 → 提升決策效率</p>
     </div>
   </div>
-  <p style="text-align: center; color: var(--text-muted); font-style: italic;">工具能解決問題就是好工具，不追求全自動化，而是追求決策效率極大化。</p>
 </section>
 
 <div class="part-header" id="section3">
@@ -272,25 +261,32 @@
     <div class="solution-body">
       <h4>實戰案例：My FamiPort App 「我的專屬」優化任務</h4>
       
+      <div class="insight-box" style="margin: var(--sp-md) 0; border-left: 4px solid var(--primary); background: #F6F6FA; color: var(--text);">
+        <h3 style="color: var(--text); font-size: 1rem; margin-top: 0;">核心方法論 (Methodology)：</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 4px;">1. Gemini (Data Mining)：廣度挖掘數據（含異類競品掃描）。</p>
+        <p style="font-size: 0.9rem; margin-bottom: 4px;">2. NotebookLM (Insight Extraction)：深度萃取策略（跨案例解法配對）。</p>
+        <p style="font-size: 0.9rem; margin-bottom: 0;">3. Gemini (Iteration & Validation)：創意擴充與壓力測試（細節優化）。</p>
+      </div>
+
       <div class="phase-container">
         
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
-          <div class="phase-badge">Phase 1: Gemini 廣度挖掘</div>
-          <p>採集全家現況與全球指標性競品數據。</p>
+          <div class="phase-badge">Phase 1: Gemini 廣度挖掘 (Deep Research)</div>
+          <p><strong>任務：</strong>採集全家現況與全球指標性競品數據。</p>
           
           <div style="margin-bottom: var(--sp-md);">
             <span class="step-label">步驟 1：全家現況與痛點診斷</span>
-            <img src="釐清目前需求.jpg" class="step-img" alt="釐清需求截圖">
+            <img src="釐清目前需求.jpg" class="step-img" alt="全家診斷">
             <div class="prompt-trigger" onclick="openTextModal(0)">查看診斷指令 Prompt</div>
           </div>
 
           <div>
-            <span class="step-label">步驟 2：全球零售競品掃描</span>
+            <span class="step-label">步驟 2：全球零售競品特徵掃描 (含異類分析)</span>
             <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">台灣與日本各大超商與零售競品分析</p>
             <div style="display: flex; gap: 24px; align-items: flex-start;">
-              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.39.43.png" class="step-img" style="margin-top: 0;" alt="日本超商研究"></div>
-              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.40.04.png" class="step-img" style="margin-top: 0;" alt="台灣超商研究"></div>
+              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.39.43.png" class="step-img" style="margin-top: 0;" alt="日本研究"></div>
+              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.40.04.png" class="step-img" style="margin-top: 0;" alt="台灣研究"></div>
             </div>
             <div class="prompt-trigger" onclick="openTextModal(1)">查看全球競品掃描 Prompt</div>
           </div>
@@ -298,141 +294,105 @@
 
         <!-- Phase 2 -->
         <div class="phase-card phase-2">
-          <div class="phase-badge">Phase 2: NotebookLM 深度萃取</div>
-          <p>強制 AI 將「全家的問題」與「競品的解法」進行配對。</p>
+          <div class="phase-badge">Phase 2: NotebookLM 深度萃取 (Strategy Synthesis)</div>
+          <p><strong>任務：</strong>強制 AI 將「全家的問題」與「競品的解法」進行配對。</p>
           
           <div style="margin-bottom: var(--sp-md);">
             <span class="step-label">步驟 3：跨文件痛點與解法配對</span>
-            <img src="截圖 2026-02-06 凌晨2.01.07.png" class="step-img" alt="NotebookLM Analysis">
+            <img src="截圖 2026-02-06 凌晨2.01.21.png" class="step-img" alt="交叉分析">
             <div class="prompt-trigger" onclick="openTextModal(2)">查看交叉分析 Prompt</div>
           </div>
 
           <div>
-            <span class="step-label">步驟 4：生成產品規格草案</span>
-            <img src="截圖 2026-02-06 凌晨2.01.21.png" class="step-img" alt="Product PRD Draft">
+            <span class="step-label">步驟 4：生成產品規格與想法</span>
+            <img src="截圖 2026-02-06 凌晨2.46.40.png" class="step-img" alt="規格草案">
             <div class="prompt-trigger" onclick="openTextModal(3)">查看規格生成 Prompt</div>
           </div>
         </div>
 
         <!-- Phase 3 -->
         <div class="phase-card phase-3">
-          <div class="phase-badge">Phase 3: Gemini 創意擴充與驗證</div>
-          <p>補強文案細節並進行風險壓力測試。</p>
+          <div class="phase-badge">最終優化方案呈現</div>
           
-          <div>
-            <span class="step-label">步驟 5：優化方案結果呈現</span>
-            
-            <div class="feature-list">
-              <!-- Feature 1 -->
-              <div class="feature-item">
-                <h5>1. Fami-Link 智慧動態島</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 趕時間的上班族在進店時，置頂顯示列印代碼，無需翻找。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 參考動態島設計，有檔案上傳時自動在頂部出現卡片，顯示倒數與條碼。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 等待殺時間優惠。機台操作空檔彈出限時 10 分鐘商品折價券。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決 OMO 條碼焦慮與等待枯燥斷點。</p>
-              </div>
-
-              <!-- Feature 2 -->
-              <div class="feature-item">
-                <h5>2. 賣家成就卡</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 微型網拍賣家在寄件時累積進度，增加選擇全家的動力。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 擬物化集章卡，視覺模擬真實蓋章效果，顯示月寄件進度。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 集章拉力賽。利用目標漸近效應，集滿 10 件贈送商品。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決寄件流程純勞務無獎勵問題，防止賣家流失。</p>
-              </div>
-
-              <!-- Feature 3 -->
-              <div class="feature-item">
-                <h5>3. 我的雲端冰箱</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 通勤族將買一送一贈品寄存，解決一次提不動重物的問題。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 虛擬冰箱貨架圖像介面，將已買未領商品擺在架上並標示期限。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 資產損失提醒。快過期時推播轉送或領取提示，利用損失規避心理。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決實體促銷拿不動痛點，創造未來必然回訪。</p>
-              </div>
-
-              <!-- Feature 4 -->
-              <div class="feature-item">
-                <h5>4. 機台登入魔杖</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 用手機掃描機台 QR Code 自動登入，避免在公用螢幕打字。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面顯眼處設置掃描登入功能，一鍵同步手機寄件與列印資料。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 無接觸獎勵。使用掃碼登入可獲得額外點數，養成數位習慣。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 消滅手動輸入 10 碼代碼的原始斷點體驗。</p>
-              </div>
-
-              <!-- Feature 5 -->
-              <div class="feature-item">
-                <h5>5. 超級一鍵通</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 結帳不手忙腳亂，一個二維碼搞定會員、載具與支付。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面右下角設置懸浮按鈕，按下去彈出四合一聚合碼。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決結帳時切換 App 造成的卡頓與排隊壓力。</p>
-              </div>
-
-              <!-- Feature 6 -->
-              <div class="feature-item">
-                <h5>6. 每日好運籤</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 每天打開 App 試運氣，賺取小額點數回饋。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面顯眼處設置扭蛋機或求籤筒互動模組。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 機率性獎勵。利用賭博心理提升日活躍用戶數。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決 App 工具屬性過強導致平常不會開啟的問題。</p>
-              </div>
-
-              <!-- Feature 7 -->
-              <div class="feature-item">
-                <h5>7. 繳費刮刮樂</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 繳完帳單後獲得數位刮刮樂，獲得心理補償與驚喜感。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 偵測繳費完成後彈出數位收據，滑動螢幕刮開獎項。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 變動獎勵。把痛苦的支出轉化為期待中獎的互動遊戲。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決繳費服務缺乏正向情緒回饋的體驗斷層。</p>
-              </div>
-
-              <!-- Feature 8 -->
-              <div class="feature-item">
-                <h5>8. 包裹雷達</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 一眼確認待取包裹數量，方便下班順路領取。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 儀表板顯示包裹數量狀態，並整合物流進度追蹤。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 搬運補給。偵測大件包裹時自動產生飲品優惠券，提示搬重物辛苦了。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決物流資訊不同步與忘記取件問題。</p>
-              </div>
-
-              <!-- Feature 9 -->
-              <div class="feature-item">
-                <h5>9. 娛樂票夾</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 隨時確認數位票券狀態，安心入場參與活動。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 參考數位錢包，將票券圖像化為精美票根，點擊可看細節。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 展演前導購。活動開演前在票券下方推播周邊門市咖啡優惠。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決用戶對數位資產找不到的焦慮與信任危機。</p>
-              </div>
-
-              <!-- Feature 10 -->
-              <div class="feature-item">
-                <h5>10. 點數計算機</h5>
-                <p class="feature-detail"><span class="feature-label">用戶故事:</span> 清楚點數換算的實際價值，決定兌換時機。</p>
-                <p class="feature-detail"><span class="feature-label">UI 概念:</span> 不再只顯示點數數值，直接顯示可換得之商品或折抵現金。</p>
-                <p class="feature-detail"><span class="feature-label">遊戲化:</span> 目標進度。顯示距離下一個獎勵目標的差距，刺激持續累積。</p>
-                <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決點數價值感模糊導致用戶不積極累積的問題。</p>
-              </div>
+          <div class="feature-list">
+            <div class="feature-item">
+              <h5>1. Fami-Link 智慧動態島</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 趕時間的上班族在進店時，置頂顯示列印代碼，無需翻找。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 參考動態島設計，有檔案上傳時自動在頂部出現卡片，顯示倒數與條碼。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 等待殺時間優惠。機台操作空檔彈出限時 10 分鐘商品折價券。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決 OMO 條碼焦慮與等待枯燥斷點。</p>
             </div>
-
-            <div class="prompt-trigger" onclick="openTextModal(4)" style="margin-top: 24px;">查看創意發想與風險測試 Prompt</div>
+            <div class="feature-item">
+              <h5>2. 賣家成就卡</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 微型網拍賣家在每次寄件時累積進度，增加選擇全家的動力。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 擬物化集章卡，視覺模擬真實蓋章效果，顯示月寄件進度。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 集章拉力賽。利用目標漸近效應，集滿 10 件贈送商品。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決寄件流程純勞務無獎勵問題，防止賣家流失。</p>
+            </div>
+            <div class="feature-item">
+              <h5>3. 我的雲端冰箱</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 通勤族將買一送一贈品寄存，解決一次提不動重物的問題。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 虛擬冰箱貨架圖像介面，將已買未領商品擺在架上並標示期限。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 資產損失提醒。快過期時推播轉送或領取提示，利用損失規避心理。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決實體促銷拿不動痛點，創造未來必然回訪。</p>
+            </div>
+            <div class="feature-item">
+              <h5>4. 機台登入魔杖</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 用手機掃描機台 QR Code 自動登入，避免在公用螢幕打字。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面顯眼處設置掃描登入功能，一鍵同步手機寄件與列印資料。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 無接觸獎勵。使用掃碼登入可獲得額外點數，養成數位習慣。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 消滅手動輸入 10 碼代碼的原始斷點體驗。</p>
+            </div>
+            <div class="feature-item">
+              <h5>5. 超級一鍵通</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 結帳不手忙腳亂，一個二維碼搞定會員、載具與支付。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面右下角設置懸浮按鈕，按下去彈出四合一聚合碼。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決結帳時切換 App 造成的卡頓與排隊壓力。</p>
+            </div>
+            <div class="feature-item">
+              <h5>6. 每日好運籤</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 每天打開 App 試運氣，賺取小額點數回饋。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 頁面顯眼處設置扭蛋機或求籤筒互動模組。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 機率性獎勵。利用賭博心理提升日活躍用戶數。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決 App 工具屬性過強導致平常不會開啟的問題。</p>
+            </div>
+            <div class="feature-item">
+              <h5>7. 繳費刮刮樂</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 繳完帳單後獲得數位刮刮樂，獲得心理補償與驚喜感。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 偵測繳費完成後彈出數位收據，滑動螢幕刮開獎項。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 變動獎勵。把痛苦的支出轉化為期待中獎的互動遊戲。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決繳費服務缺乏正向情緒回饋的體驗斷層。</p>
+            </div>
+            <div class="feature-item">
+              <h5>8. 包裹雷達</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 一眼確認待取包裹數量，方便下班順路領取。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 儀表板顯示包裹數量狀態，並整合物流進度追蹤。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 搬運補給。偵測大件包裹時自動產生飲品優惠券，提示搬重物辛苦了。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決物流資訊不同步與忘記取件問題。</p>
+            </div>
+            <div class="feature-item">
+              <h5>9. 娛樂票夾</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 隨時確認數位票券狀態，安心入場參與活動。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 參考數位錢包，將票券圖像化為精美票根，點擊可看細節。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 展演前導購。活動開演前在票券下方推播周邊門市咖啡優惠。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決用戶對數位資產找不到的焦慮與信任危機。</p>
+            </div>
+            <div class="feature-item">
+              <h5>10. 點數計算機</h5>
+              <p class="feature-detail"><span class="feature-label">用戶故事:</span> 清楚點數換算的實際價值，決定兌換時機。</p>
+              <p class="feature-detail"><span class="feature-label">UI 概念:</span> 不再只顯示點數數值，直接顯示可換得之商品或折抵現金。</p>
+              <p class="feature-detail"><span class="feature-label">遊戲化:</span> 目標進度。顯示距離下一個獎勵目標的差距，刺激持續累積。</p>
+              <p class="feature-detail"><span class="feature-label">解決痛點:</span> 解決點數價值感模糊導致用戶不積極累積的問題。</p>
+            </div>
           </div>
         </div>
 
-      </div>
-
-      <div class="insight-box" style="margin: 32px 0 0 0; border-left-color: var(--success); background: #F0FDF4; color: var(--text);">
-        <h3 style="color: var(--success); font-size: 1.1rem; margin-top: 0;">戰略總結：從數據到功能的完整推導</h3>
-        <p style="font-size: 0.95rem;">基於以上三階段流程，成功將「工具流量」轉化為「商品消費」，打造具備高黏著度的生活儀表板。</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer><p>Generated by Gemini CLI | Optimized for EY Style System</p></footer>
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
-  <img src="" alt="Lightbox Image" class="lightbox-img" id="lightboxImg">
-</div>
 
 <div class="text-modal" id="textModal">
   <div class="text-modal-content">
@@ -442,38 +402,40 @@
 </div>
 
 <script>
-  function toggleCase() { document.getElementById('caseContent').classList.toggle('active'); }
-  
   const promptData = [
-    `【全家現況與痛點診斷】
-請扮演資深零售體驗研究員。針對『全家 My FamiPort App』進行診斷：
-1. 【核心商流盤點】：找出用戶真正高頻使用的 Top 3 需求（如：寄件、列印、繳費）。
-2. 【OMO 體驗斷點分析】：分析用戶在 App 操作到實體機台執行中最挫折的斷點。
-3. 【我的專屬模組病灶】：剖析為何目前區塊使用率低？從功能面、介面面、價值面分析。`,
-    `【全球零售競品特徵掃描】
-請進行「全球零售 App 標竿分析」，針對以下維度掃描具備獨特黏著機制的案例：
-1. 韓國 GS25 - 雲端倉儲策略：分析如何寄存贈品並轉化回訪率。
-2. 台灣全聯 PX Mart - 每日活躍策略：如何利用每日簽到與任務牆吸引長輩使用。
-3. 日本超商 (FamilyMart/Lawson) - 遊戲化行銷：分析個人化優惠券與集章進度條設計。
-4. 台灣 7-ELEVEN - 生態圈整合：分析如何打造一站式生活入口。`,
-    `【跨文件痛點與解法配對】
-請閱讀上傳的兩份文件，執行交叉分析並輸出表格：
-1. 【全家核心商流】：列出流量最大功能。
+    `【步驟 1：全家現況與痛點診斷】
+請扮演資深零售體驗 (UX) 研究員。我要針對『全家 My FamiPort App』進行診斷。
+1. 【核心商流流量盤點】：找出用戶「真正高頻使用」的 Top 3 剛性需求。
+2. 【OMO 體驗斷點分析】：分析用戶在手機 App 操作到實體機台執行中最挫折的「斷點」。
+3. 【「我的專屬」模組病灶】：剖析為何使用率低？從功能面、介面面、價值面分析。`,
+    `【步驟 2：全球零售競品特徵掃描 (含異類分析)】
+接著，請擴大搜索範圍，進行「全球零售 App 標竿分析」，針對四個維度掃描：
+1. 【韓國 GS25 - 雲端倉儲策略】：分析「My Own Refrigerator」如何寄存贈品。
+2. 【台灣全聯 PX Mart - 每日活躍策略】：如何利用每日簽到創造高日活躍度。
+3. 【日本超商 (FamilyMart/Lawson) - 遊戲化行銷】：個人化優惠券、集章進度條。
+4. 【台灣 7-ELEVEN - 生態圈整合】：分析 OPEN POINT 整合點數與票夾的做法。`,
+    `【步驟 3：跨文件痛點與解法配對】
+請仔細閱讀我上傳的兩份文件（全家診斷、競品掃描），執行交叉矩陣分析：
+1. 【全家核心商流】：列出流量最大的 3 個功能。
 2. 【現存痛點】：對應的使用者痛點。
-3. 【可借鏡的競品機制】：從 GS25、全聯或日本超商案例中找出解法。
-4. 【預期優化方向】：描述如何應用在「我的專屬」頁面。`,
-    `【生成產品規格草案】
-基於上述分析，正式規劃『全家 My FamiPort App - 我的專屬』改版企劃書。
+3. 【可借鏡的競品機制】：從 GS25、全聯或日本超商案例中找出具體解法。
+4. 【預期優化方向】：應用在「我的專屬」頁面的具體方式。
+請用「表格 (Table)」格式呈現。`,
+    `【步驟 4：生成產品規格草案 (PRD Draft)】
+基於上述分析，請正式規劃『全家 My FamiPort App - 我的專屬』改版企劃書。
 目標：將此區塊從「冷門工具」轉型為「熱門生活儀表板」。
-請提供 10 個具體的改版功能提案，包含：功能命名、用戶故事、UI/UX 介面概念、遊戲化機制、解決的痛點。`,
+請提供 3 個具體的改版功能提案，每個提案需包含：
+1. 【功能命名】：具吸引力且直觀。
+2. 【User Story (用戶故事)】。
+3. 【UI/UX 介面概念】：具體描述介面呈現。
+4. 【Gamification (遊戲化機制)】。
+5. 【解決的痛點】。`,
     `【創意擴充、微互動與風險測試】
-1. 【UI 文案發想】：發想動態島在運送中、已到店、快過期狀態下的吸睛短句。
-2. 【勳章成就命名】：設計有趣、年輕化的成就系統名稱。
-3. 【風險預判與紅隊演練】：扮演最嚴格的產品總監，找出操作門檻、現場營運與系統整合的潛在風險並給出防禦策略。`
+1. 【動態島短文案】：發想運送中、已到店、快過期狀態下的貼心短句。
+2. 【勳章成就命名】：發想年輕有梗的成就系統名稱。
+3. 【風險預判與壓力測試】：扮演產品總監，找出操作門檻、現場營運與系統整合風險並給出防禦策略。`
   ];
 
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
   const textModal = document.getElementById('textModal');
   const textModalBody = document.getElementById('textModalBody');
 
@@ -488,21 +450,7 @@
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.step-img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
   window.onclick = function(event) {
-    if (event.target == lightbox) closeLightbox();
     if (event.target == textModal) closeTextModal();
   }
 </script>
