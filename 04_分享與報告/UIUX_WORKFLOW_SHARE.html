@@ -828,19 +828,20 @@ Slide 13: 亮點 10 - 點數應用
   <div class="solution-card" id="sol3">
     <div class="solution-header">
       <span class="icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
       </span>
       回應痛點 3：Sitemap 與報價依賴經驗，易有落差
     </div>
     <div class="solution-body">
-      <h4>實戰案例：全家 My FamiPort App 改版工時精算</h4>
+      <h4>我的專屬新功能頁面評估與人天計算</h4>
 
       <div class="phase-container">
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: 需求規格轉化 (Spec Translation)</div>
-          <p><strong>情境：</strong>別再只跟設計師說「要做冰箱功能」。我們透過一段專業的 Prompt，明確告訴 AI 哪些是核心畫面、哪些頁面有彈窗、哪些需要處理 Empty/Error State。</p>
-          <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>專案任務：全家 My FamiPort App -「我的專屬」改版 UI/UX 設計工作量評估
+          <p><strong>情境：</strong>將目前要設計的規格需求丟到 Gemini 上，請 AI 幫你產生 Prompt。</p>
+          <img src="截圖 2026-02-09 下午1.46.50.png" class="step-img" alt="Gemini 生成 Prompt">
+          <div class="prompt-box"><div class="prompt-tag">USER 輸入</div>專案任務：全家 My FamiPort App -「我的專屬」改版 UI/UX 設計工作量評估
 
 設計背景：
 我們要將原本條列式的「我的專屬」頁面，改版為「資訊儀表板 (Dashboard)」。設計師需要知道具體要設計哪些畫面、元件與狀態。
@@ -862,70 +863,67 @@ Slide 13: 亮點 10 - 點數應用
 
         <!-- Phase 2 -->
         <div class="phase-card phase-2" style="border-top-color: var(--accent);">
-          <div class="phase-badge">Phase 2: 自動化工時評估 (AI Estimation)</div>
-          <p><strong>情境：</strong>啟動專門處理工時精算的 <strong>Project Architect (AI 助手)</strong>。我們直接將上一步準備好的需求指令貼入，AI 就會自動化身專案經理，幫你查漏補缺：確保沒漏掉「讀取中」的畫面、也沒忘了「斷網」的彈窗。它能精準判斷每個畫面的設計難度，並直接產出可供 Excel 使用的報價表格。</p>
-          <div style="background: #F6F6FA; padding: var(--sp-sm); border: 1px solid var(--border); margin-top: 10px;">
-            <p style="font-size: var(--fs-sm); color: var(--text); margin-bottom: 0;"><strong>AI 思考邏輯：</strong></p>
-            <ul style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">
-              <li>將「亮點」映射至「UI 元件庫」基準。</li>
-              <li>自動補全 Empty/Error 狀態的設計人天。</li>
-              <li>區分 Wireframe 與 Mockup 的開發權重。</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Result -->
-        <div class="phase-card phase-3" style="border-top-color: var(--success);">
-          <div class="phase-badge">最終 WBS 成果呈現 (Final WBS Output)</div>
-          <p><strong>情境：</strong>直接生成一份 Excel/CSV，包含每個畫面的設計時間，讓設計師的產能有數據支持，報價理直氣壯。</p>
+          <div class="phase-badge">Phase 2: AI 自動產出報價單 (Excel Generation)</div>
+          <p><strong>情境：</strong>將目前要設計的規格需求丟到 Gemini 上，請 AI 幫你產生 excel</p>
+          <img src="截圖 2026-02-09 下午3.50.36.png" class="step-img" alt="CLI 產出 Excel 結果">
           
-          <div style="overflow-x: auto; margin-top: 15px;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left;">
-              <thead>
-                <tr style="background: var(--text); color: var(--primary);">
-                  <th style="padding: 10px; border: 1px solid #444;">主功能</th>
-                  <th style="padding: 10px; border: 1px solid #444;">次功能</th>
-                  <th style="padding: 10px; border: 1px solid #444;">Wireframe</th>
-                  <th style="padding: 10px; border: 1px solid #444;">Mockup</th>
-                  <th style="padding: 10px; border: 1px solid #444;">總計</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="background: #FFF;">
-                  <td style="padding: 10px; border: 1px solid var(--border);">儀表板首頁</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">核心佈局與特殊狀態</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">2.5天</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">4.5天</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">7.0天</td>
-                </tr>
-                <tr style="background: #F9F9FB;">
-                  <td style="padding: 10px; border: 1px solid var(--border);">雲端冰箱</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">詳情頁與兌換流程</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">1.3天</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">2.0天</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">3.3天</td>
-                </tr>
-                <tr style="background: #FFF;">
-                  <td style="padding: 10px; border: 1px solid var(--border);">雲端列印</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">檔案列表與 QR Code</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">0.7天</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">1.5天</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">2.2天</td>
-                </tr>
-                <tr style="background: var(--primary); font-weight: 700;">
-                  <td colspan="4" style="padding: 10px; border: 1px solid var(--border); text-align: right;">專案設計總工時 (UI/UX)：</td>
-                  <td style="padding: 10px; border: 1px solid var(--border);">20.5 人天</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <div class="insight-box" style="margin-top: 15px; border-left: 4px solid var(--accent); background: #f8f9fa;">
+            <h3 style="color: var(--accent); font-size: 0.95rem; margin-top: 0;">💡 核心關鍵：CLI Skill 設定</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">注意：CLI 需事先設定好產出規格 (Project Architect Skill)。</p>
+            
+            <details style="cursor: pointer;">
+                <summary style="font-size: 0.85rem; font-weight: 700; color: var(--text);">查看完整 Skill 定義 (Project Architect)</summary>
+                <div class="text-modal-body" style="margin-top: 10px; padding: 10px; background: #2d2d2d; color: #fff; border-radius: 4px; font-size: 0.8rem;">
+# Skill: Project Architect (UI/UX Design Director Edition)
 
-          <a href="UIUX_Design_Estimation_WBS.csv" download class="view-ppt-btn" style="margin-top: 15px; text-decoration: none;">
-            <span class="icon" style="margin-right: 8px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            </span>
-            下載 WBS 完整清單 (.csv)
-          </a>
+## Description
+將模糊需求或詳細戰略轉化為以 UI/UX 為核心的專業 WBS 工時評估。具備「模式識別」能力，能自動適應不同程度的輸入，並產出精美的 Excel 報表。
+
+## Instructions
+你是一位擁有 15 年經驗的 **資深產品設計總監 (Product Design Director)**，擅長將商業戰略翻譯成設計師看得懂的「畫面情單」與「情境故事」。你的任務是協助團隊精準評估設計與開發成本。
+
+### 核心運作流程 (SOP)
+
+#### 1. 輸入模式識別 (Input Mode Identification)
+- **模式 A：模糊需求 (僅有專案主題)**
+    - 根據產業標準主動規劃核心功能模組與角色。
+    - **必須暫停執行**，詢問使用者：「這樣的範圍符合您的需求嗎？是否有要增減的部分？」
+- **模式 B：詳細戰略 (已有戰略文件或總結)**
+    - 讀取內容中的痛點、技術背景與案例。
+    - **直接執行第 2 步**：產出 Sitemap 與情境解說。
+
+#### 2. Sitemap 呈現與情境解說 (Sitemap & Scenario)
+在產出 Excel 前，必須先在對話中呈現：
+- **Sitemap 結構**：呈現 App 的導航與頁面層級 (L1 > L2 > L3)。
+- **情境解說 (UX Scenario)**：針對關鍵功能進行「情境說明」。
+    - 內容應包含：使用者如何操作、介面如何呈現、解決了什麼戰略痛點、需要處理的特殊狀態 (Empty/Loading)。
+- **專業確認**：在呈現完後詢問：「這樣的架構與情境理解是否正確？如果沒問題，我將為您產出詳細的 Excel 評估表。」
+
+#### 3. WBS 展開與估算 (WBS Generation)
+採用以下 Excel 欄位結構：
+- **主功能**：標示功能位置 (Home, Map, Game...)。**注意：為了視覺整潔，若連續多行的「主功能」相同，僅第一行顯示文字，後續行數請留白 (Empty Cell)。**
+- **頁面/功能名稱**：具體功能名稱。
+- **設計情境與功能說明 (UX Spec)**：詳細的互動描述與情境故事。
+- **關鍵元件 (UI Components)**：設計師需製作的元件清單，包含：
+    - **基礎元件**：(如：卡片、按鈕、篩選器)。
+    - **衍生畫面**：(如：彈窗 Modal、底部滑頁 Bottom Sheet、提示 Toast)。
+    - **特殊狀態**：(如：錯誤畫面、空狀態、載入中)。
+    - **語言規範**：**必須使用繁體中文** (可視情況括號備註英文專有名詞)。
+- **UI/FE/BE (天)**：各角色工時。
+- **隱形成本**：自動計算 PM (15%), SA (10%), QA (10%) 並列於總計列。
+
+#### 4. Excel 產出與路徑規範 (Output & Path Rules)
+使用 `run_shell_command` 執行 Python 腳本 (pandas + openpyxl) 產出 `.xlsx`。
+- **存放目錄**：所有 `.xlsx` 必須存放在當前目錄下的 `產出` 資料夾內。若該資料夾不存在，必須自動建立。
+- **檔名規則**：`YYYYMMDD_[專案名稱]_WBS工時評估.xlsx` (例如：20260204_My_FamiPort_WBS工時評估.xlsx)。
+- **格式規範**：微軟正黑體、黑色字、標題灰底加粗、自動欄寬、自動換行、全儲存格細邊框。
+
+## 專業知識庫 (Knowledge Base)
+- **首頁/Dashboard**：1.5 - 2 天 (高複雜度 Widget)。
+- **互動地圖/遊戲**：2 - 3 天 (複雜狀態與動畫)。
+- **一般工具頁/表單**：0.5 - 1 天 (Design System)。</div>
+            </details>
+          </div>
         </div>
       </div>
     </div>
