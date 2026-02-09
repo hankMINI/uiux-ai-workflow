@@ -245,35 +245,7 @@
     .lightbox-close { position: absolute; top: 30px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
 
     footer { text-align: center; padding: var(--sp-xl) var(--sp-md); color: var(--text-muted); font-size: var(--fs-sm); border-top: 1px solid var(--border); }
-    /* PDF Viewer Styles */
-    .pdf-modal {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(26, 26, 36, 0.95);
-      display: none; flex-direction: column; align-items: center; justify-content: center;
-      z-index: 5000; opacity: 0; transition: opacity 0.3s ease;
-    }
-    .pdf-modal.active { display: flex; opacity: 1; }
-    .pdf-container { position: relative; max-width: 90%; max-height: 85vh; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-    #the-canvas { display: block; max-width: 100%; max-height: 85vh; height: auto; border: 1px solid #333; }
-    .pdf-controls {
-      display: flex; gap: 20px; margin-top: 15px; align-items: center; color: white; font-family: "SF Mono", monospace;
-    }
-    .pdf-btn {
-      background: var(--code-bg); border: 1px solid var(--border); color: white;
-      padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 700; transition: all 0.2s;
-    }
-    .pdf-btn:hover { background: var(--primary); color: var(--text); border-color: var(--primary); }
-    .pdf-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 32px; cursor: pointer; z-index: 5001; }
-    .pdf-nav-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.1); color: white; border: none;
-      width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
-      font-size: 24px; display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s;
-    }
-    .pdf-nav-btn:hover { background: var(--primary); color: var(--text); }
-    .pdf-prev { left: -70px; }
-    .pdf-next { right: -70px; }
+    
     .view-ppt-btn {
       background: var(--primary); color: var(--text); padding: 0 24px;
       text-align: center; font-weight: 700; cursor: pointer;
@@ -848,12 +820,12 @@ Slide 13: 亮點 10 - 點數應用
           <p><strong>情境：</strong>直接下載產出的 PPT 檔案，設計師僅需進行最後的邏輯檢核，省去 80% 的排版勞動。</p>
           <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="PPT 最終產出 1">
           
-          <button class="view-ppt-btn" onclick="openPdfViewer()" style="width: 100%; height: 50px; margin-top: 15px;">
+          <a href="My FamiPort App 2.0.pdf" target="_blank" class="view-ppt-btn" style="width: 100%; height: 50px; margin-top: 15px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
             <span class="icon" style="margin-right: 8px;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line></svg>
             </span>
             線上預覽改版企劃書 (PDF)
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -1082,7 +1054,7 @@ C. [Project Name]_GUIDELINE.md
           <div class="phase-badge">Phase 1: 生成器指令產出 (Prompt Generation)</div>
           <p><strong>情境：</strong>在 Gemini Canvas 中設定好品牌色、字體與圓角參數，請求 Design System Generator 生成給 Figma Make 看得懂的 Prompt。</p>
           <img src="截圖 2026-02-09 晚上9.10.24.png" class="step-img" alt="Gemini Canvas 生成 Prompt">
-          <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none; background: var(--text); color: var(--primary);">
+          <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none;">
             <span class="icon" style="margin-right: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
@@ -1098,7 +1070,7 @@ C. [Project Name]_GUIDELINE.md
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.10.34.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Figma Make 生成預覽"></div>
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.25.15.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="貼入 Figma 使用"></div>
           </div>
-          <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none; background: #0ACF83; color: white;">
+          <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none;">
             <span class="icon" style="margin-right: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </span>
@@ -1233,115 +1205,5 @@ C. [Project Name]_GUIDELINE.md
 </script>
 
 </main>
-<!-- PDF Viewer Modal -->
-<div class="pdf-modal" id="pdfModal">
-  <div class="pdf-close" onclick="closePdfViewer()">&times;</div>
-  <div class="pdf-container">
-    <canvas id="the-canvas"></canvas>
-    <button class="pdf-nav-btn pdf-prev" onclick="onPrevPage()">&#10094;</button>
-    <button class="pdf-nav-btn pdf-next" onclick="onNextPage()">&#10095;</button>
-  </div>
-  <div class="pdf-controls">
-    <span>Page <span id="page_num"></span> / <span id="page_count"></span></span>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-<script>
-  // PDF.js Logic
-  const url = 'My FamiPort App 2.0.pdf';
-  let pdfDoc = null,
-      pageNum = 1,
-      pageRendering = false,
-      pageNumPending = null,
-      canvas = document.getElementById('the-canvas'),
-      ctx = canvas.getContext('2d');
-
-  function openPdfViewer() {
-    const modal = document.getElementById('pdfModal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // 偵測是否為本地檔案開啟 (file://)
-    if (window.location.protocol === 'file:') {
-      console.warn('偵測到本地開啟，切換至相容模式 (iframe)');
-      const container = document.querySelector('.pdf-container');
-      container.innerHTML = `<iframe src="${url}" style="width:85vw; height:85vh; border:none; background:white;"></iframe>`;
-      document.querySelector('.pdf-controls').style.display = 'none';
-      return;
-    }
-
-    if (!pdfDoc) {
-      // 原本的 pdf.js 初始化代碼
-      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-      
-      pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-        pdfDoc = pdfDoc_;
-        document.getElementById('page_count').textContent = pdfDoc.numPages;
-        renderPage(pageNum);
-      }).catch(err => {
-        console.error('Error loading PDF:', err);
-        alert('無法載入 PDF 檔案。請確保您是透過伺服器 (Localhost/Live Server) 瀏覽此頁面，而非直接開啟檔案 (file://)。');
-      });
-    }
-  }
-
-  function closePdfViewer() {
-    document.getElementById('pdfModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function renderPage(num) {
-    pageRendering = true;
-    pdfDoc.getPage(num).then(function(page) {
-      const viewport = page.getViewport({scale: 1.5}); // Scale up for better quality
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-
-      const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport
-      };
-      const renderTask = page.render(renderContext);
-
-      renderTask.promise.then(function() {
-        pageRendering = false;
-        if (pageNumPending !== null) {
-          renderPage(pageNumPending);
-          pageNumPending = null;
-        }
-      });
-    });
-    document.getElementById('page_num').textContent = num;
-  }
-
-  function queueRenderPage(num) {
-    if (pageRendering) {
-      pageNumPending = num;
-    } else {
-      renderPage(num);
-    }
-  }
-
-  function onPrevPage() {
-    if (pageNum <= 1) return;
-    pageNum--;
-    queueRenderPage(pageNum);
-  }
-
-  function onNextPage() {
-    if (pageNum >= pdfDoc.numPages) return;
-    pageNum++;
-    queueRenderPage(pageNum);
-  }
-
-  // Keyboard navigation
-  document.addEventListener('keydown', function(e) {
-    if (!document.getElementById('pdfModal').classList.contains('active')) return;
-    if (e.key === 'ArrowLeft') onPrevPage();
-    if (e.key === 'ArrowRight') onNextPage();
-    if (e.key === 'Escape') closePdfViewer();
-  });
-</script>
 </body>
 </html>
