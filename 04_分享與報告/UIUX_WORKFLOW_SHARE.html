@@ -839,33 +839,25 @@ Slide 13: 亮點 10 - 點數應用
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: 需求規格轉化 (Spec Translation)</div>
-          <p><strong>情境：</strong>將目前要設計的規格需求丟到 Gemini 上，請 AI 幫你產生 Prompt。</p>
-          <img src="截圖 2026-02-09 下午4.05.16.png" class="step-img" alt="Gemini 生成 Prompt">
-          <div class="prompt-box"><div class="prompt-tag">USER 輸入</div>專案任務：全家 My FamiPort App -「我的專屬」改版 UI/UX 設計工作量評估
+          <p><strong>情境：</strong>透過 NotebookLM 將亮點轉化成頁面與功能清單的表格。</p>
+          <img src="截圖 2026-02-09 下午4.32.51.png" class="step-img" alt="NotebookLM 表格化輸出">
+          <div class="prompt-box"><div class="prompt-tag">USER 輸入</div>這幾個亮點我們需要進行設計，你能依照這情境幫我預估可能會呈現的畫面嗎？
 
-設計背景：
-我們要將原本條列式的「我的專屬」頁面，改版為「資訊儀表板 (Dashboard)」。設計師需要知道具體要設計哪些畫面、元件與狀態。
+層級如下示意：我需要我個功能會產生的頁面，與設計人員的製作天數評估。
 
-三大核心功能：
-1. Fami-Link 雲端列印（動態卡片 + 快速叫碼）
-2. 我的雲端冰箱（圖像化庫存）
-3. 點數計算機（價值視覺化）
-
-你的任務 (Role: UX Lead)：
-請針對上述需求，拆解出詳細的 「UI 畫面與狀態盤點表」。請務必包含以下細節，以便我評估設計工時：
-1. 核心頁面 (Key Screens)：列出主頁面與使用情境。
-2. 關鍵元件與互動 (Components & Interactions)：列出複雜模組、彈窗 (Modals) 與回饋 (Toasts)。
-3. 必要的特殊狀態 (States - 必填)：包含 Empty, Loading, Error State。
-
-輸出要求：
-請依序條列，並根據畫面的數量與複雜度，預估 UI/UX Designer 的設計人天。</div>
+我的專屬
+亮點一
+亮點功能</div>
         </div>
 
         <!-- Phase 2 -->
         <div class="phase-card phase-2" style="border-top-color: var(--accent);">
           <div class="phase-badge">Phase 2: AI 自動產出報價單 (Excel Generation)</div>
-          <p><strong>情境：</strong>將目前要設計的規格需求丟到 Gemini 上，請 AI 幫你產生 excel</p>
-          <img src="截圖 2026-02-09 下午3.50.36.png" class="step-img" alt="CLI 產出 Excel 結果">
+          <p><strong>情境：</strong>將表格整個複製貼到 Gemini CLI 上面，製作 excel 表格。</p>
+          <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md);">
+            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.05.16.png" class="step-img" style="margin-top: 0;" alt="CLI 輸入表格"></div>
+            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.27.48.png" class="step-img" style="margin-top: 0;" alt="CLI 生成 Excel"></div>
+          </div>
           
           <div class="insight-box" style="margin-top: 15px; border-left: 4px solid var(--accent); background: #f8f9fa;">
             <h3 style="color: var(--accent); font-size: 0.95rem; margin-top: 0;">💡 核心關鍵：CLI Skill 設定</h3>
