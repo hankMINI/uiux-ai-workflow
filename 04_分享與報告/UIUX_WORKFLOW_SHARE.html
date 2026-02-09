@@ -350,8 +350,8 @@
       <p>在 Figma 手動設數百個變數，一旦修改需逐一同步，隱藏時間成本高。</p>
     </div>
     <div class="pain-point-item">
-      <h4>痛點 5：Wireframe 無法傳達細節，溝通成本大</h4>
-      <p>客戶難以從黑白線框圖見微互動，高保真階段才發現理解落差，導致大幅修改。</p>
+      <h4>痛點 5：傳統 Prototype 細節不足，難以還原真實質感</h4>
+      <p>原本的原型無法還原微互動與視覺細節，且手動完成動效耗時巨大；導致客戶在初期理解落差，直到後期高保真階段才發現問題，造成大幅修改成本。</p>
     </div>
   </div>
 </section>
@@ -873,7 +873,7 @@ Slide 13: 亮點 10 - 點數應用
       <div class="insight-box">
         <h3>核心方法論：</h3>
         <p>1. NotebookLM：負責「結構化」。將分散的產品亮點轉化為具備設計邏輯的頁面清單表格。</p>
-        <p>2. Gemini CLI：負責「專業化」。透過預設的 Project Architect Skill，自動補全隱形成本與設計細節。</p>
+        <p>2. Gemini CLI：負責「自動化報價」。驅動 Project Architect Skill 精算隱形成本，產出符合 6 欄位規範與 14pt 標準字級之 WBS 評估表。</p>
         
         <details>
             <summary>🛠️ 查看 CLI Skill 配置細節 (6 欄位結構定義)</summary>
@@ -1098,6 +1098,53 @@ C. [Project Name]_GUIDELINE.md
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.10.34.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Figma Make 生成預覽"></div>
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.25.15.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="貼入 Figma 使用"></div>
           </div>
+          <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none; background: #0ACF83; color: white;">
+            <span class="icon" style="margin-right: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
+            在 Figma 中查看生成的設計規範
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 痛點 5 實戰案例 -->
+  <div class="solution-card" id="sol5">
+    <div class="solution-header">
+      <span class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </span>
+      回應痛點 5：傳統 Prototype 細節不足，難以還原真實質感
+    </div>
+    <div class="solution-body">
+      <h4>Figma Make AI：從靜態設計到高擬真互動轉化 (SCCG 為例)</h4>
+
+      <div class="insight-box">
+        <h3>核心方法論：</h3>
+        <p>1. 視覺複製：將 Figma 本機設計圖直接貼入 Figma Make，建立視覺參考基準。</p>
+        <p>2. 意志對齊：透過「零發揮指令」，強制 AI 進行 1:1 像素級還原，確保細節不失真。</p>
+      </div>
+
+      <div class="phase-container">
+        <!-- Phase 1 -->
+        <div class="phase-card phase-1">
+          <div class="phase-badge">Phase 1: 設計圖精準對齊 (Design Alignment)</div>
+          <p><strong>動作：</strong>將 Figma 中的現有設計圖複製，直接貼上至 Figma Make 的對話框中。</p>
+          <img src="截圖 2026-02-09 晚上9.46.35.png" class="step-img" alt="Figma Make 貼上設計圖">
+          <div class="prompt-box"><div class="prompt-tag">OPTIMIZED PROMPT</div>請作為精準的 UI 執行者，完全遵循所提供的設計圖進行 1:1 還原。請確保所有字體、配色、間距、圖層結構與視覺細節皆如實呈現，禁止任何形式的自主修改或發揮。</div>
+        </div>
+
+        <!-- Result -->
+        <div class="phase-card phase-3">
+          <div class="phase-badge">最終高擬真成果呈現</div>
+          <p><strong>成果：</strong>AI 生成的高保真頁面不僅還原了設計，還能直接生成具備微互動效果的連結，讓客戶在第一時間感受真實體驗。</p>
+          <a href="https://badge-brain-30475314.figma.site" target="_blank" class="view-ppt-btn" style="width: 100%; height: 50px; text-decoration: none;">
+            <span class="icon" style="margin-right: 8px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </span>
+            線上預覽高擬真互動原型
+          </a>
         </div>
       </div>
     </div>
