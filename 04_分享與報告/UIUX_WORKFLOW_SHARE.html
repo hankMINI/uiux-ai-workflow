@@ -247,10 +247,20 @@
     footer { text-align: center; padding: var(--sp-xl) var(--sp-md); color: var(--text-muted); font-size: var(--fs-sm); border-top: 1px solid var(--border); }
     
     .view-ppt-btn {
-      background: var(--primary); color: var(--text); padding: 0 24px;
-      text-align: center; font-weight: 700; cursor: pointer;
-      border: none; transition: all 0.2s;
-      display: flex; align-items: center; justify-content: center;
+      background: var(--primary); 
+      color: var(--text); 
+      width: 100%;
+      height: 50px;
+      text-align: center; 
+      font-weight: 700; 
+      cursor: pointer;
+      border: none; 
+      transition: all 0.2s;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      text-decoration: none;
+      margin-top: var(--sp-sm);
       white-space: nowrap;
     }
     .view-ppt-btn:hover { opacity: 0.8; }
@@ -820,7 +830,7 @@ Slide 13: 亮點 10 - 點數應用
           <p><strong>情境：</strong>直接下載產出的 PPT 檔案，設計師僅需進行最後的邏輯檢核，省去 80% 的排版勞動。</p>
           <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="PPT 最終產出 1">
           
-          <a href="My FamiPort App 2.0.pdf" target="_blank" class="view-ppt-btn" style="width: 100%; height: 50px; margin-top: 15px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+          <a href="My FamiPort App 2.0.pdf" target="_blank" class="view-ppt-btn">
             <span class="icon" style="margin-right: 8px;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line></svg>
             </span>
@@ -941,111 +951,6 @@ Slide 13: 亮點 10 - 點數應用
         <h3>核心方法論：</h3>
         <p>1. Gemini Canvas：製作一個「設計規範指令產生器」，將複雜的樣式參數（如顏色、字體、圓角）自動轉化為 Figma Make 專用的 AI 提示詞。</p>
         <p>2. Figma Make (AI)：接收標準化指令，一鍵繪製出包含原子組件與狀態的完整 UI Guideline。</p>
-
-        <details>
-            <summary>🛠️ 查看 Design System Generator Skill 配置細節</summary>
-            <div class="skill-content">Skill: Design System Generator (設計規範生成器 - 專業完備版)
-
-Description
-
-根據使用者在 DESIGN_SYSTEM_BRIEF.md 中的參數，生成符合專業開發標準的 Token JSON 與一份包含「完整原子組件」的 Figma AI 提示詞。本工具特別強化了組件的狀態（States）與複雜業務場景所需的元件。
-
-Instructions
-
-你是一位頂尖的設計系統架構師。你的任務是將需求轉化為 Figma AI 能精準執行的指令，強調「文件化排版」與「組件完備性」。
-
-1. 執行流程 (Workflow)
-
-讀取參數：提取 Project Name、Brand Color、Radius 等風格參數。
-
-生成 JSON：產出包含 Primitive 與 Semantic 邏輯的 Token 檔案。
-
-生成進階 Prompt：注入 [Complete Component Matrix] 並加上強制排版指令。
-
-自動歸檔：寫入 outputs/[Project Name]/ 目錄。
-
-2. 檔案產出內容
-
-A. [Project Name]_v3_FIGMA_PROMPT.txt (核心指令)
-
-Role: AI Design System Architect
-Task: Generate a UI Component Documentation Sheet.
-❌ CRITICAL: NO APP SCREENS. DOCUMENTATION LAYOUT ONLY.
-
-Layout Rules:
-
-Canvas: Width 1440px, Height Auto-grow, Padding 100px, Gap 120px.
-
-Sectioning: Each section must have an H2 Title and a brief usage description.
-
-Labeling: Every variant must be labeled (e.g., "Primary/Hover/Large").
-
-[Complete Component Matrix]:
-
-Foundations & Tokens
-
-Color Swatches: Primary, Secondary, Success, Warning, Error, Info, and 10-step Grey Scale with Hex and Token names.
-
-Typography: Display, H1-H6, Body (L/M/S), and Button text styles.
-
-Elevation: 5 levels of shadows (None to Ultra High).
-
-Buttons & Selection Controls
-
-Buttons: Solid, Outlined, Ghost, Link x (Default, Hover, Active, Disabled, Loading).
-
-Toggles: Checkbox, Radio, and Switch in all states (Selected, Unselected, Indeterminate).
-
-Segmented Control: 3-tab style for view switching.
-
-Form Architecture
-
-Text Inputs: Placeholder, Filled, Focus, Error, and Disabled states.
-
-Input Features: Must show Label, Helper Text, and Prefix/Suffix Icons.
-
-Advanced: Sliders, Date Pickers, and Steppers.
-
-Navigation Systems
-
-Bars: Desktop Side Nav (Expanded) and Mobile Bottom Nav (5 icons).
-
-Wayfinding: Breadcrumbs, Pagination (Numbers/Arrows), and Tabs (Underline/Pill).
-
-Data Display & Feedback
-
-Cards: Media Card, Product Card, and User Profile Card.
-
-Feedback: Alerts (4 colors), Toasts, and Tooltips (All directions).
-
-Status: Badges (Dot/Numeric), Tags/Chips (Removable/Static).
-
-Advanced Patterns
-
-Data Table: Header with Sort, Row with Checkbox, and Pagination footer.
-
-Empty States: Illustration + Title + Description + CTA Button.
-
-Skeleton Screens: Loading states for Cards and Lists.
-
-B. [Project Name]_tokens.json
-
-生成符合 W3C Design Tokens 標準的 JSON。
-
-包含語義化命名邏輯（如 bg-primary, text-secondary, border-error）。
-
-C. [Project Name]_GUIDELINE.md
-
-使用繁體中文說明設計原則。
-
-包含無障礙設計（Accessibility）規範與動效時長（Motion Duration）建議。
-
-3. 反饋
-
-告知使用者已生成 v3 完備版規範。
-
-提醒：此版本特別針對複雜系統（如銀行管理後台或電商 App）優化了 Skeleton 與 Empty States。</div>
-        </details>
       </div>
 
       <div class="phase-container">
@@ -1054,7 +959,7 @@ C. [Project Name]_GUIDELINE.md
           <div class="phase-badge">Phase 1: 生成器指令產出 (Prompt Generation)</div>
           <p><strong>情境：</strong>在 Gemini Canvas 中設定好品牌色、字體與圓角參數，請求 Design System Generator 生成給 Figma Make 看得懂的 Prompt。</p>
           <img src="截圖 2026-02-09 晚上9.10.24.png" class="step-img" alt="Gemini Canvas 生成 Prompt">
-          <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none;">
+          <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn">
             <span class="icon" style="margin-right: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
@@ -1070,7 +975,7 @@ C. [Project Name]_GUIDELINE.md
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.10.34.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Figma Make 生成預覽"></div>
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.25.15.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="貼入 Figma 使用"></div>
           </div>
-          <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none;">
+          <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn">
             <span class="icon" style="margin-right: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </span>
@@ -1111,7 +1016,7 @@ C. [Project Name]_GUIDELINE.md
         <div class="phase-card phase-3">
           <div class="phase-badge">最終高擬真成果呈現</div>
           <p><strong>成果：</strong>AI 生成的高保真頁面不僅還原了設計，還能直接生成具備微互動效果的連結，讓客戶在第一時間感受真實體驗。</p>
-          <a href="https://badge-brain-30475314.figma.site" target="_blank" class="view-ppt-btn" style="width: 100%; height: 50px; text-decoration: none;">
+          <a href="https://badge-brain-30475314.figma.site" target="_blank" class="view-ppt-btn">
             <span class="icon" style="margin-right: 8px;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
             </span>
