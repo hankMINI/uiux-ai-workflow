@@ -853,20 +853,19 @@ Slide 13: 亮點 10 - 點數應用
         <!-- Phase 2 -->
         <div class="phase-card phase-2" style="border-top-color: var(--accent);">
           <div class="phase-badge">Phase 2: AI 自動產出報價單 (Excel Generation)</div>
-          <p><strong>情境：</strong>將表格整個複製貼到 Gemini CLI 上面，製作 excel 表格。</p>
-          <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md);">
-            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.05.16.png" class="step-img" style="margin-top: 0;" alt="CLI 輸入表格"></div>
-            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.27.48.png" class="step-img" style="margin-top: 0;" alt="CLI 生成 Excel"></div>
+          <p><strong>情境：</strong>將目前要設計的規格需求丟到 Gemini 上，請 AI 幫你產生 excel</p>
+          <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md); align-items: stretch;">
+            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.05.16.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="CLI 輸入表格"></div>
+            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.27.48.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="CLI 生成 Excel"></div>
           </div>
           
-          <div class="insight-box" style="margin-top: 15px; border-left: 4px solid var(--accent); background: #f8f9fa;">
+          <div class="insight-box" style="margin-top: 15px; border-left: 4px solid var(--accent); background: #F6F6FA;">
             <h3 style="color: var(--accent); font-size: 0.95rem; margin-top: 0;">💡 核心關鍵：CLI Skill 設定</h3>
             <p style="font-size: 0.9rem; margin-bottom: 8px;">注意：CLI 需事先設定好產出規格 (Project Architect Skill)。</p>
             
             <details style="cursor: pointer;">
                 <summary style="font-size: 0.85rem; font-weight: 700; color: var(--text);">查看完整 Skill 定義 (Project Architect)</summary>
-                <div class="text-modal-body" style="margin-top: 10px; padding: 10px; background: #2d2d2d; color: #fff; border-radius: 4px; font-size: 0.8rem;">
-# Skill: Project Architect (UI/UX Design Director Edition)
+                <div style="margin-top: 10px; padding: 15px; background: #FFF; border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; line-height: 1.6; color: var(--text); white-space: pre-wrap; font-family: inherit;"># Skill: Project Architect (UI/UX Design Director Edition)
 
 ## Description
 將模糊需求或詳細戰略轉化為以 UI/UX 為核心的專業 WBS 工時評估。具備「模式識別」能力，能自動適應不同程度的輸入，並產出精美的 Excel 報表。
@@ -892,23 +891,22 @@ Slide 13: 亮點 10 - 點數應用
 - **專業確認**：在呈現完後詢問：「這樣的架構與情境理解是否正確？如果沒問題，我將為您產出詳細的 Excel 評估表。」
 
 #### 3. WBS 展開與估算 (WBS Generation)
-採用以下 Excel 欄位結構：
-- **主功能**：標示功能位置 (Home, Map, Game...)。**注意：為了視覺整潔，若連續多行的「主功能」相同，僅第一行顯示文字，後續行數請留白 (Empty Cell)。**
-- **頁面/功能名稱**：具體功能名稱。
-- **設計情境與功能說明 (UX Spec)**：詳細的互動描述與情境故事。
-- **關鍵元件 (UI Components)**：設計師需製作的元件清單，包含：
-    - **基礎元件**：(如：卡片、按鈕、篩選器)。
-    - **衍生畫面**：(如：彈窗 Modal、底部滑頁 Bottom Sheet、提示 Toast)。
-    - **特殊狀態**：(如：錯誤畫面、空狀態、載入中)。
-    - **語言規範**：**必須使用繁體中文** (可視情況括號備註英文專有名詞)。
-- **UI/FE/BE (天)**：各角色工時。
-- **隱形成本**：自動計算 PM (15%), SA (10%), QA (10%) 並列於總計列。
+採用 **6 欄位結構** 進行拆解：
+- **核心原則**：WBS 的精髓在於「拆解到最小可估算的執行單位」。每一項衍生畫面 (L3) 都應該獨立成行，這樣在設計與審核時才能精確對應到每一個畫面。
+- **A 欄 (主功能)**：第一層分類 (L1)，重複時留白以製造群組感。
+- **B 欄 (頁面名稱)**：第二層核心頁面 (L2)。
+- **C 欄 (衍生畫面/狀態)**：第三層子畫面 (L3)，如燈箱、特殊狀態。
+- **D 欄 (頁面說明與功能組成)**：包含三個維度：
+    1. **使用者情境**：描述痛點 (Pain Point)。
+    2. **介面設計概念**：描述解決方案 (Solution)。
+    3. **誘因與機制**：描述心理學誘因或遊戲化機制 (Motivation)。
+- **E 欄 (UI 天)**：純 UI 設計工時。
 
 #### 4. Excel 產出與路徑規範 (Output & Path Rules)
 使用 `run_shell_command` 執行 Python 腳本 (pandas + openpyxl) 產出 `.xlsx`。
 - **存放目錄**：所有 `.xlsx` 必須存放在當前目錄下的 `產出` 資料夾內。若該資料夾不存在，必須自動建立。
 - **檔名規則**：`YYYYMMDD_[專案名稱]_WBS工時評估.xlsx` (例如：20260204_My_FamiPort_WBS工時評估.xlsx)。
-- **格式規範**：微軟正黑體、黑色字、標題灰底加粗、自動欄寬、自動換行、全儲存格細邊框。
+- **格式規範**：內容文字統一為 **14 級字 (14pt)**、微軟正黑體、黑色字、標題灰底加粗、自動欄寬、自動換行、全儲存格細邊框。
 
 ## 專業知識庫 (Knowledge Base)
 - **首頁/Dashboard**：1.5 - 2 天 (高複雜度 Widget)。
