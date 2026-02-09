@@ -50,7 +50,7 @@
     .icon { display: inline-flex; align-self: center; top: 0.125em; position: relative; }
     p { margin-bottom: var(--sp-sm); }
     ul { margin-bottom: var(--sp-sm); padding-left: 20px; }
-    li { margin-bottom: var(--sp-xs); }
+    li { margin-bottom: 0; }
     h2, h3, h4 { margin-top: 0; }
 
     header {
@@ -77,8 +77,9 @@
     }
 
     .sticky-nav ul { display: flex; justify-content: center; list-style: none; max-width: 1100px; margin: 0 auto; padding: 0; }
-    .sticky-nav a { display: block; padding: 20px var(--sp-lg); color: var(--text); text-decoration: none; font-weight: 700; font-size: var(--fs-sm); border-bottom: 4px solid transparent; transition: all 0.2s ease; }
-    .sticky-nav a:hover { border-bottom-color: var(--primary); background: #FDFDFD; }
+    .sticky-nav a { display: block; padding: 20px var(--sp-lg); color: var(--text); text-decoration: none; font-weight: 700; font-size: var(--fs-sm); transition: all 0.2s ease; }
+    .sticky-nav a:hover { background: #FDFDFD; }
+    .sticky-nav a.active { background: var(--primary); color: var(--text); }
 
     main { max-width: 1100px; margin: 0 auto; padding: 20px var(--sp-md) var(--sp-xl); display: flex; flex-direction: column; }
     [id] { scroll-margin-top: 80px; }
@@ -122,7 +123,7 @@
 
     .insight-box h3 { color: var(--primary); margin-top: 0; margin-bottom: var(--sp-sm); }
 
-    .mode-comparison { display: flex; flex-direction: column; gap: var(--sp-md); margin: var(--sp-lg) 0; }
+    .mode-comparison { display: flex; flex-direction: column; gap: var(--sp-md); margin: 0 0 var(--sp-lg) 0; }
     .mode-card { padding: var(--sp-md); border: 1px solid var(--border); position: relative; display: flex; flex-direction: column; }
     .mode-card.traditional { background: #F6F6FA; border-left: 4px solid var(--secondary); opacity: 0.8; }
     .mode-card.hybrid { background: #FFFBE6; border: 2px solid var(--primary); border-left: 6px solid var(--primary); box-shadow: 0 8px 30px rgba(255, 230, 0, 0.15); }
@@ -177,9 +178,11 @@
     .text-modal-body { font-family: "SF Mono", monospace; font-size: var(--fs-sm); line-height: 1.6; white-space: pre-wrap; color: var(--text); }
 
     .prompt-box {
+      position: relative;
       background: var(--code-bg);
       color: #e2e8f0;
       padding: var(--sp-md);
+      padding-top: 36px;
       font-family: "SF Mono", monospace;
       font-size: var(--fs-sm);
       border-left: 4px solid var(--primary);
@@ -189,6 +192,17 @@
       line-height: 1.5;
       margin-top: var(--sp-sm);
     }
+    .prompt-tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--primary);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      letter-spacing: 0.05em;
+    }
 
     .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 36, 0.95); display: none; align-items: center; justify-content: center; z-index: 4000; opacity: 0; transition: opacity 0.3s ease; }
     .lightbox.active { display: flex; opacity: 1; }
@@ -196,6 +210,68 @@
     .lightbox-close { position: absolute; top: 30px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
 
     footer { text-align: center; padding: var(--sp-xl) var(--sp-md); color: var(--text-muted); font-size: var(--fs-sm); border-top: 1px solid var(--border); }
+    /* PDF Viewer Styles */
+    .pdf-modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(26, 26, 36, 0.95);
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 5000; opacity: 0; transition: opacity 0.3s ease;
+    }
+    .pdf-modal.active { display: flex; opacity: 1; }
+    .pdf-container { position: relative; max-width: 90%; max-height: 85vh; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    #the-canvas { display: block; max-width: 100%; max-height: 85vh; height: auto; border: 1px solid #333; }
+    .pdf-controls {
+      display: flex; gap: 20px; margin-top: 15px; align-items: center; color: white; font-family: "SF Mono", monospace;
+    }
+    .pdf-btn {
+      background: var(--code-bg); border: 1px solid var(--border); color: white;
+      padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 700; transition: all 0.2s;
+    }
+    .pdf-btn:hover { background: var(--primary); color: var(--text); border-color: var(--primary); }
+    .pdf-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 32px; cursor: pointer; z-index: 5001; }
+    .pdf-nav-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1); color: white; border: none;
+      width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+      font-size: 24px; display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .pdf-nav-btn:hover { background: var(--primary); color: var(--text); }
+    .pdf-prev { left: -70px; }
+    .pdf-next { right: -70px; }
+    .view-ppt-btn {
+      background: var(--primary); color: var(--text); padding: 0 24px;
+      text-align: center; font-weight: 700; cursor: pointer;
+      border: none; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+      white-space: nowrap;
+    }
+    .view-ppt-btn:hover { opacity: 0.8; }
+    /* Sub-navigation Styles */
+    .sub-nav {
+      position: sticky;
+      top: 61px; /* Sticks below the main nav */
+      background: #FFFBE6;
+      z-index: 900;
+      margin-bottom: var(--sp-lg);
+      display: none; /* Hidden by default, shown in section 3 */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .sub-nav.active { display: block; }
+    .sub-nav ul {
+      display: flex; justify-content: center; list-style: none;
+      max-width: 1100px; margin: 0 auto; padding: 0;
+    }
+    .sub-nav a {
+      display: block; padding: 12px var(--sp-md); color: #333;
+      text-decoration: none; font-size: var(--fs-sm); font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .sub-nav a:hover { background: rgba(255,255,255,0.5); }
+    .sub-nav a.active { background: #fff0a3; color: black; }
+
+    /* Adjust scroll margin for sections so they land perfectly below two sticky bars */
+    .solution-card { scroll-margin-top: 180px; }
   </style>
 </head>
 <body>
@@ -269,8 +345,19 @@
   <h2>第三部分：解決方案實戰</h2>
 </div>
 
+<!-- Sub Navigation for Pain Points -->
+<nav class="sub-nav" id="subNavItem">
+  <ul>
+    <li><a href="#sol1" class="sub-link">痛點 1</a></li>
+    <li><a href="#sol2" class="sub-link">痛點 2</a></li>
+    <li><a href="#sol3" class="sub-link">痛點 3</a></li>
+    <li><a href="#sol4" class="sub-link">痛點 4</a></li>
+    <li><a href="#sol5" class="sub-link">痛點 5</a></li>
+  </ul>
+</nav>
+
 <section>
-  <div class="solution-card">
+  <div class="solution-card" id="sol1">
     <div class="solution-header">
       <span class="icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -296,7 +383,7 @@
           <div style="margin-bottom: var(--sp-md);">
             <span class="step-label">步驟 1：全家現況與痛點診斷</span>
             <img src="釐清目前需求.jpg" class="step-img" alt="全家診斷">
-            <div class="prompt-box">請扮演資深零售體驗 (UX) 研究員。針對『全家 My FamiPort App』進行診斷：
+            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請扮演資深零售體驗 (UX) 研究員。針對『全家 My FamiPort App』進行診斷：
 1. 【核心商流流量盤點】：找出用戶「真正高頻使用」的 Top 3 剛性需求。
 2. 【OMO 體驗斷點分析】：分析用戶在手機 App 操作到實體機台執行中最挫折的斷點。
 3. 【「我的專屬」模組病灶】：剖析為何目前區塊使用率低？從功能面、介面面、價值面分析。</div>
@@ -309,11 +396,17 @@
               <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.39.43.png" class="step-img" style="margin-top: 0;" alt="日本研究"></div>
               <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.40.04.png" class="step-img" style="margin-top: 0;" alt="台灣研究"></div>
             </div>
-            <div class="prompt-box">接著，請擴大搜索範圍，進行「全球零售 App 標竿分析」，針對四個維度掃描：
+                        <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>接著，請擴大搜索範圍，進行「全球零售 App 標竿分析」，針對四個維度掃描：
 1. 【韓國 GS25 - 雲端倉儲策略】：分析「My Own Refrigerator」如何寄存贈品。
 2. 【台灣全聯 PX Mart - 每日活躍策略】：如何利用每日簽到創造高日活躍度。
 3. 【日本超商 (FamilyMart/Lawson) - 遊戲化行銷】：個人化優惠券、集章進度條。
 4. 【台灣 7-ELEVEN - 生態圈整合】：分析 OPEN POINT 整合點數與票夾的做法。</div>
+          </div>
+
+          <div style="margin-top: var(--sp-lg);">
+            <span class="step-label">步驟 2.1：透過 Kortex 將 Gemini 蒐集到的資料依次匯入 NotebookLM 進行分析</span>
+            <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">利用 Kortex 插件將 Gemini 的研究成果（如全球零售標竿分析）一鍵同步至 NotebookLM，建立具備上下文關聯的專案知識庫。</p>
+            <img src="截圖 2026-02-09 上午11.46.07.png" class="step-img" alt="Kortex 匯入 NotebookLM">
           </div>
         </div>
 
@@ -325,7 +418,7 @@
           <div style="margin-bottom: var(--sp-md);">
             <span class="step-label">步驟 3：跨文件痛點與解法配對</span>
             <img src="截圖 2026-02-06 凌晨2.01.21.png" class="step-img" alt="交叉分析">
-            <div class="prompt-box">請仔細閱讀我上傳的兩份文件（全家診斷、競品掃描），執行交叉矩陣分析並輸出表格：
+            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請仔細閱讀我上傳的兩份文件（全家診斷、競品掃描），執行交叉矩陣分析並輸出表格：
 1. 【全家核心商流】：列出流量最大的 3 個功能。
 2. 【現存痛點】：對應的使用者痛點。
 3. 【可借鏡的競品機制】：從 GS25、全聯或日本超商案例中找出具體解法。
@@ -335,7 +428,7 @@
           <div>
             <span class="step-label">步驟 4：生成產品規格與想法</span>
             <img src="截圖 2026-02-06 凌晨2.46.40.png" class="step-img" alt="規格草案">
-            <div class="prompt-box">基於上述分析，請正式規劃『全家 My FamiPort App - 我的專屬』改版企劃書。
+            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>基於上述分析，請正式規劃『全家 My FamiPort App - 我的專屬』改版企劃書。
 目標：將此區塊從「冷門工具」轉型為「熱門生活儀表板」。
 請提供 3 個具體的改版功能提案，每個提案需包含：功能命名、用戶故事、UI/UX 介面概念、遊戲化機制、解決的痛點。</div>
           </div>
@@ -440,67 +533,400 @@
   </div>
 
   <!-- 痛點 2 實戰案例 -->
-  <div class="solution-card">
+  <div class="solution-card" id="sol2">
     <div class="solution-header">
       <span class="icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
       </span>
-      回應痛點 2：提案簡報排版手動調整，產能損耗高
+      回應痛點 2：簡報排版手動調整
     </div>
     <div class="solution-body">
-      <h4>實戰案例：EY 顧問風格簡報自動化生成 (Canvas 模式)</h4>
+      <h4>實戰案例：從 NotebookLM 到 Gemini Canvas 的自動化簡報生成</h4>
       
-      <div style="margin-bottom: var(--sp-md); font-size: var(--fs-sm); color: var(--secondary);">
-        <span class="step-label">來源依據</span>: 使用者實測操作流程
+      <div class="insight-box" style="margin: var(--sp-md) 0; border-left: 4px solid var(--primary); background: #F6F6FA; color: var(--text);">
+        <h3 style="color: var(--text); font-size: 1rem; margin-top: 0;">核心方法論：</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 6px;">1. NotebookLM：將大量研究報告壓縮為邏輯嚴密的簡報大綱。</p>
+        <p style="font-size: 0.9rem; margin-bottom: 0;">2. Gemini Canvas：透過專業指令一鍵生成符合企業視覺規範的排版內容。</p>
       </div>
 
       <div class="phase-container">
-        
-        <!-- Step 1 -->
+        <!-- Phase 1 -->
         <div class="phase-card phase-1">
-          <div class="phase-badge">Step 1: NotebookLM 結構化 MD 輸出</div>
-          <p><strong>動作：</strong>在 NotebookLM 將「最終優化方案」轉化為簡報大綱，並導出為 Markdown (MD) 格式。</p>
-          <img src="截圖 2026-02-06 16.40.23.png" class="step-img" alt="NotebookLM MD 輸出">
-          <div class="prompt-box"># Role
-你是一位擅長資訊拆解與架構規劃的簡報專家。我將提供從 NotebookLM 整理好的內容，請協助我將其轉化為一份 PPT 的文字架構，特別著重於「十大亮點」的呈現。
-
-# Goal
-請專注於文字邏輯，不要視覺建議。目標是產出一份結構完整、論點豐富的簡報大綱，並且**必須包含明確的 10 個亮點**。
-
-# Task
-請依照以下三段式架構，產出 PPT 的文字內容：
-
-## 第一部分：封面 (The Hook)
-1. 主標題：具吸引力，一句話點出核心價值。
-2. 副標題：說明這份簡報將揭露哪 10 大關鍵要素。
-
-## 第二部分：痛點分析 (The Problem)
-- 現況挑戰：列出 3 個目前最棘手的問題。
-- 痛點總結：一句話強調若不改變現狀將面臨的風險。
-
-## 第三部分：十大亮點詳解 (The 10 Key Highlights)
-請歸納出整整 10 個具體的亮點 (Point 1 - Point 10)，每點包含：標題、內容闡述、價值主張。
-
-*注意：若原始資料不足 10 點，請根據邏輯合理延伸或拆解面向，確保產出完整的 10 點。*</div>
+          <div class="phase-badge">Phase 1: NotebookLM 結構化輸出 (Structural Output)</div>
+          <p><strong>任務：</strong>在 NotebookLM 中完成方案優化後，要求 AI 以 Markdown 格式輸出「簡報大綱」，確保包含標題、內文點與核心效益。</p>
+          <img src="截圖 2026-02-06 16.40.23.png" class="step-img" alt="NotebookLM 簡報大綱輸出">
         </div>
 
-        <!-- Step 2 -->
-        <div class="phase-card phase-2" style="border-top-color: var(--primary);">
-          <div class="phase-badge">Step 2: 注入 EY 顧問視覺規範指令</div>
-          <p><strong>動作：</strong>將 MD 內容貼入 Gemini，並施加嚴謹的視覺排版 Prompt，指定 RGB 配色與微軟正黑體。</p>
-          <img src="截圖 2026-02-06 18.19.01.png" class="step-img" alt="Gemini Prompt 輸入">
-        </div>
+        <!-- Phase 2 -->
+        <div class="phase-card phase-2">
+          <div class="phase-badge">Phase 2: Gemini Canvas 專家指令 (Expert Instructions)</div>
+          <p><strong>任務：</strong>將 MD 內容貼入 Gemini，啟動 Canvas 模式並下達「PPT 製作專家」指令。嚴格指定安永黃與深灰配色，並要求純文字極簡排版。</p>
+          <div style="margin-bottom: var(--sp-md);">
+            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請扮演專業的 PPT 製作專家。請將下方的簡報大綱轉換成 slice 。
+設計規範：
+字體與格式：
+全文字型指定為「微軟正黑體」。
 
-        <!-- Step 3 -->
-        <div class="phase-card phase-3" style="border-top-color: var(--success);">
-          <div class="phase-badge">Step 3: Canvas 模式視覺化生成</div>
-          <p><strong>動作：</strong>切換至 Gemini Canvas 模式進行即時預覽與調整，一鍵產出最終 PPT。</p>
-          <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="Canvas 模式產出">
-          <div style="background: #FFFBE6; padding: var(--sp-sm); border: 1px dashed var(--primary); text-align: center; color: var(--text); margin-top: 10px; font-weight: 700;">
-            [ 成果：80% 完成度之專業顧問簡報 ]
+Slide 1: 封面
+
+主標題： My FamiPort App 2.0：從冷門工具變身「熱門生活儀表板」
+
+副標題： 解密 10 大改版亮點：如何消除 OMO 斷點，將「剛需流量」轉化為高頻「消費黏著度」
+
+
+
+Slide 2: 痛點分析
+
+標題：我們正面臨的「體驗負債」
+
+1. 現況挑戰一：半套數位化的「輸入地獄」
+
+
+
+問題： 手機操作完，到店裡仍需在機台彎腰、手動輸入 10 碼代碼。
+
+影響： 非真正數位轉型，造成寄件賣家與列印族群極大挫折。
+
+2. 現況挑戰二：時間壓力下的「流程焦慮」
+
+
+
+問題： 缺乏「快取機制」與「骨架屏」，結帳列印讀取轉圈圈。
+
+影響： 排隊壓力讓用戶不敢用 FamiPay，使用率難以提升。
+
+3. 現況挑戰三：缺乏誘因的「工具人宿命」
+
+
+
+問題： 定位為被動查詢工具，缺乏遊戲化與庫存管理機制。
+
+影響： 用戶寄完件即離，無法建立日活躍度 (DAU)。
+
+Slide 3: 痛點總結
+
+標題：若不改變，我們將失去什麼？
+
+
+
+「若不解決『輸入繁瑣』與『等待枯燥』的斷點，全家將在 OMO 戰場失去高價值的 C2C 賣家與年輕數位原生代。」
+
+Slide 4: 亮點 1 - 雲端列印
+
+標題：Fami-Link 雲端列印快手首頁動態島，一鍵喚醒列印碼
+
+
+
+內容闡述：
+
+參考 iOS 動態島概念。
+
+用戶上傳檔案後，App 首頁頂端自動置頂「文件準備就緒」卡片。
+
+點擊即跳出條碼，無須進選單翻找。
+
+價值主張：【消除焦慮】
+
+解決機台前「找不到檔案」或「怕代碼過期」的恐慌。
+
+大幅縮短機台佔用時間。
+
+Slide 5: 亮點 2 - 賣家任務
+
+標題：賣家集章任務卡寄件遊戲化，打造賣家成就系統
+
+
+
+內容闡述：
+
+將枯燥的寄件流程轉化為「擬真集章卡」。
+
+機制：每寄一件蓋一個章，集滿 10 件自動兌換咖啡。
+
+價值主張：【留存大戶】
+
+利用「目標漸近效應」鎖定高頻微型賣家。
+
+防止賣家流失至競爭對手。
+
+Slide 6: 亮點 3 - 雲端庫存
+
+標題：我的雲端冰箱實體贈品數位化，庫存隨手存
+
+
+
+內容闡述：
+
+全面導入「買一送一存手機」機制。
+
+櫃檯未領取贈品轉化為具象化「虛擬冰箱」庫存。
+
+具備倒數提醒功能。
+
+價值主張：【強制回訪】
+
+解決「促銷拿不動」的物理痛點。
+
+將單次交易轉化為未來的必然回訪（回來領庫存）。
+
+Slide 7: 亮點 4 - 機台串接
+
+標題：機台登入魔杖掃碼取代輸入，消滅 10 碼斷點
+
+
+
+內容闡述：
+
+App 首頁設置醒目「掃描登入」按鈕。
+
+開啟相機掃描 FamiPort 機台螢幕，瞬間同步寄件/列印資料。
+
+完全免除手動輸入代碼。
+
+價值主張：【極致效率】
+
+徹底消滅 OMO 流程中最原始的「手動輸入」斷點。
+
+優化店內機台週轉率。
+
+Slide 8: 亮點 5 - 極速支付
+
+標題：超級一鍵通懸浮聚合碼，3 秒極速結帳
+
+
+
+內容闡述：
+
+整合會員、載具、支付於單一 QR Code。
+
+透過右下角懸浮按鈕 (FAB) 一鍵彈出。
+
+解決切換多個畫面的卡頓。
+
+價值主張：【支付流暢】
+
+降低結帳時的排隊壓力。
+
+直接提升 FamiPay 的使用意願與成功率。
+
+Slide 9: 亮點 6 - 每日互動
+
+標題：每日好運扭蛋機機率性獎勵，騙取每日開啟
+
+
+
+內容闡述：
+
+首頁設置「每日免費扭蛋」。
+
+提供高頻次微型獎勵（如 1 點）與低頻次大獎。
+
+吸引用戶沒事也來試手氣。
+
+價值主張：【提升黏著】
+
+利用「變動獎勵」心理學。
+
+解決 App 工具屬性太強、平時無人開啟的問題。
+
+Slide 10: 亮點 7 - 繳費體驗
+
+標題：繳費回饋刮刮樂轉化付款痛苦，繳費變驚喜
+
+
+
+內容闡述：
+
+系統偵測到繳費完成後，跳出「數位收據刮刮樂」。
+
+用戶刮開可能獲得購物金或點數回饋。
+
+價值主張：【情緒翻轉】
+
+將「繳錢的負面情緒」轉化為「期待中獎的正面情緒」。
+
+鞏固代收服務的忠誠度。
+
+Slide 11: 亮點 8 - 智慧提醒
+
+標題：智慧包裹雷達主動式待辦，到店搬運補給
+
+
+
+內容闡述：
+
+首頁卡片主動顯示「待取包裹數量」。
+
+若包裹體積大或數量多，系統自動推播「大瓶水/提神飲料」優惠券。
+
+價值主張：【情境行銷】
+
+解決資訊不同步導致的白跑一趟。
+
+利用取貨場景創造「順手買」的客單價。
+
+Slide 12: 亮點 9 - 票券管理
+
+標題：擬真娛樂票夾資產可視化，展演前導購
+
+
+
+內容闡述：
+
+將文字列表轉化為漂亮的「擬真數位票根」。
+
+點擊可翻轉查看座位資訊。
+
+在開演前推播周邊門市優惠。
+
+價值主張：【重建信任】
+
+透過視覺化的資產管理。
+
+消除用戶對「數位票券遺失」的不安全感。
+
+Slide 13: 亮點 10 - 點數應用
+
+標題：點數價值翻譯機點數貨幣化，刺激沈睡資產
+
+
+
+內容闡述：
+
+改變點數顯示方式，建立直觀價值連結。
+
+不再只顯示「3000 點」，而是顯示「= 2 瓶綠茶」或「= 10 元現金」。
+
+價值主張：【促進兌換】
+
+讓用戶秒懂點數購買力。
+
+有效喚醒沈睡點數，帶動店內兌換人流。
+
+幫我透過上面的大綱轉成slice 但是我不要任何美編，只要單純文字編排就好</div>
           </div>
         </div>
 
+        <!-- Result -->
+        <div class="phase-card phase-3" style="border-top-color: var(--success);">
+          <div class="phase-badge">最終成果呈現 (Final Results)</div>
+          <p><strong>情境：</strong>直接下載產出的 PPT 檔案，設計師僅需進行最後的邏輯檢核，省去 80% 的排版勞動。</p>
+          <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="PPT 最終產出 1">
+          
+          <button class="view-ppt-btn" onclick="openPdfViewer()" style="width: 100%; height: 50px; margin-top: 15px;">
+            <span class="icon" style="margin-right: 8px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line></svg>
+            </span>
+            線上預覽改版企劃書 (PDF)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 痛點 3 實戰案例 -->
+  <div class="solution-card" id="sol3">
+    <div class="solution-header">
+      <span class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      </span>
+      回應痛點 3：Sitemap 與報價依賴經驗，易有落差
+    </div>
+    <div class="solution-body">
+      <h4>實戰案例：全家 My FamiPort App 改版工時精算</h4>
+
+      <div class="phase-container">
+        <!-- Phase 1 -->
+        <div class="phase-card phase-1">
+          <div class="phase-badge">Phase 1: 需求規格轉化 (Spec Translation)</div>
+          <p><strong>情境：</strong>別再只跟設計師說「要做冰箱功能」。我們透過一段專業的 Prompt，明確告訴 AI 哪些是核心畫面、哪些頁面有彈窗、哪些需要處理 Empty/Error State。</p>
+          <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>專案任務：全家 My FamiPort App -「我的專屬」改版 UI/UX 設計工作量評估
+
+設計背景：
+我們要將原本條列式的「我的專屬」頁面，改版為「資訊儀表板 (Dashboard)」。設計師需要知道具體要設計哪些畫面、元件與狀態。
+
+三大核心功能：
+1. Fami-Link 雲端列印（動態卡片 + 快速叫碼）
+2. 我的雲端冰箱（圖像化庫存）
+3. 點數計算機（價值視覺化）
+
+你的任務 (Role: UX Lead)：
+請針對上述需求，拆解出詳細的 「UI 畫面與狀態盤點表」。請務必包含以下細節，以便我評估設計工時：
+1. 核心頁面 (Key Screens)：列出主頁面與使用情境。
+2. 關鍵元件與互動 (Components & Interactions)：列出複雜模組、彈窗 (Modals) 與回饋 (Toasts)。
+3. 必要的特殊狀態 (States - 必填)：包含 Empty, Loading, Error State。
+
+輸出要求：
+請依序條列，並根據畫面的數量與複雜度，預估 UI/UX Designer 的設計人天。</div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="phase-card phase-2" style="border-top-color: var(--accent);">
+          <div class="phase-badge">Phase 2: 自動化工時評估 (AI Estimation)</div>
+          <p><strong>情境：</strong>啟動專門處理工時精算的 <strong>Project Architect (AI 助手)</strong>。我們直接將上一步準備好的需求指令貼入，AI 就會自動化身專案經理，幫你查漏補缺：確保沒漏掉「讀取中」的畫面、也沒忘了「斷網」的彈窗。它能精準判斷每個畫面的設計難度，並直接產出可供 Excel 使用的報價表格。</p>
+          <div style="background: #F6F6FA; padding: var(--sp-sm); border: 1px solid var(--border); margin-top: 10px;">
+            <p style="font-size: var(--fs-sm); color: var(--text); margin-bottom: 0;"><strong>AI 思考邏輯：</strong></p>
+            <ul style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">
+              <li>將「亮點」映射至「UI 元件庫」基準。</li>
+              <li>自動補全 Empty/Error 狀態的設計人天。</li>
+              <li>區分 Wireframe 與 Mockup 的開發權重。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="phase-card phase-3" style="border-top-color: var(--success);">
+          <div class="phase-badge">最終 WBS 成果呈現 (Final WBS Output)</div>
+          <p><strong>情境：</strong>直接生成一份 Excel/CSV，包含每個畫面的設計時間，讓設計師的產能有數據支持，報價理直氣壯。</p>
+          
+          <div style="overflow-x: auto; margin-top: 15px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left;">
+              <thead>
+                <tr style="background: var(--text); color: var(--primary);">
+                  <th style="padding: 10px; border: 1px solid #444;">主功能</th>
+                  <th style="padding: 10px; border: 1px solid #444;">次功能</th>
+                  <th style="padding: 10px; border: 1px solid #444;">Wireframe</th>
+                  <th style="padding: 10px; border: 1px solid #444;">Mockup</th>
+                  <th style="padding: 10px; border: 1px solid #444;">總計</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: #FFF;">
+                  <td style="padding: 10px; border: 1px solid var(--border);">儀表板首頁</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">核心佈局與特殊狀態</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">2.5天</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">4.5天</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">7.0天</td>
+                </tr>
+                <tr style="background: #F9F9FB;">
+                  <td style="padding: 10px; border: 1px solid var(--border);">雲端冰箱</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">詳情頁與兌換流程</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">1.3天</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">2.0天</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">3.3天</td>
+                </tr>
+                <tr style="background: #FFF;">
+                  <td style="padding: 10px; border: 1px solid var(--border);">雲端列印</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">檔案列表與 QR Code</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">0.7天</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">1.5天</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">2.2天</td>
+                </tr>
+                <tr style="background: var(--primary); font-weight: 700;">
+                  <td colspan="4" style="padding: 10px; border: 1px solid var(--border); text-align: right;">專案設計總工時 (UI/UX)：</td>
+                  <td style="padding: 10px; border: 1px solid var(--border);">20.5 人天</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <a href="UIUX_Design_Estimation_WBS.csv" download class="view-ppt-btn" style="margin-top: 15px; text-decoration: none;">
+            <span class="icon" style="margin-right: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </span>
+            下載 WBS 完整清單 (.csv)
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -530,11 +956,173 @@
     document.body.style.overflow = '';
   }
 
+  // Scroll Spy and Sub-nav Visibility
+  const subNav = document.getElementById('subNavItem');
+  const section3 = document.getElementById('section3');
+  const mainLinks = document.querySelectorAll('.sticky-nav a'); // 主選單連結
+  const subLinks = document.querySelectorAll('.sub-link');      // 次選單連結
+  const sections = document.querySelectorAll('.part-header, section'); // 主區塊 (含標題與內容)
+  const solCards = document.querySelectorAll('.solution-card'); // 解決方案卡片
+
+  window.addEventListener('scroll', () => {
+    let currentMain = 'section1'; // 預設為第一個章節
+    let currentSub = '';
+    const scrollPos = window.scrollY + 250; // 稍微增加 Offset 確保偵測更精準
+
+    // 1. Main Nav Scroll Spy
+    document.querySelectorAll('.part-header, section[id="section2"]').forEach(sec => {
+       if (scrollPos >= sec.offsetTop) {
+         currentMain = sec.getAttribute('id');
+       }
+    });
+
+    mainLinks.forEach(link => {
+      link.classList.remove('active');
+      // 確保 currentMain 有值且連結的 href 包含該 ID
+      if (currentMain && link.getAttribute('href').includes(currentMain)) {
+        link.classList.add('active');
+      }
+    });
+
+    // 2. Sub-nav Visibility & Scroll Spy
+    if (window.scrollY > section3.offsetTop - 150) {
+      subNav.classList.add('active');
+      
+      // Sub-nav Spy logic
+      currentSub = 'sol1'; // 進入第三部分時，預設高亮第一個痛點
+      solCards.forEach(card => {
+        if (scrollPos >= card.offsetTop) {
+          currentSub = card.getAttribute('id');
+        }
+      });
+
+      subLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentSub)) {
+          link.classList.add('active');
+        }
+      });
+
+    } else {
+      subNav.classList.remove('active');
+    }
+  });
+
   window.onclick = function(event) {
     if (event.target == lightbox) closeLightbox();
   }
 </script>
 
 </main>
+<!-- PDF Viewer Modal -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-close" onclick="closePdfViewer()">&times;</div>
+  <div class="pdf-container">
+    <canvas id="the-canvas"></canvas>
+    <button class="pdf-nav-btn pdf-prev" onclick="onPrevPage()">&#10094;</button>
+    <button class="pdf-nav-btn pdf-next" onclick="onNextPage()">&#10095;</button>
+  </div>
+  <div class="pdf-controls">
+    <span>Page <span id="page_num"></span> / <span id="page_count"></span></span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script>
+  // PDF.js Logic
+  const url = 'My FamiPort App 2.0.pdf';
+  let pdfDoc = null,
+      pageNum = 1,
+      pageRendering = false,
+      pageNumPending = null,
+      canvas = document.getElementById('the-canvas'),
+      ctx = canvas.getContext('2d');
+
+  function openPdfViewer() {
+    const modal = document.getElementById('pdfModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // 偵測是否為本地檔案開啟 (file://)
+    if (window.location.protocol === 'file:') {
+      console.warn('偵測到本地開啟，切換至相容模式 (iframe)');
+      const container = document.querySelector('.pdf-container');
+      container.innerHTML = `<iframe src="${url}" style="width:85vw; height:85vh; border:none; background:white;"></iframe>`;
+      document.querySelector('.pdf-controls').style.display = 'none';
+      return;
+    }
+
+    if (!pdfDoc) {
+      // 原本的 pdf.js 初始化代碼
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+      
+      pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfDoc = pdfDoc_;
+        document.getElementById('page_count').textContent = pdfDoc.numPages;
+        renderPage(pageNum);
+      }).catch(err => {
+        console.error('Error loading PDF:', err);
+        alert('無法載入 PDF 檔案。請確保您是透過伺服器 (Localhost/Live Server) 瀏覽此頁面，而非直接開啟檔案 (file://)。');
+      });
+    }
+  }
+
+  function closePdfViewer() {
+    document.getElementById('pdfModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function renderPage(num) {
+    pageRendering = true;
+    pdfDoc.getPage(num).then(function(page) {
+      const viewport = page.getViewport({scale: 1.5}); // Scale up for better quality
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport
+      };
+      const renderTask = page.render(renderContext);
+
+      renderTask.promise.then(function() {
+        pageRendering = false;
+        if (pageNumPending !== null) {
+          renderPage(pageNumPending);
+          pageNumPending = null;
+        }
+      });
+    });
+    document.getElementById('page_num').textContent = num;
+  }
+
+  function queueRenderPage(num) {
+    if (pageRendering) {
+      pageNumPending = num;
+    } else {
+      renderPage(num);
+    }
+  }
+
+  function onPrevPage() {
+    if (pageNum <= 1) return;
+    pageNum--;
+    queueRenderPage(pageNum);
+  }
+
+  function onNextPage() {
+    if (pageNum >= pdfDoc.numPages) return;
+    pageNum++;
+    queueRenderPage(pageNum);
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('pdfModal').classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') onPrevPage();
+    if (e.key === 'ArrowRight') onNextPage();
+    if (e.key === 'Escape') closePdfViewer();
+  });
+</script>
 </body>
 </html>

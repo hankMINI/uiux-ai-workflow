@@ -8,7 +8,7 @@
 - **05_系統設定與技能庫**: MCP 與 Skill 設定檔
 
 ## 2. 核心 AI 工作流程 (已驗證)
-1. **搜尋亮點 (策略)**: NotebookLM (海量資料分析)
+1. **搜尋亮點 (策略)**: NotebookLM (大量資料分析)
 2. **提案簡報 (排版)**: Markdown 結構流 -> Google Slides
 3. **人天預估 (報價)**: Project Architect Skill (WBS 輸出)
 4. **建立規範 (視覺)**: Design System Gen + Figma AI
