@@ -107,8 +107,7 @@
 
     .sub-nav a { padding: 12px var(--sp-md); color: #333; }
     .sticky-nav a:hover, .sub-nav a:hover { background: #FDFDFD; }
-    .sticky-nav a.active { border-bottom-color: var(--primary); background: #FDFDFD; }
-    .sub-nav a.active { background: var(--primary); color: var(--text); }
+    .sticky-nav a.active, .sub-nav a.active { background: var(--primary); color: var(--text); border-bottom-color: var(--primary); }
 
     main { max-width: 1100px; margin: 0 auto; padding: 20px var(--sp-md) var(--sp-xl); display: flex; flex-direction: column; }
     [id] { scroll-margin-top: 80px; }
@@ -577,7 +576,7 @@
       回應痛點 2：簡報排版手動調整
     </div>
     <div class="solution-body">
-      <h4>實戰案例：從 NotebookLM 到 Gemini Canvas 的自動化簡報生成</h4>
+      <h4>透過 AI 快速製作全家提案簡報</h4>
       
       <div class="insight-box">
         <h3>核心方法論：</h3>
@@ -968,8 +967,8 @@ Slide 13: 亮點 10 - 點數應用
 
       <div class="insight-box">
         <h3>核心方法論：</h3>
-        <p>1. Gemini Canvas：透過 Design System Generator Skill，將色彩與風格參數轉化為專業的 JSON Token 與 Figma AI Prompt。</p>
-        <p>2. Figma Make (AI)：接收標準化 Prompt，一鍵繪製完整的 UI Guideline 與原子組件庫。</p>
+        <p>1. Gemini Canvas：製作一個「設計規範指令產生器」，將複雜的樣式參數（如顏色、字體、圓角）自動轉化為 Figma Make 專用的 AI 提示詞。</p>
+        <p>2. Figma Make (AI)：接收標準化指令，一鍵繪製出包含原子組件與狀態的完整 UI Guideline。</p>
 
         <details>
             <summary>🛠️ 查看 Design System Generator Skill 配置細節</summary>
@@ -1083,13 +1082,22 @@ C. [Project Name]_GUIDELINE.md
           <div class="phase-badge">Phase 1: 生成器指令產出 (Prompt Generation)</div>
           <p><strong>情境：</strong>在 Gemini Canvas 中設定好品牌色、字體與圓角參數，請求 Design System Generator 生成給 Figma Make 看得懂的 Prompt。</p>
           <img src="截圖 2026-02-09 晚上9.10.24.png" class="step-img" alt="Gemini Canvas 生成 Prompt">
+          <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn" style="margin-top: 12px; text-decoration: none; background: var(--text); color: var(--primary);">
+            <span class="icon" style="margin-right: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </span>
+            開啟 Gemini Canvas 設計規範指令產生器
+          </a>
         </div>
 
         <!-- Phase 2 -->
         <div class="phase-card phase-2">
           <div class="phase-badge">Phase 2: Figma Make 視覺化生成 (Visual Output)</div>
           <p><strong>情境：</strong>將生成的 Prompt 貼到 Figma Make 上，一鍵產生完整的 Guideline 與元件庫，並直接拖入 Figma 檔案中使用。</p>
-          <div class="prompt-box"><div class="prompt-tag">ACTION</div>將上一步驟生成的 [Project Name]_v3_FIGMA_PROMPT.txt 內容完整複製，貼入 Figma Make 對話框中執行。</div>
+          <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md); align-items: stretch;">
+            <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.10.34.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Figma Make 生成預覽"></div>
+            <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.25.15.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="貼入 Figma 使用"></div>
+          </div>
         </div>
       </div>
     </div>
