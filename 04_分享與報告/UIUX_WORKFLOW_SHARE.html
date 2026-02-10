@@ -596,10 +596,11 @@
           <img src="截圖 2026-02-06 16.40.23.png" class="step-img" alt="NotebookLM 簡報大綱輸出">
         </div>
 
-        <!-- Phase 2 -->
+        <!-- Phase 2 (Merged) -->
         <div class="phase-card phase-2">
-          <div class="phase-badge">Phase 2: Gemini Canvas 專家指令 (Expert Instructions)</div>
-          <p><strong>任務：</strong>將 MD 內容貼入 Gemini，啟動 Canvas 模式並下達「PPT 製作專家」指令。嚴格指定安永黃與深灰配色，並要求純文字極簡排版。</p>
+          <div class="phase-badge">Phase 2: Gemini Canvas 專家轉化與產出 (Expert Transformation & Output)</div>
+          <p><strong>任務與成果：</strong>將 MD 內容貼入 Gemini 啟動 Canvas 模式，下達「PPT 製作專家」指令。AI 會依據安永視覺規範自動完成排版，設計師僅需最後檢核，省去 80% 的手工勞動。</p>
+          
           <div style="margin-bottom: var(--sp-md);">
             <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請扮演專業的 PPT 製作專家。請將下方的簡報大綱轉換成 slice 。
 設計規範：
@@ -844,14 +845,12 @@ Slide 13: 亮點 10 - 點數應用
 
 幫我透過上面的大綱轉成slice 但是我不要任何美編，只要單純文字編排就好</div>
           </div>
-        </div>
 
-        <!-- Result -->
-        <div class="phase-card phase-3" style="border-top-color: var(--success);">
-          <div class="phase-badge">最終成果呈現 (Final Results)</div>
-          <p><strong>情境：</strong>直接下載產出的 PPT 檔案，設計師僅需進行最後的邏輯檢核，省去 80% 的排版勞動。</p>
-          <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="PPT 最終產出 1">
-          
+          <div style="margin-top: var(--sp-md);">
+            <span class="step-label">最終成果預覽</span>
+            <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="Gemini Canvas 最終產出預覽">
+          </div>
+
           <button onclick="openPdf('My FamiPort App 2.0.pdf')" class="view-ppt-btn">
             <span class="btn-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -877,7 +876,7 @@ Slide 13: 亮點 10 - 點數應用
       <div class="insight-box">
         <h3>核心方法論：</h3>
         <p>1. NotebookLM：負責「結構化」。將分散的產品亮點轉化為具備設計邏輯的頁面清單表格。</p>
-        <p>2. Gemini CLI：負責「自動化報價」。驅動 Project Architect Skill 精算隱形成本，產出符合 6 欄位規範與 14pt 標準字級之 WBS 評估表。</p>
+        <p>2. Gemini CLI：負責「自動化表格產出」。驅動 Project Architect Skill 依據專業 Excel 範本，自動補全設計細節並產出符合 6 欄位規範與 14pt 標準字級之 WBS 評估表。</p>
         
         <details>
             <summary>🛠️ 查看 CLI Skill 配置細節 (6 欄位結構定義)</summary>
@@ -935,7 +934,7 @@ Slide 13: 亮點 10 - 點數應用
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: 需求規格轉化 (Spec Translation)</div>
-          <p><strong>情境：</strong>透過 NotebookLM 將亮點轉化成頁面與功能清單的表格。</p>
+          <p><strong>情境：</strong>將痛點一產出的亮點內容獨立存檔並匯入 NotebookLM，要求 AI 依據亮點轉化為精確的頁面清單與人天估算表格。</p>
           <img src="截圖 2026-02-09 下午4.32.51.png" class="step-img" alt="NotebookLM 表格化輸出">
           <div class="prompt-box"><div class="prompt-tag">USER 輸入</div>這幾個亮點我們需要進行設計，你能依照這情境幫我預估可能會呈現的畫面嗎？
 
@@ -948,7 +947,7 @@ Slide 13: 亮點 10 - 點數應用
 
         <!-- Phase 2 -->
         <div class="phase-card phase-2" style="border-top-color: var(--accent);">
-          <div class="phase-badge">Phase 2: AI 自動產出報價單 (Excel Generation)</div>
+          <div class="phase-badge">Phase 2: AI 自動產出頁面與人天的清單</div>
           <p><strong>情境：</strong>將表格整個複製貼到 Gemini CLI 上面，製作 excel 表格。</p>
           <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md); align-items: stretch;">
             <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.05.16.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="CLI 輸入表格"></div>
