@@ -60,7 +60,16 @@
     h4 { font-size: var(--fs-l4); font-weight: 700; }
     h5 { font-size: var(--fs-body); font-weight: 700; }
 
-    .icon { display: inline-flex; align-self: center; top: 0.125em; position: relative; }
+    .icon { display: inline-flex; align-items: center; justify-content: center; position: relative; }
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
     p { margin-bottom: var(--sp-sm); }
     ul { margin-bottom: var(--sp-sm); padding-left: 20px; }
     li { margin-bottom: 0; }
@@ -289,6 +298,19 @@
 
     /* Adjust scroll margin for sections so they land perfectly below two sticky bars */
     .solution-card { scroll-margin-top: 180px; }
+
+    /* PDF Modal Styles */
+    .pdf-modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(26, 26, 36, 0.95);
+      display: none; align-items: center; justify-content: center;
+      z-index: 5000;
+    }
+    .pdf-modal.active { display: flex; }
+    .pdf-content { width: 90%; height: 90vh; position: relative; background: white; border-radius: 8px; overflow: hidden; }
+    .pdf-close { position: absolute; top: 15px; right: 20px; font-size: 30px; color: #333; cursor: pointer; z-index: 5001; font-weight: bold; background: rgba(255,255,255,0.8); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+    .pdf-close:hover { background: var(--primary); }
+    iframe { border: none; width: 100%; height: 100%; }
   </style>
 </head>
 <body>
@@ -830,12 +852,12 @@ Slide 13: 亮點 10 - 點數應用
           <p><strong>情境：</strong>直接下載產出的 PPT 檔案，設計師僅需進行最後的邏輯檢核，省去 80% 的排版勞動。</p>
           <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="PPT 最終產出 1">
           
-          <a href="My FamiPort App 2.0.pdf" target="_blank" class="view-ppt-btn">
-            <span class="icon" style="margin-right: 8px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line></svg>
+          <button onclick="openPdf('My FamiPort App 2.0.pdf')" class="view-ppt-btn">
+            <span class="btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
             線上預覽改版企劃書 (PDF)
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -960,7 +982,7 @@ Slide 13: 亮點 10 - 點數應用
           <p><strong>情境：</strong>在 Gemini Canvas 中設定好品牌色、字體與圓角參數，請求 Design System Generator 生成給 Figma Make 看得懂的 Prompt。</p>
           <img src="截圖 2026-02-09 晚上9.10.24.png" class="step-img" alt="Gemini Canvas 生成 Prompt">
           <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn">
-            <span class="icon" style="margin-right: 8px;">
+            <span class="btn-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
             開啟 Gemini Canvas 設計規範指令產生器
@@ -976,8 +998,8 @@ Slide 13: 亮點 10 - 點數應用
             <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.25.15.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="貼入 Figma 使用"></div>
           </div>
           <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn">
-            <span class="icon" style="margin-right: 8px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span class="btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
             在 Figma 中查看生成的設計規範
           </a>
@@ -1017,8 +1039,8 @@ Slide 13: 亮點 10 - 點數應用
           <div class="phase-badge">最終高擬真成果呈現</div>
           <p><strong>成果：</strong>AI 生成的高保真頁面不僅還原了設計，還能直接生成具備微互動效果的連結，讓客戶在第一時間感受真實體驗。</p>
           <a href="https://badge-brain-30475314.figma.site" target="_blank" class="view-ppt-btn">
-            <span class="icon" style="margin-right: 8px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <span class="btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
             線上預覽高擬真互動原型
           </a>
@@ -1027,6 +1049,14 @@ Slide 13: 亮點 10 - 點數應用
     </div>
   </div>
 </section>
+
+<!-- PDF Modal -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-close" onclick="closePdf()">&times;</div>
+  <div class="pdf-content">
+    <iframe id="pdfFrame" src=""></iframe>
+  </div>
+</div>
 
 <footer><p>Generated by Gemini CLI | Optimized for EY Style System</p></footer>
 
@@ -1038,6 +1068,23 @@ Slide 13: 亮點 10 - 點數應用
 <script>
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
+
+  // PDF Functions
+  function openPdf(url) {
+    const modal = document.getElementById('pdfModal');
+    const frame = document.getElementById('pdfFrame');
+    frame.src = url;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePdf() {
+    const modal = document.getElementById('pdfModal');
+    const frame = document.getElementById('pdfFrame');
+    frame.src = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
   document.querySelectorAll('.step-img').forEach(img => {
     img.addEventListener('click', () => {
