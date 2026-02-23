@@ -317,7 +317,7 @@
 
 <header>
   <h1>UI/UX Workflow Toolkit</h1>
-  <p class="subtitle">設計師的 AI 混合工作流程</p>
+  <p class="subtitle">設計師的 AI 混合工作流程程</p>
 </header>
 
 <nav class="sticky-nav">
@@ -335,7 +335,7 @@
 </div>
 
 <section id="section1">
-  <h2>一、前言：工作流程中的時間損耗</h2>
+  <h2>一、前言：工作流程程中的時間損耗</h2>
   <div class="pain-point-container">
     <div class="pain-point-item">
       <h4>痛點 1：競品分析資料散亂，難以收斂重點</h4>
@@ -350,18 +350,18 @@
       <p>手動拆解 Sitemap 與評估各頁面工時需耗費大量心力，且難以涵蓋所有特殊狀態，導致產出報價單的過程漫長且效率低下。</p>
     </div>
     <div class="pain-point-item">
-      <h4>痛點 4：Design System 變數手動建立，維護難度高</h4>
-      <p>在 Figma 手動設數百個變數，一旦修改需逐一同步，隱藏時間成本高。</p>
+      <h4>痛點 4：彙整想法，透過 Figma Make 快速製作視覺與高擬真頁面</h4>
+      <p>傳統原型僅能表達功能架構，無法傳達任務進度條與勳章帶來的心理驅動力。這使得團隊難以在初期驗證「任務式設計」對提升使用率的實際效果。</p>
     </div>
     <div class="pain-point-item">
-      <h4>痛點 5：傳統 Prototype 細節不足，難以還原真實質感</h4>
-      <p>原本的原型無法還原微互動與視覺細節，且手動完成動效耗時巨大；導致客戶在初期理解落差，直到後期高保真階段才發現問題，造成大幅修改成本。</p>
+      <h4>痛點 5：手動整理設計系統極其耗時，難以從視覺產出逆向同步</h4>
+      <p>在高保真視覺確認後，設計師仍需耗費大量勞務手動整理圖中的顏色、字體與元件規範。缺乏自動化機制將已確認的高擬真產出逆向匯出為設計系統 (Design System)。</p>
     </div>
   </div>
 </section>
 
 <section id="section2">
-  <h2>二、核心方法論：混合工作流程</h2>
+  <h2>二、核心方法論：混合工作流程程</h2>
   <div class="insight-box">
     <h3>設計師應專注決策，而非機械產出</h3>
     <p>
@@ -396,182 +396,124 @@
 </nav>
 
 <section>
-  <div class="solution-card" id="sol1">
+      <!-- 解決方案 1 實戰案例 -->
+    <div class="solution-card" id="sol1">
     <div class="solution-header">
       <span class="icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </span>
-      回應痛點 1：競品分析資料散亂
+      回應痛點 1：從全球標竿中獵取「高頻互動機制」，破解使用者上癮任務
     </div>
     <div class="solution-body">
-      <h4>實戰案例：My FamiPort App 「我的專屬」優化任務</h4>
+      <h4>實戰案例：My FamiPort App 亮點獵取與任務佈局</h4>
       
       <div class="insight-box">
-        <h3>核心方法論：</h3>
-        <p>1. Gemini Deep Research：負責「廣」。針對國內外所有競品進行地毯式搜索，挖掘功能、定價與用戶評價等非結構化數據。</p>
-        <p>2. NotebookLM：負責「深」。將搜尋到的數據餵養給 AI，透過交叉質問激發市場缺口與產品靈感。</p>
+        <h3>研究核心：收集後續戰鬥所需的「任務子彈」</h3>
+        <p>我們不再進行發散的功能比對，而是精準識別全球零售 App 如何透過「微型任務」驅動回訪。透過 AI 快速識別 GS25、全聯、日本超商等標竿的高頻互動機制，將其轉化為『我的專屬』改版所需的行為誘因素材庫。</p>
       </div>
 
       <div class="phase-container">
-        
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
-          <div class="phase-badge">Phase 1: Gemini 廣度挖掘 (Deep Research)</div>
-          <p><strong>任務：</strong>採集全家現況與全球指標性競品數據。</p>
-          
-          <div style="margin-bottom: var(--sp-md);">
-            <span class="step-label">步驟 1：全家現況與痛點診斷</span>
-            <img src="釐清目前需求.jpg" class="step-img" alt="全家診斷">
-            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請扮演資深零售體驗 (UX) 研究員。針對『全家 My FamiPort App』進行診斷：
-1. 【核心商流流量盤點】：找出用戶「真正高頻使用」的 Top 3 剛性需求。
-2. 【OMO 體驗斷點分析】：分析用戶在手機 App 操作到實體機台執行中最挫折的斷點。
-3. 【「我的專屬」模組病灶】：剖析為何目前區塊使用率低？從功能面、介面面、價值面分析。</div>
-          </div>
-
-          <div>
-            <span class="step-label">步驟 2：全球零售競品特徵掃描 (含異類分析)</span>
-            <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">台灣與日本各大超商與零售競品分析</p>
-            <div style="display: flex; gap: 24px; align-items: flex-start;">
-              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.39.43.png" class="step-img" style="margin-top: 0;" alt="日本研究"></div>
-              <div style="flex: 1;"><img src="截圖 2026-02-05 晚上7.40.04.png" class="step-img" style="margin-top: 0;" alt="台灣研究"></div>
+          <div class="phase-badge">Phase 1: 全球任務特徵掃描 (Mechanism Scanning)</div>
+          <p><strong>動作：</strong>利用 Gemini Deep Research 掃描全球具備「高黏著度」的零售任務。如 GS25 的雲端寄取任務、日本超商的遊戲化集章等。</p>
+          <div style="display: flex; gap: 24px; align-items: flex-start;">
+            <div style="flex: 1;">
+              <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">日本超商：遊戲化任務分析</p>
+              <img src="assets/images/research-japan-retail.png" class="step-img" style="margin-top: 0;" alt="日本零售任務研究">
             </div>
-                        <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>接著，請擴大搜索範圍，進行「全球零售 App 標竿分析」，針對四個維度掃描：
-1. 【韓國 GS25 - 雲端倉儲策略】：分析「My Own Refrigerator」如何寄存贈品。
-2. 【台灣全聯 PX Mart - 每日活躍策略】：如何利用每日簽到創造高日活躍度。
-3. 【日本超商 (FamilyMart/Lawson) - 遊戲化行銷】：個人化優惠券、集章進度條。
-4. 【台灣 7-ELEVEN - 生態圈整合】：分析 OPEN POINT 整合點數與票夾的做法。</div>
-          </div>
-
-          <div style="margin-top: var(--sp-lg);">
-            <span class="step-label">步驟 2.1：透過 Kortex 將 Gemini 蒐集到的資料依次匯入 NotebookLM 進行分析</span>
-            <p style="font-size: var(--fs-sm); color: var(--secondary); margin-top: 8px;">利用 Kortex 插件將 Gemini 的研究成果（如全球零售標竿分析）一鍵同步至 NotebookLM，建立具備上下文關聯的專案知識庫。</p>
-            <img src="截圖 2026-02-09 上午11.46.07.png" class="step-img" alt="截圖 2026-02-09 上午11.46.07">
+            <div style="flex: 1;">
+              <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">台灣零售：互動誘因分析</p>
+              <img src="assets/images/research-taiwan-retail.png" class="step-img" style="margin-top: 0;" alt="台灣零售誘因分析">
+            </div>
           </div>
         </div>
 
-        <!-- Phase 2 -->
-        <div class="phase-card phase-2">
-          <div class="phase-badge">Phase 2: NotebookLM 深度萃取 (Strategy Synthesis)</div>
-          <p><strong>任務：</strong>強制 AI 將「全家的問題」與「競品的解法」進行配對。</p>
-          
-          <div style="margin-bottom: var(--sp-md);">
-            <span class="step-label">步驟 3：跨文件痛點與解法配對</span>
-            <img src="截圖 2026-02-06 凌晨2.01.21.png" class="step-img" alt="交叉分析">
-            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請仔細閱讀我上傳的兩份文件（全家診斷、競品掃描），執行交叉矩陣分析並輸出表格：
-1. 【全家核心商流】：列出流量最大的 3 個功能。
-2. 【現存痛點】：對應的使用者痛點。
-3. 【可借鏡的競品機制】：從 GS25、全聯或日本超商案例中找出具體解法。
-4. 【預期優化方向】：應用在「我的專屬」頁面的具體方式。</div>
-          </div>
-
-          <div>
-            <span class="step-label">步驟 4：生成產品規格與想法</span>
-            <img src="截圖 2026-02-06 凌晨2.46.40.png" class="step-img" alt="規格草案">
-            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>基於上述分析，請正式規劃『全家 My FamiPort App - 我的專屬』改版企劃書。
-目標：將此區塊從「冷門工具」轉型為「熱門生活儀表板」。
-請提供 3 個具體的改版功能提案，每個提案需包含：功能命名、用戶故事、UI/UX 介面概念、遊戲化機制、解決的痛點。</div>
-          </div>
-        </div>
-
-        <!-- Phase 3 -->
+        <!-- Phase 3 (10大亮點詳細說明) -->
         <div class="phase-card phase-3">
-          <div class="phase-badge">最終優化方案呈現</div>
+          <div class="phase-badge">最終戰果：10 大任務化功能亮點提案</div>
           
           <div style="margin-bottom: var(--sp-md); color: var(--secondary); font-size: var(--fs-sm); border-left: 2px solid var(--primary); padding-left: var(--sp-sm);">
-            <p style="margin-bottom: 8px;">本方案依據『全家 My FamiPort App』前十大剛性需求功能進行分層排序。透過跨案例分析，將全家現有的流量優勢與全球零售標竿之核心機制（如 GS25 雲端寄取、全聯任務牆、日本超商遊戲化行銷）進行精確配對。</p>
-            <p style="margin-bottom: 0;">策略核心在於將體驗從「被動查詢工具」轉化為「智慧生活儀表板」，並導入行為心理學誘因，在解決 OMO 體驗斷點的同時，創造實質的商業價值與用戶回訪率。</p>
+            <p style="margin-bottom: 0;">策略核心在於將體驗從「被動查詢工具」轉化為「智慧生活儀表板」，透過以下 10 個任務化模組，創造實質的使用者回訪率與商業價值。</p>
           </div>
           
           <div class="feature-list">
-            <!-- 1 -->
             <div class="feature-item">
               <h5>1. Fami-Link 雲端列印快手</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 趕時間的上班族進店只想趕快列印，不想在櫃檯前手忙腳亂找代碼或擔心代碼過期。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 趕時間的使用者進店只想趕快列印，不想在機台前手忙腳亂找代碼或擔心代碼過期。</p>
               <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考動態島或首頁整合設計。平常隱藏，只要有上傳檔案，首頁最上方即出現卡片顯示文件就緒與一鍵開啟條碼。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 等待不無聊。系統偵測到機台操作等待空檔時，彈出限時 10 分鐘的商品折價券。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 等待不無聊。系統偵測到機台操作等待空檔時，彈出限時 10 分鐘的商品折價券。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決代碼過期焦慮與機台前等待的尷尬斷點。</p>
             </div>
-            <!-- 2 -->
             <div class="feature-item">
               <h5>2. 賣家集章卡</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 網拍小賣家希望每次寄件都有回饋感，以此增加選擇全家而非競品的動力。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考集點貼紙畫面。在頁面中間設置數位集章卡，視覺模擬真實蓋章效果，顯示月寄件進度。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 寄件馬拉松。集滿 10 件贈送商品，利用目標漸近心理促使賣家為了湊滿印章多寄一件。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考集點貼紙畫面。在頁面中間設定數位集章卡，視覺模擬真實蓋章效果，顯示月寄件進度。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 寄件馬拉松。集滿 10 件贈送商品，利用目標漸近心理促使賣家為了湊滿印章多寄一件。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決寄件流程純勞務無獎勵的問題，留住高價值使用者。</p>
             </div>
-            <!-- 3 -->
             <div class="feature-item">
               <h5>3. 我的雲端冰箱</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 騎機車的通勤族想買促銷優惠，但不想一次提走大量重物。</p>
               <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考虛擬冰箱設計。改用圖像介面將已買未領的商品擺在架上，並標示過期剩餘天數。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 怕浪費提醒。快過期時推播領取或轉送提示，利用損失規避心理引導使用者回店。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 怕浪費提醒。快過期時推播領取或轉送提示，利用損失規避心理引導使用者回店。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決實體促銷拿不動的物理問題，創造必然的回訪機制。</p>
             </div>
-            <!-- 4 -->
             <div class="feature-item">
               <h5>4. 機台掃碼通</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 討厭在機台螢幕上反覆點選與輸入代碼，希望透過手機掃描快速登入。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面右上方設置醒目的掃描圖示。掃描機台 QR Code 後，手機內的寄件資料即自動同步。</p>
-              <p class="feature-detail"><span class="feature-label">誘進與遊戲化機制:</span> 免接觸獎勵。推廣期間使用掃碼登入即贈送點數，養成使用者數位操作習慣。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面右上方設定醒目的掃描圖示。掃描機台 QR Code 後，手機內的寄件資料即自動同步。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 免接觸獎勵。推廣期間使用掃碼登入即贈送點數，養成使用者數位操作習慣。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 徹底消滅手動輸入 10 碼代碼的低效體驗。</p>
             </div>
-            <!-- 5 -->
             <div class="feature-item">
               <h5>5. 超級一鍵通</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 結帳時不想頻繁切換會員、發票與付款畫面，避免造成後方排隊壓力。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面右下角設置懸浮按鈕。點擊後直接彈出整合會員、載具、支付與優惠券的單一聚合碼。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 透過極致效率產生的爽感，引導使用者將此頁面作為核心入口。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面右下角設定懸浮按鈕。點擊後直接彈出整合會員、載具、支付與優惠券的單一聚合碼。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 透過極致效率產生的爽感，引導使用者將此頁面作為核心入口。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決結帳時操作 App 的卡頓與排隊壓力。</p>
             </div>
-            <!-- 6 -->
             <div class="feature-item">
               <h5>6. 每日好運籤</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 平常沒事不會開啟 App，但想要每天進來試試運氣並賺取小回饋。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面顯眼處設置扭蛋機或求籤筒互動模組。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 試手氣。每天免費參與一次，利用變動獎勵機率提升日活躍使用者數。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面顯眼處設定扭蛋機或求籤筒互動模組。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 試手氣。每天免費參與一次，利用變動獎勵機率提升日活躍使用者數。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決工具類 App 低黏著度、無事不開啟的問題。</p>
             </div>
-            <!-- 7 -->
             <div class="feature-item">
               <h5>7. 繳費刮刮樂</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 剛繳完高額帳單心情受影響，想要獲得一點驚喜感或心理補償。</p>
               <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 偵測繳費完成後彈出數位收據，使用者可滑動螢幕體驗刮開銀漆的動畫效果。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 驚喜回饋。將痛苦的支出行為轉化為期待中獎的遊戲互動。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 驚喜回饋。將痛苦的支出行為轉化為期待中獎的遊戲互動。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決繳費服務僅有負向情緒回饋的體驗斷層。</p>
             </div>
-            <!-- 8 -->
             <div class="feature-item">
               <h5>8. 包裹雷達</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 常有網購需求，希望一眼確認待取包裹數量，方便下班順路領取。</p>
               <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 儀表板顯示待取包裹件數卡片，並連結物流進度。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 搬運補給。偵測到大件或多件包裹時自動產生飲品優惠券，提示搬重物辛苦了。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 搬運補給。偵測到大件或多件包裹時自動產生飲品優惠券，提示搬重物辛苦了。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決物流資訊不同步與忘記取件的問題。</p>
             </div>
-            <!-- 9 -->
             <div class="feature-item">
               <h5>9. 娛樂票夾</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 準備參加大型活動，需要隨時確認票券狀態以確保安心入場。</p>
               <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 數位票根圖案化呈現，點擊可翻面查看詳細座位資訊，模擬實體票券質感。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 開場前導購。活動開始前根據場地位置推播周邊門市的咖啡優惠。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 開場前導購。活動開始前根據場地位置推播周邊門市的咖啡優惠。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決使用者對數位票券找不到或消失的不信任感。</p>
             </div>
-            <!-- 10 -->
             <div class="feature-item">
               <h5>10. 點數計算機</h5>
               <p class="feature-detail"><span class="feature-label">使用者情境:</span> 擁有大量點數但不知道實際價值，導致缺乏兌換動力。</p>
               <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 直接將點數數值換算為實質商品或現金價值。如顯示：等於 2 瓶綠茶。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與遊戲化機制:</span> 目標進度。顯示距離下一個熱門獎勵的差距，刺激持續消費累積。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 目標進度。顯示距離下一個熱門獎勵的差距，刺激持續消費累積。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決點數價值感模糊導致使用者不積極兌換的問題。</p>
             </div>
           </div>
-          </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- 痛點 2 實戰案例 -->
   <div class="solution-card" id="sol2">
     <div class="solution-header">
       <span class="icon">
@@ -593,265 +535,20 @@
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: NotebookLM 結構化輸出 (Structural Output)</div>
           <p><strong>任務：</strong>在 NotebookLM 中完成方案優化後，要求 AI 以 Markdown 格式輸出「簡報大綱」，確保包含標題、內文點與核心效益。</p>
-          <img src="截圖 2026-02-06 16.40.23.png" class="step-img" alt="NotebookLM 簡報大綱輸出">
+          <img src="assets/images/notebooklm-ppt-outline.png" class="step-img" alt="NotebookLM 產出之簡報大綱">
         </div>
 
-        <!-- Phase 2 (Merged) -->
+        <!-- Phase 2 -->
         <div class="phase-card phase-2">
           <div class="phase-badge">Phase 2: Gemini Canvas 專家轉化與產出 (Expert Transformation & Output)</div>
           <p><strong>任務與成果：</strong>將 MD 內容貼入 Gemini 啟動 Canvas 模式，下達「PPT 製作專家」指令。AI 會依據安永視覺規範自動完成排版，設計師僅需最後檢核，省去 80% 的手工勞動。</p>
           
-          <div style="margin-bottom: var(--sp-md);">
-            <div class="prompt-box"><div class="prompt-tag">PROMPT 提示詞</div>請扮演專業的 PPT 製作專家。請將下方的簡報大綱轉換成 slice 。
-設計規範：
-字體與格式：
-全文字型指定為「微軟正黑體」。
-
-Slide 1: 封面
-
-主標題： My FamiPort App 2.0：從冷門工具變身「熱門生活儀表板」
-
-副標題： 解密 10 大改版亮點：如何消除 OMO 斷點，將「剛需流量」轉化為高頻「消費黏著度」
-
-
-
-Slide 2: 痛點分析
-
-標題：我們正面臨的「體驗負債」
-
-1. 現況挑戰一：半套數位化的「輸入地獄」
-
-
-
-問題： 手機操作完，到店裡仍需在機台彎腰、手動輸入 10 碼代碼。
-
-影響： 非真正數位轉型，造成寄件賣家與列印族群極大挫折。
-
-2. 現況挑戰二：時間壓力下的「流程焦慮」
-
-
-
-問題： 缺乏「快取機制」與「骨架屏」，結帳列印讀取轉圈圈。
-
-影響： 排隊壓力讓用戶不敢用 FamiPay，使用率難以提升。
-
-3. 現況挑戰三：缺乏誘因的「工具人宿命」
-
-
-
-問題： 定位為被動查詢工具，缺乏遊戲化與庫存管理機制。
-
-影響： 用戶寄完件即離，無法建立日活躍度 (DAU)。
-
-Slide 3: 痛點總結
-
-標題：若不改變，我們將失去什麼？
-
-
-
-「若不解決『輸入繁瑣』與『等待枯燥』的斷點，全家將在 OMO 戰場失去高價值的 C2C 賣家與年輕數位原生代。」
-
-Slide 4: 亮點 1 - 雲端列印
-
-標題：Fami-Link 雲端列印快手首頁動態島，一鍵喚醒列印碼
-
-
-
-內容闡述：
-
-參考 iOS 動態島概念。
-
-用戶上傳檔案後，App 首頁頂端自動置頂「文件準備就緒」卡片。
-
-點擊即跳出條碼，無須進選單翻找。
-
-價值主張：【消除焦慮】
-
-解決機台前「找不到檔案」或「怕代碼過期」的恐慌。
-
-大幅縮短機台佔用時間。
-
-Slide 5: 亮點 2 - 賣家任務
-
-標題：賣家集章任務卡寄件遊戲化，打造賣家成就系統
-
-
-
-內容闡述：
-
-將枯燥的寄件流程轉化為「擬真集章卡」。
-
-機制：每寄一件蓋一個章，集滿 10 件自動兌換咖啡。
-
-價值主張：【留存大戶】
-
-利用「目標漸近效應」鎖定高頻微型賣家。
-
-防止賣家流失至競爭對手。
-
-Slide 6: 亮點 3 - 雲端庫存
-
-標題：我的雲端冰箱實體贈品數位化，庫存隨手存
-
-
-
-內容闡述：
-
-全面導入「買一送一存手機」機制。
-
-櫃檯未領取贈品轉化為具象化「虛擬冰箱」庫存。
-
-具備倒數提醒功能。
-
-價值主張：【強制回訪】
-
-解決「促銷拿不動」的物理痛點。
-
-將單次交易轉化為未來的必然回訪（回來領庫存）。
-
-Slide 7: 亮點 4 - 機台串接
-
-標題：機台登入魔杖掃碼取代輸入，消滅 10 碼斷點
-
-
-
-內容闡述：
-
-App 首頁設置醒目「掃描登入」按鈕。
-
-開啟相機掃描 FamiPort 機台螢幕，瞬間同步寄件/列印資料。
-
-完全免除手動輸入代碼。
-
-價值主張：【極致效率】
-
-徹底消滅 OMO 流程中最原始的「手動輸入」斷點。
-
-優化店內機台週轉率。
-
-Slide 8: 亮點 5 - 極速支付
-
-標題：超級一鍵通懸浮聚合碼，3 秒極速結帳
-
-
-
-內容闡述：
-
-整合會員、載具、支付於單一 QR Code。
-
-透過右下角懸浮按鈕 (FAB) 一鍵彈出。
-
-解決切換多個畫面的卡頓。
-
-價值主張：【支付流暢】
-
-降低結帳時的排隊壓力。
-
-直接提升 FamiPay 的使用意願與成功率。
-
-Slide 9: 亮點 6 - 每日互動
-
-標題：每日好運扭蛋機機率性獎勵，騙取每日開啟
-
-
-
-內容闡述：
-
-首頁設置「每日免費扭蛋」。
-
-提供高頻次微型獎勵（如 1 點）與低頻次大獎。
-
-吸引用戶沒事也來試手氣。
-
-價值主張：【提升黏著】
-
-利用「變動獎勵」心理學。
-
-解決 App 工具屬性太強、平時無人開啟的問題。
-
-Slide 10: 亮點 7 - 繳費體驗
-
-標題：繳費回饋刮刮樂轉化付款痛苦，繳費變驚喜
-
-
-
-內容闡述：
-
-系統偵測到繳費完成後，跳出「數位收據刮刮樂」。
-
-用戶刮開可能獲得購物金或點數回饋。
-
-價值主張：【情緒翻轉】
-
-將「繳錢的負面情緒」轉化為「期待中獎的正面情緒」。
-
-鞏固代收服務的忠誠度。
-
-Slide 11: 亮點 8 - 智慧提醒
-
-標題：智慧包裹雷達主動式待辦，到店搬運補給
-
-
-
-內容闡述：
-
-首頁卡片主動顯示「待取包裹數量」。
-
-若包裹體積大或數量多，系統自動推播「大瓶水/提神飲料」優惠券。
-
-價值主張：【情境行銷】
-
-解決資訊不同步導致的白跑一趟。
-
-利用取貨場景創造「順手買」的客單價。
-
-Slide 12: 亮點 9 - 票券管理
-
-標題：擬真娛樂票夾資產可視化，展演前導購
-
-
-
-內容闡述：
-
-將文字列表轉化為漂亮的「擬真數位票根」。
-
-點擊可翻轉查看座位資訊。
-
-在開演前推播周邊門市優惠。
-
-價值主張：【重建信任】
-
-透過視覺化的資產管理。
-
-消除用戶對「數位票券遺失」的不安全感。
-
-Slide 13: 亮點 10 - 點數應用
-
-標題：點數價值翻譯機點數貨幣化，刺激沈睡資產
-
-
-
-內容闡述：
-
-改變點數顯示方式，建立直觀價值連結。
-
-不再只顯示「3000 點」，而是顯示「= 2 瓶綠茶」或「= 10 元現金」。
-
-價值主張：【促進兌換】
-
-讓用戶秒懂點數購買力。
-
-有效喚醒沈睡點數，帶動店內兌換人流。
-
-幫我透過上面的大綱轉成slice 但是我不要任何美編，只要單純文字編排就好</div>
-          </div>
-
           <div style="margin-top: var(--sp-md);">
             <span class="step-label">最終成果預覽</span>
-            <img src="截圖 2026-02-06 18.15.48.png" class="step-img" alt="Gemini Canvas 最終產出預覽">
+            <img src="assets/images/gemini-canvas-ppt-preview.png" class="step-img" alt="Gemini Canvas 簡報排版成果">
           </div>
 
-          <button onclick="openPdf('My FamiPort App 2.0.pdf')" class="view-ppt-btn">
+          <button onclick="openPdf('assets/data/My FamiPort App 2.0.pdf')" class="view-ppt-btn">
             <span class="btn-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
@@ -862,7 +559,6 @@ Slide 13: 亮點 10 - 點數應用
     </div>
   </div>
 
-  <!-- 痛點 3 實戰案例 -->
   <div class="solution-card" id="sol3">
     <div class="solution-header">
       <span class="icon">
@@ -935,7 +631,7 @@ Slide 13: 亮點 10 - 點數應用
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: 需求規格轉化 (Spec Translation)</div>
           <p><strong>情境：</strong>將痛點一產出的亮點內容獨立存檔並匯入 NotebookLM，要求 AI 依據亮點轉化為精確的頁面清單與人天估算表格。</p>
-          <img src="截圖 2026-02-09 下午4.32.51.png" class="step-img" alt="NotebookLM 表格化輸出">
+          <img src="assets/images/notebooklm-wbs-table.png" class="step-img" alt="NotebookLM 生成之 WBS 估算表">
           <div class="prompt-box"><div class="prompt-tag">USER 輸入</div>這幾個亮點我們需要進行設計，你能依照這情境幫我預估可能會呈現的畫面嗎？
 
 層級如下示意：我需要我個功能會產生的頁面，與設計人員的製作天數評估。
@@ -950,103 +646,146 @@ Slide 13: 亮點 10 - 點數應用
           <div class="phase-badge">Phase 2: AI 自動產出頁面與人天的清單</div>
           <p><strong>情境：</strong>將表格整個複製貼到 Gemini CLI 上面，製作 excel 表格。</p>
           <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md); align-items: stretch;">
-            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.05.16.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="CLI 輸入表格"></div>
-            <div style="flex: 1;"><img src="截圖 2026-02-09 下午4.27.48.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="CLI 生成 Excel"></div>
+            <div style="flex: 1;"><img src="assets/images/cli-wbs-input.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Gemini CLI 接收 WBS 資料指令"></div>
+            <div style="flex: 1;"><img src="assets/images/cli-excel-generation.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Gemini CLI 自動產出之 Excel 報表"></div>
           </div>
         </div>
     </div>
   </div>
 
-  <!-- 痛點 4 實戰案例 -->
-  <div class="solution-card" id="sol4">
+            <!-- 解決方案 4 實戰案例 -->
+    <div class="solution-card" id="sol4">
     <div class="solution-header">
       <span class="icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </span>
-      回應痛點 4：Design System 變數手動建立，維護難度高
+      回應痛點 4：彙整戰略想法，利用 Figma Make 快速製作視覺與高擬真任務頁面
     </div>
     <div class="solution-body">
-      <h4>實戰案例：自動化設計系統生成與 Figma 整合</h4>
+      <h4>實戰案例：全家「我的專屬」從「私人秘書」升級為「主動式任務成就中心」</h4>
 
       <div class="insight-box">
-        <h3>核心方法論：</h3>
-        <p>1. Gemini Canvas：製作一個「設計規範指令產生器」，將複雜的樣式參數（如顏色、字體、圓角）自動轉化為 Figma Make 專用的 AI 提示詞。</p>
-        <p>2. Figma Make (AI)：接收標準化指令，一鍵繪製出包含原子組件與狀態的完整 UI Guideline。</p>
+        <h3>核心改版策略：利用任務機制提升互動頻率與使用者黏著度</h3>
+        <p>我們將原本專注於資產彙整的私人秘書角色，注入具備主動性與回饋感的任務機制。透過 AI 快速產出高擬真視覺，驗證成就系統與進度回饋如何有效引發使用者的開啟動機，將原本「領東西才開啟」的被動功能，轉化為「每天都想點開看看」的互動儀表板。</p>
       </div>
 
       <div class="phase-container">
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
-          <div class="phase-badge">Phase 1: 生成器指令產出 (Prompt Generation)</div>
-          <p><strong>情境：</strong>在 Gemini Canvas 中設定好品牌色、字體與圓角參數，請求 Design System Generator 生成給 Figma Make 看得懂的 Prompt。</p>
-          <img src="截圖 2026-02-09 晚上9.10.24.png" class="step-img" alt="Gemini Canvas 生成 Prompt">
-          <a href="https://gemini.google.com/share/2ca1a70ab866" target="_blank" class="view-ppt-btn">
-            <span class="btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </span>
-            開啟 Gemini Canvas 設計規範指令產生器
-          </a>
+          <div class="phase-badge">Phase 1: 戰略想法與高擬真產出 (Strategy & Output)</div>
+          <p><strong>動作：</strong>將 NotebookLM 提煉出的優化方向與「生活儀表板」概念，直接交給 Figma Make 變成看得見、具備真實體感的高擬真畫面。</p>
+          
+          <div style="margin-bottom: var(--sp-md);">
+            <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 8px;">戰略規劃圖 (想法整合)</p>
+            <img src="assets/images/new_strategy_plan.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="戰略規劃圖">
+          </div>
+
+          <div style="background: #FFFBE6; padding: var(--sp-md); border: 1px solid var(--primary);">
+            <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">新版亮點：任務導向模式 (主動參與)</p>
+            <div style="display: flex; gap: var(--sp-md); align-items: flex-start;">
+              <div style="flex: 1;">
+                <p style="font-size: var(--fs-xs); color: var(--secondary); margin-bottom: 4px; line-height: 1.2;">1. 常用服務<br>整合高頻功能</p>
+                <img src="assets/images/new-service-common.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版常用服務">
+              </div>
+              <div style="flex: 1;">
+                <p style="font-size: var(--fs-xs); color: var(--secondary); margin-bottom: 4px; line-height: 1.2;">2. 任務中心<br>主動觸發回訪</p>
+                <img src="assets/images/new-mission-center.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版任務中心">
+              </div>
+              <div style="flex: 1;">
+                <p style="font-size: var(--fs-xs); color: var(--secondary); margin-bottom: 4px; line-height: 1.2;">3. 自選獎勵<br>強化成就回饋</p>
+                <img src="assets/images/new-reward-select.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版自選獎勵">
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Phase 2 -->
-        <div class="phase-card phase-2">
-          <div class="phase-badge">Phase 2: Figma Make 視覺化生成 (Visual Output)</div>
-          <p><strong>情境：</strong>將生成的 Prompt 貼到 Figma Make 上，一鍵產生完整的 Guideline 與元件庫，並直接拖入 Figma 檔案中使用。</p>
-          <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md); align-items: stretch;">
-            <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.10.34.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Figma Make 生成預覽"></div>
-            <div style="flex: 1;"><img src="截圖 2026-02-09 晚上9.25.15.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="貼入 Figma 使用"></div>
+        <!-- Phase 3 -->
+        <div class="phase-card phase-3" style="border-top-color: var(--accent);">
+          <div class="phase-badge">UX 策略演進報告 (UX Strategy Report)</div>
+          <p><strong>成果：</strong>透過對比分析，驗證了從「數位資產」轉向「任務激勵」能有效突破工具性陷阱。</p>
+          
+          <div style="overflow-x: auto; margin-top: var(--sp-md);">
+            <table style="width: 100%; border-collapse: collapse; font-size: var(--fs-sm); border: 1px solid var(--border); background: #FFF;">
+              <thead>
+                <tr style="background: #f6f6fa; border-bottom: 2px solid var(--primary);">
+                  <th style="padding: 12px; text-align: left; width: 18%;">維度</th>
+                  <th style="padding: 12px; text-align: left; width: 35%; color: var(--secondary);">舊版設計 (資產管理模式)</th>
+                  <th style="padding: 12px; text-align: left; width: 35%;">新版規劃 (任務導向模式)</th>
+                  <th style="padding: 12px; text-align: left; width: 12%;">策略價值</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border);">
+                  <td style="padding: 12px; font-weight: 700;">1. 主要功能</td>
+                  <td style="padding: 12px; color: var(--secondary); background: #FCFCFD;"><b>數位資產</b>：管理商品寄杯、酷碰券與消費進度。<br><small>例如：單純查看咖啡剩餘杯數、存放酷碰券。</small></td>
+                  <td style="padding: 12px; background: #FFFBE6;"><b>生活儀表板</b>：整合任務中心與主動式成就系統。<br><small>例如：追蹤「已完成 7 次任務」，查看「下一檻獎勵 +50 點」。</small></td>
+                  <td style="padding: 12px; font-weight: 700; color: var(--success);">主動參與</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                  <td style="padding: 12px; font-weight: 700;">2. 設計初衷</td>
+                  <td style="padding: 12px; color: var(--secondary); background: #FCFCFD;"><b>降低搜尋成本</b>：方便櫃檯結帳時快速掌握資產。<br><small>例如：在櫃檯結帳前，快速開啟條碼進行兌換。</small></td>
+                  <td style="padding: 12px; background: #FFFBE6;"><b>輔助決策與助力</b>：將複雜資訊透明化，降低心理負擔。<br><small>例如：主動提醒「1個商品將在 6/31 到期」，輔助安排領取。</small></td>
+                  <td style="padding: 12px; font-weight: 700; color: var(--success);">建立信任</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 700;">3. 改版原因</td>
+                  <td style="padding: 12px; color: var(--secondary); background: #FCFCFD;"><b>工具性陷阱</b>：非領東西不開啟，使用者使用率低下。<br><small>例如：只有在進店準備取貨時，才會點開此頁面。</small></td>
+                  <td style="padding: 12px; background: #FFFBE6;"><b>提振使用率 (DAU)</b>：創造任務誘因，吸引主動回訪。<br><small>例如：為了看下一檻集章進度，即使沒進店也會點開。</small></td>
+                  <td style="padding: 12px; font-weight: 700; color: var(--success);">強化黏著</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <a href="https://www.figma.com/design/DOm5SXjYfWCVJtQxe6bAPI/Untitled?node-id=0-1" target="_blank" class="view-ppt-btn">
-            <span class="btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </span>
-            在 Figma 中查看生成的設計規範
-          </a>
         </div>
+      </div>
+
+      <div style="display: flex; gap: var(--sp-md); margin-top: var(--sp-sm);">
+        <a href="https://www.figma.com/make/2BoZZzf3FmXyQGbEgzIbJT/Generate-visual-layout?t=NsKGdAmE1qmKjrIq-1" target="_blank" class="view-ppt-btn" style="flex: 1; margin-top: 0;">
+          <span class="btn-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+          查看製作指令與過程
+        </a>
+        <a href="https://lock-emu-63976663.figma.site/" target="_blank" class="view-ppt-btn" style="flex: 1; margin-top: 0;">
+          <span class="btn-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+          線上預覽互動原型
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- 痛點 5 實戰案例 -->
+        <!-- 解決方案 5 實戰案例 -->
   <div class="solution-card" id="sol5">
     <div class="solution-header">
       <span class="icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </span>
-      回應痛點 5：傳統 Prototype 細節不足，難以還原真實質感
+      回應痛點 5：透過 Claude 將網頁內容轉化為設計規範
     </div>
     <div class="solution-body">
-      <h4>Figma Make AI：從靜態設計到高擬真互動轉化 (SCCG 為例)</h4>
+      <h4>實戰案例：自動化產出設計規範 —— 將網頁資料轉為 Guideline</h4>
 
       <div class="insight-box">
-        <h3>核心方法論：</h3>
-        <p>1. 視覺複製：將 Figma 本機設計圖直接貼入 Figma Make，建立視覺參考基準。</p>
-        <p>2. 意志對齊：透過「零發揮指令」，強制 AI 進行 1:1 像素級還原，確保細節不失真。</p>
+        <h3>核心做法：從完成的網頁直接產生規範文件</h3>
+        <p>在 Figma Make 完成高擬真網頁後，利用 Claude 讀取網站的程式碼與樣式數據，直接產出設計規範 (Design System)，解決手動整理元件與樣式的時間損耗。</p>
       </div>
 
       <div class="phase-container">
-        <!-- Phase 1 -->
+        <!-- 最終成果展示 -->
         <div class="phase-card phase-1">
-          <div class="phase-badge">Phase 1: 設計圖精準對齊 (Design Alignment)</div>
-          <p><strong>動作：</strong>將 Figma 中的現有設計圖複製，直接貼上至 Figma Make 的對話框中。</p>
-          <img src="截圖 2026-02-09 晚上9.46.35.png" class="step-img" alt="Figma Make 貼上設計圖">
-          <div class="prompt-box"><div class="prompt-tag">OPTIMIZED PROMPT</div>請作為精準的 UI 執行者，完全遵循所提供的設計圖進行 1:1 還原。請確保所有字體、配色、間距、圖層結構與視覺細節皆如實呈現，禁止任何形式的自主修改或發揮。</div>
-        </div>
-
-        <!-- Result -->
-        <div class="phase-card phase-3">
-          <div class="phase-badge">最終高擬真成果呈現</div>
-          <p><strong>成果：</strong>AI 生成的高保真頁面不僅還原了設計，還能直接生成具備微互動效果的連結，讓客戶在第一時間感受真實體驗。</p>
-          <a href="https://badge-brain-30475314.figma.site" target="_blank" class="view-ppt-btn">
+          <div class="phase-badge">最終成果：由網頁資料自動生成的設計規範</div>
+          <p><strong>說明：</strong>免去人工排版與對齊的勞務損耗。AI 自動識別網頁底層的顏色 Token、字體級距與元件屬性，產出包含原子元件與使用指南的專業 Guideline，確保設計與開發 100% 同步。</p>
+          <img src="assets/images/design-system-guide.png" class="step-img" style="border: 1px solid var(--border);" alt="自動產出之設計規範最終成果">
+          
+          <a href="https://www.figma.com/design/MGJ81nEjnmnuLqn1TSpOzw/UIUX-Ai-%E7%A0%94%E7%A9%B6?node-id=565-2&t=CbGAoHFSyYVB17Ub-4" target="_blank" class="view-ppt-btn">
             <span class="btn-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </span>
-            線上預覽高擬真互動原型
+            查看自動產出的設計規範 (Guideline)
           </a>
         </div>
       </div>
     </div>
   </div>
+
 </section>
 
 <!-- PDF Modal -->
