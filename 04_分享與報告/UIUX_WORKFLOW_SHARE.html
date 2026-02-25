@@ -420,11 +420,11 @@
           <div style="display: flex; gap: 24px; align-items: flex-start;">
             <div style="flex: 1;">
               <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">日本超商：遊戲化任務分析</p>
-              <img src="assets/images/research-japan-retail.png" class="step-img" style="margin-top: 0;" alt="日本零售任務研究">
+              <img src="assets/images/research-japan-missions.png" class="step-img" style="margin-top: 0;" alt="日本零售任務研究">
             </div>
             <div style="flex: 1;">
               <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">台灣零售：互動誘因分析</p>
-              <img src="assets/images/research-taiwan-retail.png" class="step-img" style="margin-top: 0;" alt="台灣零售誘因分析">
+              <img src="assets/images/research-taiwan-incentives.png" class="step-img" style="margin-top: 0;" alt="台灣零售誘因分析">
             </div>
           </div>
         </div>
@@ -535,7 +535,7 @@
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: NotebookLM 結構化輸出 (Structural Output)</div>
           <p><strong>任務：</strong>在 NotebookLM 中完成方案優化後，要求 AI 以 Markdown 格式輸出「簡報大綱」，確保包含標題、內文點與核心效益。</p>
-          <img src="assets/images/notebooklm-ppt-outline.png" class="step-img" alt="NotebookLM 產出之簡報大綱">
+          <img src="assets/images/ppt-outline-gen.png" class="step-img" alt="NotebookLM 產出之簡報大綱">
         </div>
 
         <!-- Phase 2 -->
@@ -545,7 +545,7 @@
           
           <div style="margin-top: var(--sp-md);">
             <span class="step-label">最終成果預覽</span>
-            <img src="assets/images/gemini-canvas-ppt-preview.png" class="step-img" alt="Gemini Canvas 簡報排版成果">
+            <img src="assets/images/ppt-auto-layout-result.png" class="step-img" alt="Gemini Canvas 簡報排版成果">
           </div>
 
           <button onclick="openPdf('assets/data/My FamiPort App 2.0.pdf')" class="view-ppt-btn">
@@ -631,7 +631,7 @@
         <div class="phase-card phase-1">
           <div class="phase-badge">Phase 1: 需求規格轉化 (Spec Translation)</div>
           <p><strong>情境：</strong>將痛點一產出的亮點內容獨立存檔並匯入 NotebookLM，要求 AI 依據亮點轉化為精確的頁面清單與人天估算表格。</p>
-          <img src="assets/images/notebooklm-wbs-table.png" class="step-img" alt="NotebookLM 生成之 WBS 估算表">
+          <img src="assets/images/wbs-estimation-table.png" class="step-img" alt="NotebookLM 生成之 WBS 估算表">
           <div class="prompt-box"><div class="prompt-tag">USER 輸入</div>這幾個亮點我們需要進行設計，你能依照這情境幫我預估可能會呈現的畫面嗎？
 
 層級如下示意：我需要我個功能會產生的頁面，與設計人員的製作天數評估。
@@ -646,8 +646,8 @@
           <div class="phase-badge">Phase 2: AI 自動產出頁面與人天的清單</div>
           <p><strong>情境：</strong>將表格整個複製貼到 Gemini CLI 上面，製作 excel 表格。</p>
           <div style="display: flex; gap: var(--sp-md); margin-bottom: var(--sp-md); align-items: stretch;">
-            <div style="flex: 1;"><img src="assets/images/cli-wbs-input.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Gemini CLI 接收 WBS 資料指令"></div>
-            <div style="flex: 1;"><img src="assets/images/cli-excel-generation.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Gemini CLI 自動產出之 Excel 報表"></div>
+            <div style="flex: 1;"><img src="assets/images/cli-wbs-command.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Gemini CLI 接收 WBS 資料指令"></div>
+            <div style="flex: 1;"><img src="assets/images/cli-wbs-excel-result.png" class="step-img" style="margin-top: 0; width: 100%; height: 280px; object-fit: cover; object-position: top;" alt="Gemini CLI 自動產出之 Excel 報表"></div>
           </div>
         </div>
     </div>
@@ -677,7 +677,7 @@
           
           <div style="margin-bottom: var(--sp-md);">
             <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 8px;">戰略規劃圖 (想法整合)</p>
-            <img src="assets/images/new_strategy_plan.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="戰略規劃圖">
+            <img src="assets/images/revamp-strategy-logic.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="戰略規劃圖">
           </div>
 
           <div style="background: #FFFBE6; padding: var(--sp-md); border: 1px solid var(--primary);">
@@ -685,15 +685,15 @@
             <div style="display: flex; gap: var(--sp-md); align-items: flex-start;">
               <div style="flex: 1;">
                 <p style="font-size: var(--fs-xs); color: var(--secondary); margin-bottom: 4px; line-height: 1.2;">1. 常用服務<br>整合高頻功能</p>
-                <img src="assets/images/new-service-common.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版常用服務">
+                <img src="assets/images/feature-common-services.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版常用服務">
               </div>
               <div style="flex: 1;">
                 <p style="font-size: var(--fs-xs); color: var(--secondary); margin-bottom: 4px; line-height: 1.2;">2. 任務中心<br>主動觸發回訪</p>
-                <img src="assets/images/new-mission-center.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版任務中心">
+                <img src="assets/images/feature-mission-center.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版任務中心">
               </div>
               <div style="flex: 1;">
                 <p style="font-size: var(--fs-xs); color: var(--secondary); margin-bottom: 4px; line-height: 1.2;">3. 自選獎勵<br>強化成就回饋</p>
-                <img src="assets/images/new-reward-select.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版自選獎勵">
+                <img src="assets/images/feature-reward-system.jpg" class="step-img" style="margin-top: 0; width: 100%; border: 1px solid var(--border);" alt="新版自選獎勵">
               </div>
             </div>
           </div>
@@ -773,7 +773,7 @@
         <div class="phase-card phase-1">
           <div class="phase-badge">最終成果：由網頁資料自動生成的設計規範</div>
           <p><strong>說明：</strong>節省人工排版與對齊工時。AI 自動識別網頁底層的顏色 Token、字體級距與元件屬性，產出包含原子元件與使用指南的專業 Guideline，確保設計與開發 100% 同步。</p>
-          <img src="assets/images/design-system-guide.png" class="step-img" style="border: 1px solid var(--border);" alt="自動產出之設計規範最終成果">
+          <img src="assets/images/ds-auto-guideline.png" class="step-img" style="border: 1px solid var(--border);" alt="自動產出之設計規範最終成果">
           
           <a href="https://www.figma.com/design/MGJ81nEjnmnuLqn1TSpOzw/UIUX-Ai-%E7%A0%94%E7%A9%B6?node-id=565-2&t=CbGAoHFSyYVB17Ub-4" target="_blank" class="view-ppt-btn">
             <span class="btn-icon">
