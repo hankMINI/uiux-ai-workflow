@@ -397,116 +397,124 @@
 
 <section>
       <!-- 解決方案 1 實戰案例 -->
-    <div class="solution-card" id="sol1">
+      <!-- 解決方案 1 實戰案例 -->
+  <div class="solution-card" id="sol1">
     <div class="solution-header">
       <span class="icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </span>
-      回應痛點 1：競品分析資料散亂
+      回應痛點 1：競品分析效率低
     </div>
     <div class="solution-body">
       <h4>實戰案例：My FamiPort App 「我的專屬」優化任務</h4>
       
       <div class="insight-box">
-        <h3>研究核心：收集改版所需的任務機制素材</h3>
-        <p>我們不再進行發散的功能比對，而是精準識別全球零售 App 如何透過「微型任務」驅動回訪。透過 AI 快速識別 GS25、全聯、日本超商等標竿的高頻互動機制，將其轉化為『我的專屬』改版所需的互動機制參考。</p>
+        <h3>目的：收集改版參考素材</h3>
+        <p>我們精準識別各國零售 App 如何驅動使用者回訪。透過 AI 快速掃描 GS25、全聯、日本超商等案例，收集改版所需的互動機制素材。</p>
       </div>
 
       <div class="phase-container">
         <!-- Phase 1 -->
         <div class="phase-card phase-1">
           <div class="phase-badge">第一步：掃描各國 App 案例</div>
-          <p><strong>動作：</strong>利用 Gemini Deep Research 掃描全球具備「高黏著度」的零售任務。如 GS25 的雲端寄取任務、日本超商的遊戲化集章等。</p>
+          <p><strong>動作：</strong>利用 Gemini Deep Research 掃描日本、台灣等超商 App 案例，分析雲端寄取、集章等機制。</p>
           <div style="display: flex; gap: 24px; align-items: flex-start;">
             <div style="flex: 1;">
-              <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">日本超商：遊戲化任務分析</p>
-              <img src="assets/images/research-japan-missions.png" class="step-img" style="margin-top: 0;" alt="日本零售任務研究">
+              <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">日本超商案例</p>
+              <img src="assets/images/research-japan-missions.png" class="step-img" style="margin-top: 0;" alt="日本超商案例">
             </div>
             <div style="flex: 1;">
-              <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">台灣零售：互動誘因分析</p>
-              <img src="assets/images/research-taiwan-incentives.png" class="step-img" style="margin-top: 0;" alt="台灣零售誘因分析">
+              <p style="font-size: var(--fs-xs); font-weight: 700; color: var(--secondary); margin-bottom: 4px;">台灣零售案例</p>
+              <img src="assets/images/research-taiwan-incentives.png" class="step-img" style="margin-top: 0;" alt="台灣零售案例">
             </div>
           </div>
         </div>
 
-        <!-- Phase 3 (10大亮點詳細說明) -->
+        <!-- Phase 2 (補回 NotebookLM) -->
+        <div class="phase-card phase-2">
+          <div class="phase-badge">第二步：NotebookLM 資料同步</div>
+          <p><strong>動作：</strong>透過 Kortex 將收集到的案例匯入 NotebookLM，建立專案知識庫，方便後續產出改版規格。</p>
+          <img src="assets/images/strategy-vault-sync.png" class="step-img" alt="NotebookLM 同步">
+        </div>
+
+        <!-- Phase 3 -->
         <div class="phase-card phase-3">
           <div class="phase-badge">最終戰果：10 大任務化功能亮點提案</div>
           
           <div style="margin-bottom: var(--sp-md); color: var(--secondary); font-size: var(--fs-sm); border-left: 2px solid var(--primary); padding-left: var(--sp-sm);">
-            <p style="margin-bottom: 0;">策略核心在於將體驗從「被動查詢工具」轉化為「生活儀表板」，透過以下 10 個任務化模組，創造實質的使用者回訪率與商業價值。</p>
+            <p style="margin-bottom: 0;">將體驗從被動查詢轉化為互動儀表板，創造使用者回訪率與商業價值。</p>
           </div>
           
           <div class="feature-list">
             <div class="feature-item">
               <h5>1. Fami-Link 雲端列印快手</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 趕時間的使用者進店只想趕快列印，不想在機台前手忙腳亂找代碼或擔心代碼過期。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考動態島或首頁整合設計。平常隱藏，只要有上傳檔案，首頁最上方即出現卡片顯示文件就緒與一鍵開啟條碼。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 等待不無聊。系統偵測到機台操作等待空檔時，彈出限時 10 分鐘的商品折價券。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 趕時間進店只想趕快列印，不想在機台前手忙腳亂找代碼。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 首頁最上方出現卡片顯示文件就緒與一鍵開啟條碼。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 偵測機台等待空檔，彈出限時商品折價券。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決代碼過期焦慮與機台前等待的尷尬斷點。</p>
             </div>
             <div class="feature-item">
               <h5>2. 賣家集章卡</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 網拍小賣家希望每次寄件都有回饋感，以此增加選擇全家而非競品的動力。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考集點貼紙畫面。在頁面中間設定數位集章卡，視覺模擬真實蓋章效果，顯示月寄件進度。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 寄件馬拉松。集滿 10 件贈送商品，利用目標漸近心理促使賣家為了湊滿印章多寄一件。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決寄件流程純勞務無獎勵的問題，留住高價值使用者。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 網拍賣家希望每次寄件都有回饋感，以此增加選擇全家的動力。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面中間設置數位集章卡，模擬真實蓋章效果。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 集滿 10 件贈送商品，利用目標漸近心理留住賣家。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決寄件流程純勞務無獎勵的問題。</p>
             </div>
             <div class="feature-item">
               <h5>3. 我的雲端冰箱</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 騎機車的通勤族想買促銷優惠，但不想一次提走大量重物。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 參考虛擬冰箱設計。改用圖像介面將已買未領的商品擺在架上，並標示過期剩餘天數。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 怕浪費提醒。快過期時推播領取或轉送提示，利用損失規避心理引導使用者回店。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決實體促銷拿不動的物理問題，創造必然的回訪機制。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 想買促銷優惠但不想一次提走大量重物。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 虛擬冰箱介面，標示已買未領商品與過期剩餘天數。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 快過期時推播提醒，利用損失規避心理引導使用者回店。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決實體促銷拿不動的物理問題，創造回訪機制。</p>
             </div>
             <div class="feature-item">
               <h5>4. 機台掃碼通</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 討厭在機台螢幕上反覆點選與輸入代碼，希望透過手機掃描快速登入。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面右上方設定醒目的掃描圖示。掃描機台 QR Code 後，手機內的寄件資料即自動同步。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 免接觸獎勵。推廣期間使用掃碼登入即贈送點數，養成使用者數位操作習慣。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 徹底消滅手動輸入 10 碼代碼的低效體驗。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 討厭在機台螢幕反覆輸入代碼，希望快速登入。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 掃描機台 QR Code 後，手機內的寄件資料自動同步。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 使用掃碼登入即贈送點數，養成數位操作習慣。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 消滅手動輸入 10 碼代碼的低效體驗。</p>
             </div>
             <div class="feature-item">
               <h5>5. 超級一鍵通</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 結帳時不想頻繁切換會員、發票與付款畫面，避免造成後方排隊壓力。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面右下角設定懸浮按鈕。點擊後直接彈出整合會員、載具、支付與優惠券的單一聚合碼。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 透過極致效率產生的爽感，引導使用者將此頁面作為核心入口。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 結帳時不想頻繁切換會員、載具與付款畫面。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 右下角懸浮按鈕，點擊彈出整合單一聚合碼。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 極致效率產生的爽感，引導使用者以此作為入口。</p>
               <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決結帳時操作 App 的卡頓與排隊壓力。</p>
             </div>
             <div class="feature-item">
               <h5>6. 每日好運籤</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 平常沒事不會開啟 App，但想要每天進來試試運氣並賺取小回饋。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 頁面顯眼處設定扭蛋機或求籤筒互動模組。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 試手氣。每天免費參與一次，利用變動獎勵機率提升日活躍使用者數。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決工具類 App 低黏著度、無事不開啟的問題。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 平常沒事不會開啟 App，想要每天試試運氣賺小回饋。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 扭蛋機或求籤筒互動模組。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 每天免費參與一次，利用變動獎勵提升日活躍度。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決工具類 App 低黏著度問題。</p>
             </div>
             <div class="feature-item">
               <h5>7. 繳費刮刮樂</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 剛繳完高額帳單心情受影響，想要獲得一點驚喜感或心理補償。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 偵測繳費完成後彈出數位收據，使用者可滑動螢幕體驗刮開銀漆的動畫效果。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 驚喜回饋。將痛苦的支出行為轉化為期待中獎的遊戲互動。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決繳費服務僅有負向情緒回饋的體驗斷層。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 繳完費心情受影響，想要獲得一點驚喜感。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 繳費完成後彈出數位收據，可滑動體驗刮開動畫。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 將支出行為轉化為期待中獎的互動。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決繳費服務僅有負面情緒回饋的斷層。</p>
             </div>
             <div class="feature-item">
               <h5>8. 包裹雷達</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 常有網購需求，希望一眼確認待取包裹數量，方便下班順路領取。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 儀表板顯示待取包裹件數卡片，並連結物流進度。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 搬運補給。偵測到大件或多件包裹時自動產生飲品優惠券，提示搬重物辛苦了。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決物流資訊不同步與忘記取件的問題。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 想一眼確認待取包裹數量，方便下班順路領取。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 儀表板顯示待取包裹件數卡片，連結物流進度。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 偵測到大件包裹時產生飲品優惠券，提示搬重物辛苦了。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決物流資訊不同步與忘記取件問題。</p>
             </div>
             <div class="feature-item">
               <h5>9. 娛樂票夾</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 準備參加大型活動，需要隨時確認票券狀態以確保安心入場。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 數位票根圖案化呈現，點擊可翻面查看詳細座位資訊，模擬實體票券質感。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 開場前導購。活動開始前根據場地位置推播周邊門市的咖啡優惠。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決使用者對數位票券找不到或消失的不信任感。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 參加大型活動，需要隨時確認票券狀態以確保安心入場。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 數位票根圖案化呈現，點擊可翻面查看詳細資訊。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 活動開始前根據位置推播周邊門市咖啡優惠。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決對數位票券不安全感。</p>
             </div>
             <div class="feature-item">
               <h5>10. 點數計算機</h5>
-              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 擁有大量點數但不知道實際價值，導致缺乏兌換動力。</p>
-              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 直接將點數數值換算為實質商品或現金價值。如顯示：等於 2 瓶綠茶。</p>
-              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 目標進度。顯示距離下一個熱門獎勵的差距，刺激持續消費累積。</p>
-              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決點數價值感模糊導致使用者不積極兌換的問題。</p>
+              <p class="feature-detail"><span class="feature-label">使用者情境:</span> 擁有大量點數但不知道實際價值，缺乏兌換動力。</p>
+              <p class="feature-detail"><span class="feature-label">介面設計概念:</span> 將點數數值換算為實質商品或現金價值。</p>
+              <p class="feature-detail"><span class="feature-label">誘因與機制:</span> 顯示距離下一個熱門獎勵的差距，刺激持續消費。</p>
+              <p class="feature-detail"><span class="feature-label">解決之痛點:</span> 解決點數價值感模糊問題。</p>
             </div>
           </div>
         </div>
